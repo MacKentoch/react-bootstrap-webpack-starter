@@ -1,0 +1,50 @@
+{
+  "name": "react-bootstrap-webpack-starter",
+  "version": "0.1.0",
+  "description": "react js + bootstrap + webpack starter",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "NODE_ENV=dev webpack",
+    "prod": "NODE_ENV=production webpack -p --config webpack.production.config.babel.js ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Erwan DATIN (MacKentoch)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.5.2",
+    "babel-eslint": "^5.0.0",
+    "babel-loader": "^6.2.3",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-2": "^6.5.0",
+    "babel-register": "^6.5.2",
+    "css-loader": "^0.23.1",
+    "eslint": "^2.2.0",
+    "eslint-plugin-react": "^4.1.0",
+    "expose-loader": "^0.7.1",
+    "file-loader": "^0.8.5",
+    "json-loader": "^0.5.4",
+    "node-sass": "^3.4.2",
+    "react-hot-loader": "^1.3.0",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "animate.css": "^3.5.1",
+    "bootstrap": "^3.3.6",
+    "classnames": "^2.2.3",
+    "font-awesome": "^4.5.0",
+    "jquery": "^2.2.1",
+    "react": "^0.14.7",
+    "react-bootstrap": "^0.28.3",
+    "react-dom": "^0.14.7",
+    "react-router": "^2.0.0",
+    "react-tap-event-plugin": "^0.2.2"
+  }
+}
