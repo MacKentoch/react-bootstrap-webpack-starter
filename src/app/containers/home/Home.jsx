@@ -37,20 +37,18 @@ class Home extends React.Component {
         className={this.processViewAnimationClasses()}>
         <Jumbotron>
           <h1>
-            React + Bootstrap
+            Full ES2015 ReactJS + Bootstrap
           </h1>
-          <p>
-            starter
-          </p>
-          <p>
-            react + react-router + classnames
-          </p>
-          <p>
-            bootstrap + react-bootstrap + animate.css + webpack
-          </p>
-          <h3>
-            + hot reload!!!
-          </h3>
+          <h2>
+            with Hot Reload!!!
+          </h2>
+          <h2>
+            with React Router (SPA)
+          </h2>
+          <h1>
+            Starter
+          </h1>
+          <h1></h1>
           <p>
             <Link
               className="btn btn-success btn-lg"
