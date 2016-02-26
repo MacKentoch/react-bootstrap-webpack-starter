@@ -50,7 +50,7 @@ npm run prod
 
 ## To add
 
-- [ ] Hot reload
+- [x] Hot reload
 - [ ] Redux
 
 ## License
