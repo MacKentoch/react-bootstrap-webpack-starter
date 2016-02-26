@@ -24,13 +24,19 @@ Bundler is the commonly used by react community  : `webpack`.
 ```bash
 npm install
 ```
-### dev mode
+### bundle dev mode
 
 ```bash
 npm run dev
 ```
 
-### production mode
+### dev : hot reload mode
+
+```bash
+npm run start
+```
+
+### bundle production mode
 
 ```bash
 npm run prod

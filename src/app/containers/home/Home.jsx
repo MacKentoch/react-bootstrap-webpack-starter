@@ -43,8 +43,14 @@ class Home extends React.Component {
             starter
           </p>
           <p>
-            react + react-router + classnames + bootstrap + react-bootstrap + animate.css + webpack
+            react + react-router + classnames
           </p>
+          <p>
+            bootstrap + react-bootstrap + animate.css + webpack
+          </p>
+          <h3>
+            + hot reload!!!
+          </h3>
           <p>
             <Link
               className="btn btn-success btn-lg"
