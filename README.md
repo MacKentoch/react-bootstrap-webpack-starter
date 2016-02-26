@@ -1,19 +1,23 @@
-React Bootstrap Webpack starter
+Full ES2015 React Bootstrap with Hot Reload starter
 ==========
 
-A simple ReactJS + Bootstrap starter.
-Bundler is the commonly used by react community  : `webpack`.
+A simple `full ES2015` (*previously named ES6*)
+
+### ReactJS + Bootstrap starter with hot reload
+
+#### full client and server side in ES6-ES2015
 
 ## Detailed Content
 
-- React JS
-- react-router
-- Bootstrap
-- React-Bootstrap
-- Webpack
-- animate.css
-- classnames
-- font-awesome
+- React JS (0.14.x - [github :link:](https://github.com/facebook/react))
+- react-router (2.x- [github :link:](https://github.com/reactjs/react-router))
+- Bootstrap (3.x - [github :link:](https://github.com/twbs/bootstrap))
+- React-Bootstrap ([github :link:](https://github.com/react-bootstrap/react-bootstrap))
+- font-awesome ([github :link:](https://github.com/FortAwesome/Font-Awesome))
+- animate.css ([github :link:](https://github.com/daneden/animate.css))
+- classnames ([github :link:](https://github.com/JedWatson/classnames))
+- Webpack ([github :link:](https://github.com/webpack/webpack))
+- babel 6+ ([github :link:](https://github.com/babel/babel))
 
 
 
