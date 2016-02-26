@@ -1,10 +1,9 @@
-/* eslint no-var:0 */
-var path    = require('path');
-var webpack = require('webpack');
+import path     from 'path';
+import webpack  from 'webpack';
 
-var assetsDir       = path.resolve(__dirname, 'public/assets');
+const assetsDir = path.resolve(__dirname, 'public/assets');
 
-module.exports = {
+let config = {
   devtool: 'eval',
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
@@ -47,3 +46,5 @@ function getImplicitGlobals() {
     jQuery: 'jquery'
   });
 }
+
+export default config;
