@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "NODE_ENV=dev webpack",
     "prod": "NODE_ENV=production webpack -p --config webpack.production.config.babel.js ",
-    "start": "babel-node --presets es2015 ./server.js"
+    "start": "babel-node --presets es2015 ./server.hot.reload.js"
   },
   "keywords": [
     "react"
