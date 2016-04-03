@@ -3,7 +3,7 @@ import ReactDOM             from 'react-dom';
 import injectTpEventPlugin  from 'react-tap-event-plugin';
 import { Routes }           from './routes/Routes.jsx';
 
-
+import 'babel-polyfill';
 import 'animate.css';
 import 'jquery';
 import 'font-awesome/css/font-awesome.min.css';
