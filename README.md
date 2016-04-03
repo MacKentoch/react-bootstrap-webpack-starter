@@ -51,7 +51,7 @@ npm run prod
 ## To add
 
 - [x] Hot reload
-- [ ] Redux
+- [ ] Redux (*new repo `react-redux-bootstrap-webpack-starter` coming soon*)
 
 ## License
 
