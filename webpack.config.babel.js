@@ -1,5 +1,7 @@
-import webpack  from 'webpack';
-import path     from 'path';
+import webpack      from 'webpack';
+import path         from 'path';
+import autoprefixer from 'autoprefixer';
+import precss       from 'precss';
 
 const assetsDir       = path.resolve(__dirname, 'public/assets');
 
@@ -17,10 +19,10 @@ let config = {
       loader: 'babel'
     }, {
       test: /\.scss$/,
-      loader: 'style!css!sass'
+      loader: 'style!css!postcss!sass'
     }, {
       test: /\.css$/,
-      loader: 'style!css'
+      loader: 'style!css!postcss'
     }, {
       test: /\.json$/,
       loader: 'json'
@@ -29,13 +31,16 @@ let config = {
       loader: 'url?limit=100000@name=[name][ext]'
     }]
   },
+  postcss: function () {
+    return [precss, autoprefixer];
+  },
   plugins: [
     getImplicitGlobals()
   ]
 };
 
 /*
-* here using hoisting so don't use `var NAME = function()...` 
+* here using hoisting so don't use `var NAME = function()...`
 */
 function getImplicitGlobals() {
   return new webpack.ProvidePlugin({

@@ -1,5 +1,7 @@
-import path     from 'path';
-import webpack  from 'webpack';
+import path         from 'path';
+import webpack      from 'webpack';
+import autoprefixer from 'autoprefixer';
+import precss       from 'precss';
 
 const assetsDir = path.resolve(__dirname, 'public/assets');
 
@@ -19,6 +21,9 @@ let config = {
     new webpack.HotModuleReplacementPlugin(),
     getImplicitGlobals()
   ],
+  postcss: function () {
+    return [precss, autoprefixer];
+  },
   module: {
     loaders: [{
       test: /\.jsx?$/,
@@ -26,10 +31,10 @@ let config = {
       include: path.join(__dirname, 'src/app')
     },  {
       test: /\.scss$/,
-      loader: 'style!css!sass'
+      loader: 'style!css!postcss!sass'
     }, {
       test: /\.css$/,
-      loader: 'style!css'
+      loader: 'style!css!postcss'
     }, {
       test: /\.json$/,
       loader: 'json'
