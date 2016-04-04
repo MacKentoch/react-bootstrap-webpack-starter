@@ -1,14 +1,21 @@
 Full ES2015 React Bootstrap with Hot Reload starter
 ==========
 
-A simple `full ES2015` (*previously named ES6*)
-
 ### ReactJS + Bootstrap starter with hot reload
 
 #### full client and server side in ES6-ES2015
 
+A simple `full ES2015` (*previously named ES6*).
+
+*Concept behind:* **this starter is an easy to understand and ready to use ReactJS (ES6) + bootstrap + webpack starter with:**
+- `no hard core Webpack` config so it is more commonly understandable (*they are numerous amazing starters with incredible webpack configs — hard core configs aren't bad things at all! —. This one is just for easier understanding for people even discovering webpack*)
+- `with hot reload` (*ReactJS + webpack => hot reload = WINNER*)
+- `no flux` (*yes, to give you freedom to add then since you may want to use something else like observables?*)
+- `no auth` (*simple starter that even fits for simple applications that don't need auth*)
+
 ## Detailed Content
 
+**Front:**
 - React JS (0.14.x - [github :link:](https://github.com/facebook/react))
 - react-router (2.x- [github :link:](https://github.com/reactjs/react-router))
 - Bootstrap (3.x - [github :link:](https://github.com/twbs/bootstrap))
@@ -18,6 +25,19 @@ A simple `full ES2015` (*previously named ES6*)
 - classnames ([github :link:](https://github.com/JedWatson/classnames))
 - Webpack ([github :link:](https://github.com/webpack/webpack))
 - babel 6+ ([github :link:](https://github.com/babel/babel))
+
+**Tool chain:**
+- babel 6+
+- eslint
+- hot reload
+- loaders
+  - `js` / `jsx`
+  - sass
+  - css
+  - json
+  - images formats
+  - svg and fonts formats
+- autoprefixer (css and sass)
 
 
 
@@ -50,8 +70,8 @@ npm run prod
 
 ## To add
 
-- [x] Hot reload
-- [ ] Redux (*new repo `react-redux-bootstrap-webpack-starter` coming soon*)
+- [x] hot reload
+- [ ] ~~Redux~~ (*won't be added "HERE" since new repo `react-redux-bootstrap-webpack-starter` coming soon*)
 
 ## License
 
