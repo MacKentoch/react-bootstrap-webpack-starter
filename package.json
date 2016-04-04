@@ -9,7 +9,14 @@
     "start": "babel-node --presets es2015 ./server.hot.reload.js"
   },
   "keywords": [
-    "react"
+    "react",
+    "ES6",
+    "ES2015",
+    "bootstrap"
+    "starter",
+    "webpack",
+    "hot-reload",
+    "hot reload"
   ],
   "author": "Erwan DATIN (MacKentoch)",
   "license": "MIT",
