@@ -1,7 +1,8 @@
 import React, {
   Component
-}                     from 'react';
-import {Jumbotron}    from '../../components';
+}                       from 'react';
+import { findDOMNode }  from 'react-dom';
+import {Jumbotron}      from '../../components';
 import cx             from 'classnames';
 import shallowCompare from 'react-addons-shallow-compare';
 import { Link }       from 'react-router';

@@ -1,3 +1,5 @@
+/* global $:true */
+
 import React, {
   Component,
   PropTypes
@@ -9,11 +11,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      navModel : navigationModel
+      navModel : navigationModel,
+      windowScrollY: 0
     };
     // bind callbacks here (rather than in render()) for better performance
     this.handleLeftNavItemClick = this.handleLeftNavItemClick.bind(this);
     this.handleRightNavItemClick = this.handleRightNavItemClick.bind(this);
+    this.handleWindowScroll = this.handleWindowScroll.bind(this);
+  }
+
+  componentWillMount() {
+    window.addEventListener('scroll', this.handleWindowScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleWindowScroll);
   }
 
   render() {
@@ -34,6 +46,15 @@ class App extends Component {
     );
   }
 
+  handleWindowScroll() {
+    const { windowScrollY } = this.state;
+    const currentWindowScrollY = $(window).scrollTop();
+    if (windowScrollY !== currentWindowScrollY) {
+      this.setState({windowScrollY: currentWindowScrollY});
+    }
+  }
+
+  /* eslint-disable no-unused-vars*/
   handleLeftNavItemClick(event, viewName) {
     // something to do here?
   }
@@ -41,6 +62,7 @@ class App extends Component {
   handleRightNavItemClick(event, viewName) {
     // something to do here?
   }
+  /* eslint-enable no-unused-vars*/
 }
 
 // statics :
