@@ -1,4 +1,4 @@
-Full ES2015 React Bootstrap with Hot Reload starter
+Full ES2015 React Bootstrap with Hot Reload STARTER
 ==========
 
 ### ReactJS + Bootstrap starter with hot reload
@@ -48,28 +48,47 @@ A simple `full ES2015` (*previously named ES6*).
 ```bash
 npm install
 ```
+
 ### bundle dev mode
 
+*General case:*
 ```bash
 npm run dev
 ```
 
+*Windows - particular - case:*
+```bash
+npm run dev-win
+```
+
 ### dev : hot reload mode
 
+*General case:*
 ```bash
 npm run start
 ```
 
+*Windows - particular - case:*
+```bash
+npm run start-win
+```
+
 ### bundle production mode
 
+*General case:*
 ```bash
 npm run prod
 ```
 
+*Windows - particular - case:*
+```bash
+npm run prod-win
+```
 
 
 ## To add
 
+- [ ] tests (*coming soon*)
 - [x] hot reload
 - [ ] ~~Redux~~ (*won't be added "HERE" since specific [repo `react-redux-bootstrap-webpack-starter` created here](https://github.com/MacKentoch/react-redux-bootstrap-webpack-starter)*)
 
