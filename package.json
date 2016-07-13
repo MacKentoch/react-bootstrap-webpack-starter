@@ -1,6 +1,6 @@
 {
   "name": "react-bootstrap-webpack-starter",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "react js + bootstrap + webpack starter",
   "main": "src/index.js",
   "scripts": {
@@ -57,6 +57,7 @@
     "font-awesome": "^4.5.0",
     "jquery": "^2.2.1",
     "react": "^0.14.7",
+    "react-addons-shallow-compare": "^15.2.1",
     "react-bootstrap": "^0.28.3",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.0",

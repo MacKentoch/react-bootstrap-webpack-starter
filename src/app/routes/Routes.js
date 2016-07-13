@@ -7,8 +7,10 @@ import {
   // browserHistory
 }                   from 'react-router';
 import { App }      from '../containers';
-import Home         from '../views/home/Home.jsx';
-import About        from '../views/about/About.jsx';
+import {
+  Home,
+  About
+}                   from '../views';
 
 export const Routes = () => {
   return (
