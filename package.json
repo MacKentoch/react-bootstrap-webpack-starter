@@ -62,6 +62,7 @@
     "react-dom": "^0.14.7",
     "react-router": "^2.0.0",
     "react-tap-event-plugin": "^0.2.2",
-    "superagent": "^1.8.3"
+    "superagent": "^1.8.3",
+    "whatwg-fetch": "^1.0.0"
   }
 }

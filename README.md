@@ -12,6 +12,7 @@ A simple `full ES2015` (*previously named ES6*).
 - `with hot reload` (*ReactJS + webpack => hot reload = WINNER*)
 - `no flux` (*yes, to give you freedom to add then since you may want to use something else like observables?*)
 - `no auth` (*simple starter that even fits for simple applications that don't need auth*)
+- *ReactJS Components written with `optimization tricks` (stateless, pure render...).*
 
 ## Detailed Content
 
@@ -25,6 +26,8 @@ A simple `full ES2015` (*previously named ES6*).
 - classnames ([github :link:](https://github.com/JedWatson/classnames))
 - Webpack ([github :link:](https://github.com/webpack/webpack))
 - babel 6+ ([github :link:](https://github.com/babel/babel))
+- react-addons-shallow-compare (*pure render mixin equivalent for ES6*)
+- whatwg-fetch (*Why: because it is a fetch `Web API` polyfill*)
 
 **Tool chain:**
 - babel 6+
