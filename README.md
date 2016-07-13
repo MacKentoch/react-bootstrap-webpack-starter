@@ -24,6 +24,7 @@ A simple `full ES2015` (*previously named ES6*).
 - font-awesome ([github :link:](https://github.com/FortAwesome/Font-Awesome))
 - animate.css ([github :link:](https://github.com/daneden/animate.css))
 - classnames ([github :link:](https://github.com/JedWatson/classnames))
+- react-motion ([github :link:](https://github.com/chenglou/react-motion))
 - Webpack ([github :link:](https://github.com/webpack/webpack))
 - babel 6+ ([github :link:](https://github.com/babel/babel))
 - react-addons-shallow-compare (*pure render mixin equivalent for ES6*)
