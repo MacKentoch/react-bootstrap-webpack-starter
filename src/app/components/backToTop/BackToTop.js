@@ -4,7 +4,7 @@ import React, {
   Component,
   PropTypes
 }                       from 'react';
-import {smoothScroll}   from '../../services';
+import {smoothScroll}   from './lib/smoothScroll';
 import BackToTopButton  from './backToTopButton/BackToTopButton';
 import {Motion, spring} from 'react-motion';
 
