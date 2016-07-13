@@ -9,7 +9,8 @@ import {
 import { App }      from '../containers';
 import {
   Home,
-  About
+  About,
+  Components
 }                   from '../views';
 
 export const Routes = () => {
@@ -17,6 +18,7 @@ export const Routes = () => {
     <Router history={hashHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Home} />
+        <Route path="/components" component={Components} />
         <Route path="/about" component={About} />
       </Route>
     </Router>
