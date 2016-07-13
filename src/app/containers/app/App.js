@@ -1,38 +1,27 @@
-/* global $:true */
-
 import React, {
   Component,
   PropTypes
 }                         from 'react';
-import { NavigationBar }  from '../../components';
+import {
+  NavigationBar,
+  BackToTop
+}                         from '../../components';
 import navigationModel    from '../../models/navigation.json';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      navModel : navigationModel,
-      windowScrollY: 0
-    };
+    this.state = { navModel: navigationModel };
     // bind callbacks here (rather than in render()) for better performance
     this.handleLeftNavItemClick = this.handleLeftNavItemClick.bind(this);
     this.handleRightNavItemClick = this.handleRightNavItemClick.bind(this);
-    this.handleWindowScroll = this.handleWindowScroll.bind(this);
-  }
-
-  componentWillMount() {
-    window.addEventListener('scroll', this.handleWindowScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleWindowScroll);
   }
 
   render() {
     const { navModel } = this.state;
     const { children } = this.props;
     return (
-      <div>
+      <div id="appContainer">
         <NavigationBar
           brand={navModel.brand}
           navModel={navModel}
@@ -42,16 +31,12 @@ class App extends Component {
         <div className="container-fluid">
           {children}
         </div>
+        <BackToTop
+          minScrollY={40}
+          scrollTo={'appContainer'}
+        />
       </div>
     );
-  }
-
-  handleWindowScroll() {
-    const { windowScrollY } = this.state;
-    const currentWindowScrollY = $(window).scrollTop();
-    if (windowScrollY !== currentWindowScrollY) {
-      this.setState({windowScrollY: currentWindowScrollY});
-    }
   }
 
   /* eslint-disable no-unused-vars*/
