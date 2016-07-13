@@ -1,8 +1,11 @@
-import React            from 'react';
+import React, {
+  Component,
+  PropTypes
+}                       from 'react';
 import NavigationBar    from '../../components/navigation/NavigationBar.jsx';
-import navigationModel  from '../../models/navigation.model.json';
+import navigationModel  from '../../models/navigation.json';
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,9 +30,9 @@ class App extends React.Component {
 
 // statics :
 App.propTypes = {
-  children  : React.PropTypes.node,
-  history   : React.PropTypes.object,
-  location  : React.PropTypes.object
+  children: PropTypes.node,
+  history:  PropTypes.object,
+  location: PropTypes.object
 };
 
 export default App;

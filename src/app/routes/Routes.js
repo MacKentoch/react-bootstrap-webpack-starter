@@ -6,7 +6,7 @@ import {
   hashHistory
   // browserHistory
 }                   from 'react-router';
-import App          from '../containers/app/App.jsx';
+import { App }      from '../containers';
 import Home         from '../views/home/Home.jsx';
 import About        from '../views/about/About.jsx';
 

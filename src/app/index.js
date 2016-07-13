@@ -1,7 +1,7 @@
 import React                from 'react';
 import ReactDOM             from 'react-dom';
 import injectTpEventPlugin  from 'react-tap-event-plugin';
-import { Routes }           from './routes/Routes.jsx';
+import { Routes }           from './routes/Routes';
 
 import 'babel-polyfill';
 import 'animate.css';
