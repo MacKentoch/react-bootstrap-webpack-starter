@@ -112,6 +112,8 @@ npm run prod-win
 ## To add
 
 - [x] tests
+ - [ ] 100%
+- [x] coverage
 - [x] hot reload
 - [ ] ~~Redux~~ (*won't be added "HERE" since specific [repo `react-redux-bootstrap-webpack-starter` created here](https://github.com/MacKentoch/react-redux-bootstrap-webpack-starter)*)
 
