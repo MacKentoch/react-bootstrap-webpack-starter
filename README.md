@@ -1,5 +1,6 @@
 Full ES2015 React Bootstrap with Hot Reload STARTER
 ==========
+[![npm](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](https://github.com/MacKentoch/react-bootstrap-webpack-starter)
 
 ### ReactJS + Bootstrap starter with hot reload
 
@@ -43,7 +44,12 @@ A simple `full ES2015` (*previously named ES6*).
   - svg and fonts formats
 - autoprefixer (css and sass)
 
-
+**tests:**
+- Mocha
+- Chai (*+ dirty-chai*)
+- enzyme
+- Sinon
+- nyc
 
 ## Usage
 
@@ -77,6 +83,18 @@ npm run start
 npm run start-win
 ```
 
+### tests
+
+*General case:*
+```bash
+npm run test
+```
+
+*Windows - particular - case:*
+```bash
+npm run test-win
+```
+
 ### bundle production mode
 
 *General case:*
@@ -92,7 +110,7 @@ npm run prod-win
 
 ## To add
 
-- [ ] tests (*coming soon*)
+- [x] tests
 - [x] hot reload
 - [ ] ~~Redux~~ (*won't be added "HERE" since specific [repo `react-redux-bootstrap-webpack-starter` created here](https://github.com/MacKentoch/react-redux-bootstrap-webpack-starter)*)
 
