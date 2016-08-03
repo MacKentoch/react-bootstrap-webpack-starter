@@ -20,7 +20,7 @@ A simple `full ES2015` (*previously named ES6*).
 ## Detailed Content
 
 **Front:**
-- React JS (0.14.x - [github :link:](https://github.com/facebook/react))
+- React JS (15.x - [github :link:](https://github.com/facebook/react))
 - react-router (2.x- [github :link:](https://github.com/reactjs/react-router))
 - Bootstrap (3.x - [github :link:](https://github.com/twbs/bootstrap))
 - React-Bootstrap ([github :link:](https://github.com/react-bootstrap/react-bootstrap))
