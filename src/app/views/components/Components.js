@@ -28,7 +28,11 @@ class Components extends Component {
         <h1>
           Components
         </h1>
-        <div style={{backgroundColor: '#F1F1F1F1', height: 1200}}>
+        <div
+          style={{
+            backgroundColor: '#F1F1F1F1',
+            height: 1200
+          }}>
           <h2>
             <strong>
               TODO:
