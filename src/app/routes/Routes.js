@@ -1,10 +1,7 @@
 import React        from 'react';
 import {
-  Router,
   Route,
-  IndexRoute,
-  hashHistory
-  // browserHistory
+  IndexRoute
 }                   from 'react-router';
 import { App }      from '../containers';
 import {
@@ -13,14 +10,14 @@ import {
   Components
 }                   from '../views';
 
-export const Routes = () => {
+const Routes = () => {
   return (
-    <Router history={hashHistory}>
-      <Route path="/" component={App}>
-        <IndexRoute component={Home} />
-        <Route path="/components" component={Components} />
-        <Route path="/about" component={About} />
-      </Route>
-    </Router>
+    <Route path="/" component={App}>
+      <IndexRoute component={Home} />
+      <Route path="/components" component={Components} />
+      <Route path="/about" component={About} />
+    </Route>
   );
 };
+
+export default Routes;

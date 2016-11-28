@@ -17,11 +17,17 @@ A simple `full ES2015` (*previously named ES6*).
 - `no auth` (*simple starter that even fits for simple applications that don't need auth*)
 - *ReactJS Components written with `optimization tricks` (stateless, pure render...).*
 
+## Breaking change since v0.5.0
+
+`ReactJS` `v15.4.x` requires `react-hot-loader` to be `v3+` (*previous react-hot-loader was v1.x*).
+So This starter had to include breaking changes to follow all of that.
+
+
 ## Detailed Content
 
 **Front:**
-- React JS (15.x - [github :link:](https://github.com/facebook/react))
-- react-router (2.x- [github :link:](https://github.com/reactjs/react-router))
+- React JS (15.4.x - [github :link:](https://github.com/facebook/react))
+- react-router (3.x- [github :link:](https://github.com/reactjs/react-router))
 - Bootstrap (3.x - [github :link:](https://github.com/twbs/bootstrap))
 - React-Bootstrap ([github :link:](https://github.com/react-bootstrap/react-bootstrap))
 - font-awesome ([github :link:](https://github.com/FortAwesome/Font-Awesome))
