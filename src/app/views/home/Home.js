@@ -41,9 +41,6 @@ class Home extends Component {
           <h1>
             Starter
           </h1>
-          <h1>
-            TEST
-          </h1>
           <p>
             <Link
               className="btn btn-success btn-lg"

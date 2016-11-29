@@ -10,6 +10,8 @@ Full ES2015 React Bootstrap with Hot Reload STARTER
 
 A simple `full ES2015` (*previously named ES6*).
 
+[preview here](https://mackentoch.github.io/react-bootstrap-webpack-starter)
+
 *Concept behind:* **this starter is an easy to understand and ready to use ReactJS (ES6) + bootstrap + webpack starter with:**
 - `no hard core Webpack` config so it is more commonly understandable (*they are numerous amazing starters with incredible webpack configs — hard core configs aren't bad things at all! —. This one is just for easier understanding for people even discovering webpack*)
 - `with hot reload` (*ReactJS + webpack => hot reload = WINNER*)

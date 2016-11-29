@@ -4,7 +4,7 @@ import React, {
 }               from 'react';
 import {
   Router,
-  hashHistory
+  hashHistory // ,
   // browserHistory
 }               from 'react-router';
 

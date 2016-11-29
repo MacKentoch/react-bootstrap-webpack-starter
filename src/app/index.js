@@ -33,7 +33,7 @@ if (module.hot) {
   module.hot.accept(
     './routes/Routes',
     () => {
-      const newRoutes = require('./routes/Routes');
+      const newRoutes = require('./routes/Routes').default;
       renderApp(newRoutes);
     }
   );
