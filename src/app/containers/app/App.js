@@ -9,13 +9,7 @@ import {
 import navigationModel    from '../../models/navigation.json';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { navModel: navigationModel };
-    // bind callbacks here (rather than in render()) for better performance
-    this.handleLeftNavItemClick = this.handleLeftNavItemClick.bind(this);
-    this.handleRightNavItemClick = this.handleRightNavItemClick.bind(this);
-  }
+  state = { navModel: navigationModel };
 
   render() {
     const { navModel } = this.state;
@@ -40,11 +34,11 @@ class App extends Component {
   }
 
   /* eslint-disable no-unused-vars*/
-  handleLeftNavItemClick(event, viewName) {
+  handleLeftNavItemClick = (event, viewName) => {
     // something to do here?
   }
 
-  handleRightNavItemClick(event, viewName) {
+  handleRightNavItemClick = (event, viewName) => {
     // something to do here?
   }
   /* eslint-enable no-unused-vars*/

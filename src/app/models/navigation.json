@@ -7,10 +7,6 @@
       "link"  : "/"
     },
     {
-      "label" : "Components",
-      "link"  : "/components"
-    },
-    {
       "label" : "About",
       "link"  : "/about"
     }

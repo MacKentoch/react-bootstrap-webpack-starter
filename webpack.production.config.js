@@ -32,12 +32,12 @@ const config = {
       test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif)(\?\S*)?$/,
       loader: 'url?limit=100000&name=[name].[ext]'
     }
-  ]},
+    ]},
   plugins: [
     getImplicitGlobals(),
     setNodeEnv()
   ],
-  postcss: function () {
+  postcss() {
     return [precss, autoprefixer({ browsers: ['last 2 versions'] })];
   }
 };

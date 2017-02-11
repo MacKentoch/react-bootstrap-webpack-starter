@@ -1,23 +1,15 @@
 import React, {
-  Component
+  PureComponent
 }                       from 'react';
 import {Jumbotron}      from '../../components';
 import cx             from 'classnames';
-import shallowCompare from 'react-addons-shallow-compare';
 import { Link }       from 'react-router';
 
-class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      animated: true,
-      viewEntersAnim: true
-    };
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    return shallowCompare(this, nextProps, nextState);
-  }
+class Home extends PureComponent {
+  state = {
+    animated: true,
+    viewEntersAnim: true
+  };
 
   render() {
     const { animated, viewEntersAnim } = this.state;
@@ -45,7 +37,7 @@ class Home extends Component {
             <Link
               className="btn btn-success btn-lg"
               to={'/about'}>
-              <i className="fa fa-info"></i>
+              <i className="fa fa-info" />
               &nbsp;
               go to about
             </Link>

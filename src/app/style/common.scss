@@ -1,8 +1,9 @@
-@import "./app.var";
+@import "./_vars";
+@import "./_mixins";
 
 .containersCustom {
-    padding-left: $CONTAINER_CUSTOM_PADDING_LEFT;
-    padding-right: $CONTAINER_CUSTOM_PADDING_RIGHT;
+  padding-left: $CONTAINER_CUSTOM_PADDING_LEFT;
+  padding-right: $CONTAINER_CUSTOM_PADDING_RIGHT;
 }
 
 .invisible {
@@ -10,11 +11,6 @@
 }
 
 .view-enter {
-   animation: fadeIn 0.5s both ease-in;
+  @include fade-in(0s, 0.7s, ease-in);
    z-index: 9999;
  }
-
-.animatedViews {
-  animation-duration: 0.5s;
-  animation-fill-mode: both;
-}
