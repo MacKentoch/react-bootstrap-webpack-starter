@@ -1,4 +1,4 @@
-Full ES2015 React Bootstrap with Hot Reload STARTER
+Full ES2015+ React Bootstrap with Hot Reload STARTER
 ==========
 [![npm](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](https://github.com/MacKentoch/react-bootstrap-webpack-starter)
 [![Build Status](https://travis-ci.org/MacKentoch/react-bootstrap-webpack-starter.svg?branch=master)](https://travis-ci.org/MacKentoch/react-bootstrap-webpack-starter)
@@ -8,7 +8,7 @@ Full ES2015 React Bootstrap with Hot Reload STARTER
 
 #### full client and server side in ES6-ES2015
 
-A simple `full ES2015` (*previously named ES6*).
+A simple `full ES2015+`.
 
 [preview here](https://mackentoch.github.io/react-bootstrap-webpack-starter)
 
