@@ -1,6 +1,6 @@
 {
   "name": "react-bootstrap-webpack-starter",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "react js + bootstrap + webpack starter",
   "main": "src/index.js",
   "repository": {
@@ -16,6 +16,9 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "prod": "NODE_ENV=production webpack -p --config webpack.production.config.js ",
     "start": "NODE_ENV=dev node server.hot.reload",
+
+    "serve": "node ./src/server/index.js",
+
     "dev-win": "set NODE_ENV=dev && webpack",
     "test-win": "set NODE_ENV=test && nyc mocha test/.setup.js test/**/*.spec.js --compilers js:babel-core/register --recursive",
     "prod-win": "set NODE_ENV=production && webpack -p --config webpack.production.config.js ",
