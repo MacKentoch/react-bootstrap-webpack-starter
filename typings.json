@@ -1,0 +1,8 @@
+{
+  "name": "react-bootstrap-webpack-starter",
+  "dependencies": {},
+  "globalDependencies": {
+    "js-base64": "registry:dt/js-base64#2.1.9+20161025033459",
+    "moment": "registry:dt/moment#2.11.1+20161010105546"
+  }
+}

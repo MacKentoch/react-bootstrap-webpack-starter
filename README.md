@@ -6,7 +6,7 @@ Full ES2015+ React Bootstrap with Hot Reload STARTER
 
 ### ReactJS + Bootstrap starter with hot reload
 
-#### full client and server side in ES6-ES2015
+#### full client and server side in ES6+-ES2015+
 
 A simple `full ES2015+`.
 
@@ -18,6 +18,19 @@ A simple `full ES2015+`.
 - `no flux` (*yes, to give you freedom to add then since you may want to use something else like observables?*)
 - `no auth` (*simple starter that even fits for simple applications that don't need auth*)
 - *ReactJS Components written with `optimization tricks` (stateless, pure render...).*
+
+
+
+## Breaking change since v1.0.0
+
+- whatwg-fetch is now replaced by [axios](https://github.com/mzabriskie/axios).
+- splits vendors script and css from main bundle (*extract-text-webpack-plugin v1.x*)
+- create map file (DEV)
+- prepared `launch.json` for VSCode debugger
+- add typescript types (typings)
+- add flow types (flow-typed)
+
+
 
 ## Breaking change since v0.5.0
 
@@ -38,8 +51,7 @@ So This starter had to include breaking changes to follow all of that.
 - react-motion ([github :link:](https://github.com/chenglou/react-motion))
 - Webpack ([github :link:](https://github.com/webpack/webpack))
 - babel 6+ ([github :link:](https://github.com/babel/babel))
-- react-addons-shallow-compare (*pure render mixin equivalent for ES6*)
-- whatwg-fetch (*Why: because it is a fetch `Web API` polyfill*)
+- axios ([github :link:](https://github.com/mzabriskie/axios) *Why: simple, complete, isomorphic ...*)
 
 **Tool chain:**
 - babel 6+
