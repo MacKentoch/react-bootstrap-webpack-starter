@@ -1,3 +1,5 @@
+// @flow weak
+
 import React, {
   Component,
   PropTypes
@@ -9,11 +11,18 @@ import {
 import navigationModel    from '../../models/navigation.json';
 
 class App extends Component {
+  propTypes = {
+    children: PropTypes.node,
+    history:  PropTypes.object,
+    location: PropTypes.object
+  };
+
   state = { navModel: navigationModel };
 
   render() {
     const { navModel } = this.state;
     const { children } = this.props;
+
     return (
       <div id="appContainer">
         <NavigationBar
@@ -43,12 +52,5 @@ class App extends Component {
   }
   /* eslint-enable no-unused-vars*/
 }
-
-// statics :
-App.propTypes = {
-  children: PropTypes.node,
-  history:  PropTypes.object,
-  location: PropTypes.object
-};
 
 export default App;

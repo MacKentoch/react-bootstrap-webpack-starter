@@ -1,3 +1,5 @@
+// @flow weak
+
 import axios          from 'axios';
 import {
   getMethod,
@@ -6,7 +8,9 @@ import {
   getLocationOrigin
 }                     from '../fetchTools';
 
-export const getSomething = (endpoint = 'api/getSomethingByDefault') => {
+export const getSomething = (
+  endpoint = 'api/getSomethingByDefault'
+) => {
   const method  = getMethod.method;
   const headers = jsonHeader;
   const url     = `${getLocationOrigin()}/${endpoint}`;

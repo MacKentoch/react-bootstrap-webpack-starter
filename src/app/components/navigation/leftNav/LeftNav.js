@@ -1,7 +1,12 @@
+// @flow weak
+
 import React, { PropTypes } from 'react';
 import LeftNavButton        from './leftNavButton/LeftNavButton';
 
-const LeftNav = ({ leftLinks, onLeftNavButtonClick }) => {
+const LeftNav = ({
+  leftLinks,
+  onLeftNavButtonClick
+}) => {
   return (
     <ul className="nav navbar-nav">
       {

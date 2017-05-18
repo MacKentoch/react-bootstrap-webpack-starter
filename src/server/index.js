@@ -1,3 +1,5 @@
+// @flow weak
+
 'use strict';
 
 const express   = require('express');

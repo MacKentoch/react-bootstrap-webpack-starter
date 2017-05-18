@@ -1,4 +1,5 @@
 /* global $:true */
+// @flow weak
 
 import React, {
   Component,
@@ -9,18 +10,20 @@ import BackToTopButton  from './backToTopButton/BackToTopButton';
 import {Motion, spring} from 'react-motion';
 
 class BackToTop extends Component {
-  constructor(props) {
-    super(props);
+  static propTypes = {
+    minScrollY: PropTypes.number,
+    scrollTo: PropTypes.string.isRequired,
+    onScrollDone: PropTypes.func
+  };
 
-    this.state = {
-      windowScrollY: 0,
-      showBackButton: false
-    };
+  defaultProps = {
+    minScrollY: 120
+  };
 
-    this.handleWindowScroll = this.handleWindowScroll.bind(this);
-    this.scrollDone = this.scrollDone.bind(this);
-    this.handlesOnBackButtonClick = this.handlesOnBackButtonClick.bind(this);
-  }
+  state = {
+    windowScrollY: 0,
+    showBackButton: false
+  };
 
   componentWillMount() {
     window.addEventListener('scroll', this.handleWindowScroll);
@@ -49,7 +52,7 @@ class BackToTop extends Component {
     );
   }
 
-  handleWindowScroll() {
+  handleWindowScroll = () => {
     if ($) {
       const { windowScrollY } = this.state;
       const { minScrollY } = this.props;
@@ -71,14 +74,14 @@ class BackToTop extends Component {
     }
   }
 
-  scrollDone() {
+  scrollDone = () => {
     const { onScrollDone } = this.props;
     if (onScrollDone) {
       onScrollDone();
     }
   }
 
-  handlesOnBackButtonClick(event) {
+  handlesOnBackButtonClick = (event) => {
     event.preventDefault();
     const { scrollTo, minScrollY } = this.props;
     const { windowScrollY } = this.state;
@@ -88,15 +91,5 @@ class BackToTop extends Component {
     }
   }
 }
-
-BackToTop.propTypes = {
-  minScrollY: PropTypes.number,
-  scrollTo: PropTypes.string.isRequired,
-  onScrollDone: PropTypes.func
-};
-
-BackToTop.defaultProps = {
-  minScrollY: 120
-};
 
 export default BackToTop;

@@ -1,6 +1,10 @@
+// @flow weak
+
 import React, {PropTypes} from 'react';
 
-const UpIcon = ({color}) => {
+const UpIcon = ({
+  color
+}) => {
   return (
     <svg
       width="24px"

@@ -1,3 +1,5 @@
+// @flow weak
+
 import React, {
   PropTypes,
   Component
@@ -9,6 +11,10 @@ import {
 }               from 'react-router';
 
 class Root extends Component {
+  static propTypes = {
+    routes: PropTypes.any
+  };
+
   render() {
     const { routes } = this.props;
     return (
@@ -18,9 +24,5 @@ class Root extends Component {
     );
   }
 }
-
-Root.propTypes = {
-  routes: PropTypes.any
-};
 
 export default Root;
