@@ -27,8 +27,8 @@ A simple `full ES2015+`.
 - splits vendors script and css from main bundle (*extract-text-webpack-plugin v1.x*)
 - create map file (DEV)
 - prepared `launch.json` for VSCode debugger
-- add typescript types (typings)
-- add flow types (flow-typed)
+- add some typescript types (typings)
+- add some flow types (flow-typed)
 
 
 
