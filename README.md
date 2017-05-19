@@ -19,7 +19,11 @@ A simple `full ES2015+`.
 - `no auth` (*simple starter that even fits for simple applications that don't need auth*)
 - *ReactJS Components written with `optimization tricks` (stateless, pure render...).*
 
-
+## Breaking change since v1.1.0
+- `cross-env` added so no more particular windows command
+- serve dev and prod bundles 
+ - `npm run serve-dev`: with server hot reload (*uses nodemon*)
+ - `npm run serve-prod`: production like node-express server
 
 ## Breaking change since v1.0.0
 
@@ -29,8 +33,6 @@ A simple `full ES2015+`.
 - prepared `launch.json` for VSCode debugger
 - add some typescript types (typings)
 - add some flow types (flow-typed)
-
-
 
 ## Breaking change since v0.5.0
 
@@ -73,6 +75,7 @@ So This starter had to include breaking changes to follow all of that.
 - Sinon
 - nyc
 
+
 ## Usage
 
 ### Install
@@ -80,54 +83,43 @@ So This starter had to include breaking changes to follow all of that.
 ```bash
 npm install
 ```
+### bundle dev mode (*+ redux-devtools*)
 
-### bundle dev mode
-
-*General case:*
 ```bash
 npm run dev
 ```
 
-*Windows - particular - case:*
-```bash
-npm run dev-win
-```
+### dev : hot reload mode (*+ redux-devtools*)
 
-### dev : hot reload mode
-
-*General case:*
 ```bash
 npm run start
 ```
 
-*Windows - particular - case:*
-```bash
-npm run start-win
-```
-
 ### tests
 
-*General case:*
 ```bash
 npm run test
 ```
 
-*Windows - particular - case:*
-```bash
-npm run test-win
-```
-
 ### bundle production mode
 
-*General case:*
+
 ```bash
 npm run prod
 ```
 
-*Windows - particular - case:*
+### mini node-express server (for dev or prod bundles)
+
+with server hot reload:
 ```bash
-npm run prod-win
+npm run serve-dev
 ```
+
+without hot reload:
+```bash
+npm run serve-prod
+```
+
 
 
 ## To add
