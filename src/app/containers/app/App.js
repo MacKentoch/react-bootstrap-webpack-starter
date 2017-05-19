@@ -11,7 +11,7 @@ import {
 import navigationModel    from '../../models/navigation.json';
 
 class App extends Component {
-  propTypes = {
+  static propTypes = {
     children: PropTypes.node,
     history:  PropTypes.object,
     location: PropTypes.object
