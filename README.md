@@ -19,6 +19,8 @@ A simple `full ES2015+`.
 - `no auth` (*simple starter that even fits for simple applications that don't need auth*)
 - *ReactJS Components written with `optimization tricks` (stateless, pure render...).*
 
+> *Looking for server side rendering?* check this project with SSR added [here](https://github.com/MacKentoch/react-bootstrap-webpack-ssr-starter#react-bootstrap-with-server-side-rendering-starter)
+
 ## Breaking change since v1.1.0
 - `cross-env` added so no more particular windows command
 - serve dev and prod bundles 
@@ -83,13 +85,19 @@ So This starter had to include breaking changes to follow all of that.
 ```bash
 npm install
 ```
-### bundle dev mode (*+ redux-devtools*)
+or 
+
+```bash
+yarn install
+```
+
+### bundle dev mode
 
 ```bash
 npm run dev
 ```
 
-### dev : hot reload mode (*+ redux-devtools*)
+### dev : hot reload mode
 
 ```bash
 npm run start
