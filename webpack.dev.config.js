@@ -1,7 +1,5 @@
 const webpack           = require('webpack');
 const path              = require('path');
-const autoprefixer      = require('autoprefixer');
-const precss            = require('precss');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const assetsDir       = path.join(__dirname, 'docs/public/assets');
@@ -13,9 +11,8 @@ const SPLIT_STYLE = true;
 
 const config = {
   devtool: '#source-map',
-  // debug: true,
   entry: {
-    app: indexFile,
+    app:    indexFile,
     vendor: [
       'react',
       'react-dom',
@@ -34,43 +31,72 @@ const config = {
     ]
   },
   output: {
-    path: assetsDir,
+    path:     assetsDir,
     filename: 'app.bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.jsx?$/,
-        exclude: [nodeModulesDir, vendorsDir],
-        loader: 'babel'
+        test:     /\.jsx?$/,
+        exclude:  [nodeModulesDir, vendorsDir],
+        loader:   'babel-loader'
       },
       {
         test: /\.css$/,
-        loader: SPLIT_STYLE ? ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader') : 'style!css!postcss'
+        use:  SPLIT_STYLE 
+          ? ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [
+              {loader: 'css-loader', options: { importLoaders: 1 }},
+              'postcss-loader'
+            ]
+          })
+          : [
+            'style-loader',
+            {loader: 'css-loader', options: { importLoaders: 1 }},
+            'postcss-loader'
+          ]
       },
       {
         test: /\.scss$/,
-        loader: SPLIT_STYLE ? ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader!sass-loader') : 'style!css!postcss!sass'
-      },
-      {
-        test: /\.json$/,
-        loader: 'json'
+        use:  SPLIT_STYLE 
+        ? ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {loader: 'css-loader', options: { importLoaders: 1 }},
+            'postcss-loader',
+            'sass-loader'
+          ]
+        })
+        : [
+          'style-loader',
+          {loader: 'css-loader', options: { importLoaders: 1 }},
+          'postcss-loader',
+          'sass-loader'
+        ]
       },
       {
         test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif)(\?\S*)?$/,
-        loader: 'url?limit=100000&name=[name].[ext]'
+        use: [
+          {
+            loader:  'url-loader',
+            options: {
+              limit: 100000,
+              name: '[name].[ext]'
+            }
+          }
+        ]
       }
     ]
   },
-  postcss: function () {
-    return [precss, autoprefixer({ browsers: ['last 2 versions'] })];
-  },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
     getImplicitGlobals(),
     setNodeEnv(),
     new ExtractTextPlugin('app.styles.css'),
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'app.vendor.bundle.js')
+    new webpack.optimize.CommonsChunkPlugin({
+      name:     'vendor',
+      filename: 'app.vendor.bundle.js' 
+    })
   ]
 };
 

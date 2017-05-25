@@ -1,4 +1,4 @@
-Full ES2015+ React Bootstrap with Hot Reload STARTER
+React Bootstrap webpack 2 with Hot Reload STARTER
 ==========
 [![npm](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](https://github.com/MacKentoch/react-bootstrap-webpack-starter)
 [![Build Status](https://travis-ci.org/MacKentoch/react-bootstrap-webpack-starter.svg?branch=master)](https://travis-ci.org/MacKentoch/react-bootstrap-webpack-starter)
@@ -6,13 +6,10 @@ Full ES2015+ React Bootstrap with Hot Reload STARTER
 
 ### ReactJS + Bootstrap starter with hot reload
 
-#### full client and server side in ES6+-ES2015+
+#### Full client and server side in ES6+-ES2015+
 
-A simple `full ES2015+`.
 
-[preview here](https://mackentoch.github.io/react-bootstrap-webpack-starter)
-
-*Concept behind:* **this starter is an easy to understand and ready to use ReactJS (ES6) + bootstrap + webpack starter with:**
+*Concept behind:* **this starter is an easy way to understand and ready to use ReactJS (ES6) + bootstrap + webpack starter with:**
 - `no hard core Webpack` config so it is more commonly understandable (*they are numerous amazing starters with incredible webpack configs — hard core configs aren't bad things at all! —. This one is just for easier understanding for people even discovering webpack*)
 - `with hot reload` (*ReactJS + webpack => hot reload = WINNER*)
 - `no flux` (*yes, to give you freedom to add then since you may want to use something else like observables?*)
@@ -21,31 +18,20 @@ A simple `full ES2015+`.
 
 > *Looking for server side rendering?* check this project with SSR added [here](https://github.com/MacKentoch/react-bootstrap-webpack-ssr-starter#react-bootstrap-with-server-side-rendering-starter)
 
-## Breaking change since v1.1.0
-- `cross-env` added so no more particular windows command
-- serve dev and prod bundles 
- - `npm run serve-dev`: with server hot reload (*uses nodemon*)
- - `npm run serve-prod`: production like node-express server
+## HUGE Breaking changes since 2.0.0
+- upgrade to `webpack 2`
+- remove autoprefixer in favor of `postcss` and `cssnext`
+- upgrade `React` to `15.5.4+`
+ - `PropTypes` comes now from `prop-types`
+- upgrade dependencies
 
-## Breaking change since v1.0.0
 
-- whatwg-fetch is now replaced by [axios](https://github.com/mzabriskie/axios).
-- splits vendors script and css from main bundle (*extract-text-webpack-plugin v1.x*)
-- create map file (DEV)
-- prepared `launch.json` for VSCode debugger
-- add some typescript types (typings)
-- add some flow types (flow-typed)
-
-## Breaking change since v0.5.0
-
-`ReactJS` `v15.4.x` requires `react-hot-loader` to be `v3+` (*previous react-hot-loader was v1.x*).
-So This starter had to include breaking changes to follow all of that.
-
+> If you prefer a `webpack 1` version, [version 1.1.0](https://github.com/MacKentoch/react-bootstrap-webpack-starter/tree/v1.1.0) is what you are looking for.
 
 ## Detailed Content
 
 **Front:**
-- React JS (15.4.x - [github :link:](https://github.com/facebook/react))
+- React JS (15.5.x - [github :link:](https://github.com/facebook/react))
 - react-router (3.x- [github :link:](https://github.com/reactjs/react-router))
 - Bootstrap (3.x - [github :link:](https://github.com/twbs/bootstrap))
 - React-Bootstrap ([github :link:](https://github.com/react-bootstrap/react-bootstrap))
@@ -53,7 +39,7 @@ So This starter had to include breaking changes to follow all of that.
 - animate.css ([github :link:](https://github.com/daneden/animate.css))
 - classnames ([github :link:](https://github.com/JedWatson/classnames))
 - react-motion ([github :link:](https://github.com/chenglou/react-motion))
-- Webpack ([github :link:](https://github.com/webpack/webpack))
+- Webpack 2.x ([github :link:](https://github.com/webpack/webpack))
 - babel 6+ ([github :link:](https://github.com/babel/babel))
 - axios ([github :link:](https://github.com/mzabriskie/axios) *Why: simple, complete, isomorphic ...*)
 
@@ -68,9 +54,10 @@ So This starter had to include breaking changes to follow all of that.
   - json
   - images formats
   - svg and fonts formats
-- autoprefixer (css and sass)
+- postcss / cssnext
 
 **tests:**
+- jsdom 11+
 - Mocha
 - Chai (*+ dirty-chai*)
 - enzyme
@@ -116,14 +103,14 @@ npm run test
 npm run prod
 ```
 
-### mini node-express server (for dev or prod bundles)
+### mini node-express server
 
-with server hot reload:
+with server hot reload (*and dev bundle*):
 ```bash
 npm run serve-dev
 ```
 
-without hot reload:
+without hot reload (*and prod bundle*):
 ```bash
 npm run serve-prod
 ```
@@ -131,7 +118,7 @@ npm run serve-prod
 
 
 ## To add
-
+- [ ] react-router v4
 - [x] tests
  - [ ] 100%
 - [x] coverage

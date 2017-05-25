@@ -4,6 +4,7 @@
 /// <reference path="globals/js-base64/index.d.ts" />
 /// <reference path="globals/mocha/index.d.ts" />
 /// <reference path="globals/moment/index.d.ts" />
+/// <reference path="modules/enzyme/index.d.ts" />
 /// <reference path="modules/react-bootstrap/index.d.ts" />
 /// <reference path="modules/react-motion/index.d.ts" />
 /// <reference path="modules/react/index.d.ts" />

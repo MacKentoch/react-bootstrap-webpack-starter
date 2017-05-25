@@ -1,9 +1,11 @@
+// @flow weak
+
 import React              from 'react';
 import {
   shallow
 }                         from 'enzyme';
 import chai, {expect}     from 'chai';
-import sinon              from 'sinon';
+// import sinon              from 'sinon';
 import dirtyChai          from 'dirty-chai';
 import LeftNav            from '../../../../src/app/components/navigation/leftNav/LeftNav';
 
@@ -116,22 +118,4 @@ describe('<LeftNav />', () => {
       });
     });
   });
-
-
-  // it('should trigger a navigation on left link click', () => {
-  //   const onLeftNavButtonClickStub = sinon.spy();
-  //   const event = {};
-  //   const viewName = 'testView';
-  //
-  //   const wrapper = shallow(
-  //     <NavigationBar
-  //       onLeftNavButtonClick={onLeftNavButtonClickStub}
-  //       navModel={navModel}
-  //       />
-  //   );
-  //   const LeftNav = wrapper.find('LeftNav');
-  //   LeftNav.simulate('click', event, viewName);
-  //
-  //   expect(onLeftNavButtonClickStub.calledOnce).to.equal(true);
-  // });
 });
