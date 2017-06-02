@@ -18,6 +18,9 @@ React Bootstrap webpack 2 with Hot Reload STARTER
 
 > *Looking for server side rendering?* check this project with SSR added [here](https://github.com/MacKentoch/react-bootstrap-webpack-ssr-starter#react-bootstrap-with-server-side-rendering-starter)
 
+## HUGE Breaking changes since 2.1.0
+- upgrade to `react-router v4`
+
 ## HUGE Breaking changes since 2.0.0
 - upgrade to `webpack 2`
 - remove autoprefixer in favor of `postcss` and `cssnext`

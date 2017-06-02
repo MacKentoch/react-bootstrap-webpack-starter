@@ -3,25 +3,20 @@
 import React, {
   Component
 }                         from 'react';
-import PropTypes          from 'prop-types';
+// import PropTypes          from 'prop-types';
 import {
   NavigationBar,
   BackToTop
 }                         from '../../components';
 import navigationModel    from '../../models/navigation.json';
+import MainRoutes         from '../../routes/MainRoutes';
+import { withRouter }     from 'react-router';
 
 class App extends Component {
-  static propTypes = {
-    children: PropTypes.node,
-    history:  PropTypes.object,
-    location: PropTypes.object
-  };
-
   state = { navModel: navigationModel };
 
   render() {
     const { navModel } = this.state;
-    const { children } = this.props;
 
     return (
       <div id="appContainer">
@@ -32,7 +27,7 @@ class App extends Component {
           handleRightNavItemClick={this.handleRightNavItemClick}
         />
         <div className="container-fluid">
-          {children}
+          <MainRoutes />
         </div>
         <BackToTop
           minScrollY={40}
@@ -53,4 +48,4 @@ class App extends Component {
   /* eslint-enable no-unused-vars*/
 }
 
-export default App;
+export default withRouter(App);

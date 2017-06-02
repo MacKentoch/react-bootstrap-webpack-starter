@@ -3,21 +3,22 @@
 import React        from 'react';
 import {
   Route,
-  IndexRoute
+  Switch
 }                   from 'react-router';
-import App          from '../containers/app/App';
 import {
   Home,
-  About
+  About,
+  PageNotFound
 }                   from '../views';
 
-const Routes = () => {
+const MainRoutes = () => {
   return (
-    <Route path="/" component={App}>
-      <IndexRoute component={Home} />
+    <Switch>
+      <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
-    </Route>
+      <Route component={PageNotFound} />
+    </Switch>
   );
 };
 
-export default Routes;
+export default MainRoutes;

@@ -1,6 +1,6 @@
 {
   "name": "react-bootstrap-webpack-starter",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "react js + bootstrap + webpack starter",
   "main": "src/index.js",
   "repository": {
@@ -30,7 +30,10 @@
     "hot-reload",
     "hot reload",
     "webpack 2",
-    "webpack"
+    "webpack",
+    "react-router",
+    "react-router 4",
+    "react-router v4"
   ],
   "author": "Erwan DATIN (MacKentoch)",
   "license": "MIT",
@@ -66,7 +69,7 @@
     "nodemon": "^1.11.0",
     "nyc": "^10.3.2",
     "postcss": "^6.0.1",
-    "postcss-cssnext": "^2.11.0",
+    "postcss-cssnext": "2.9.0",
     "postcss-focus": "^2.0.0",
     "postcss-import": "^10.0.0",
     "postcss-load-config": "^1.2.0",
@@ -89,6 +92,7 @@
     "bootstrap": "^3.3.7",
     "classnames": "^2.2.5",
     "font-awesome": "^4.7.0",
+    "history": "^4.6.1",
     "jquery": "^3.2.1",
     "js-base64": "^2.1.9",
     "moment": "^2.18.1",
@@ -98,7 +102,8 @@
     "react-dom": "^15.5.4",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-motion": "^0.5.0",
-    "react-router": "^3.0.0",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
     "react-tap-event-plugin": "^2.0.1"
   }
 }

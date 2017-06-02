@@ -1,9 +1,5 @@
 // @flow weak
 
-import About      from './about/About';
-import Home       from './home/Home';
-
-export {
-  About,
-  Home
-};
+export { default as About }         from './about/About';
+export { default as Home }          from './home/Home';
+export { default as PageNotFound }  from './pageNotFound/PageNotFound';
