@@ -1,8 +1,13 @@
 // common:
 @import "./common";
+
 // containers:
 @import "../containers/app/app";
+
 // views:
 @import "../views/home/home";
 @import "../views/about/about";
+@import "../views/login/login";
+@import '../views/protected/protected';
+
 // components:

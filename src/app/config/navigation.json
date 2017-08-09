@@ -1,0 +1,28 @@
+{
+  "brand"       : "React Bootstrap Starter",
+  "leftLinks"   : [],
+  "rightLinks"  : [
+    {
+      "label" : "Home",
+      "link"  : "/"
+    },
+    {
+      "label":      "Protected",
+      "link":       "/protected",
+      "view":       "protected",
+      "isRouteBtn": true
+    },
+    {
+      "label":      "About",
+      "link":       "/about",
+      "view":       "about",
+      "isRouteBtn": true
+    },
+    {
+      "label":      "Disconnect",
+      "link":       "/login",
+      "view":       "login",
+      "isRouteBtn": true
+    }
+  ]
+}

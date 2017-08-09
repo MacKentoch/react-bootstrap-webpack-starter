@@ -5,10 +5,14 @@
     "stage-2",
     "flow"
   ],
+  "plugins": [
+    "react-hot-loader/babel",
+    "transform-regenerator",
+    "transform-async-to-generator"
+  ],
   "env": {
     "production": {
       "presets": ["react-optimize"]
     }
-  },
-  "plugins": ["react-hot-loader/babel"]
+  }
 }

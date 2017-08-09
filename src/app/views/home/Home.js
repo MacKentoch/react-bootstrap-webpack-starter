@@ -3,26 +3,23 @@
 import React, {
   PureComponent
 }                     from 'react';
-// import PropTypes      from 'prop-types';
+import PropTypes      from 'prop-types';
 import {Jumbotron}    from '../../components';
 import cx             from 'classnames';
 import { Link }       from 'react-router-dom';
+import AnimatedView   from '../../components/animatedView/AnimatedView';
 
 class Home extends PureComponent {
-  state = {
-    animated: true,
-    viewEntersAnim: true
+  static propTypes= {
+    // react-router 4:
+    match:    PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    history:  PropTypes.object.isRequired
   };
 
   render() {
-    const { animated, viewEntersAnim } = this.state;
     return(
-      <div
-        key="homeView"
-        className={cx({
-          'animatedViews': animated,
-          'view-enter': viewEntersAnim
-        })}>
+      <AnimatedView>
         <Jumbotron>
           <h1>
             ReactJS + Bootstrap
@@ -34,7 +31,7 @@ class Home extends PureComponent {
             and React Router v4
           </h2>
           <h2>
-            and webpack 2.x
+            and webpack 3.x
           </h2>
           <h1>
             Starter
@@ -49,7 +46,7 @@ class Home extends PureComponent {
             </Link>
           </p>
         </Jumbotron>
-      </div>
+      </AnimatedView>
     );
   }
 }

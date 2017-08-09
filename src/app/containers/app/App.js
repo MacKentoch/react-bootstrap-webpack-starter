@@ -8,7 +8,7 @@ import {
   NavigationBar,
   BackToTop
 }                         from '../../components';
-import navigationModel    from '../../models/navigation.json';
+import navigationModel    from '../../config/navigation.json';
 import MainRoutes         from '../../routes/MainRoutes';
 import { withRouter }     from 'react-router';
 

@@ -13,10 +13,17 @@ React Bootstrap webpack 2 with Hot Reload STARTER
 - `no hard core Webpack` config so it is more commonly understandable (*they are numerous amazing starters with incredible webpack configs — hard core configs aren't bad things at all! —. This one is just for easier understanding for people even discovering webpack*)
 - `with hot reload` (*ReactJS + webpack => hot reload = WINNER*)
 - `no flux` (*yes, to give you freedom to add then since you may want to use something else like observables?*)
-- `no auth` (*simple starter that even fits for simple applications that don't need auth*)
+- `with JWT auth`
 - *ReactJS Components written with `optimization tricks` (stateless, pure render...).*
 
+![preview](./preview/preview.png)
+
 > *Looking for server side rendering?* check this project with SSR added [here](https://github.com/MacKentoch/react-bootstrap-webpack-ssr-starter#react-bootstrap-with-server-side-rendering-starter)
+
+## HUGE Breaking changes since 3.0.0
+- upgrade to `React 15.6.x`
+- upgrade to `webpack v3`
+- add `JWT authentication` (protected route, logout components...)
 
 ## HUGE Breaking changes since 2.1.0
 - upgrade to `react-router v4`
@@ -34,15 +41,15 @@ React Bootstrap webpack 2 with Hot Reload STARTER
 ## Detailed Content
 
 **Front:**
-- React JS (15.5.x - [github :link:](https://github.com/facebook/react))
-- react-router (3.x- [github :link:](https://github.com/reactjs/react-router))
+- React JS (15.6.x - [github :link:](https://github.com/facebook/react))
+- react-router (4.x- [github :link:](https://github.com/reactjs/react-router))
 - Bootstrap (3.x - [github :link:](https://github.com/twbs/bootstrap))
 - React-Bootstrap ([github :link:](https://github.com/react-bootstrap/react-bootstrap))
 - font-awesome ([github :link:](https://github.com/FortAwesome/Font-Awesome))
 - animate.css ([github :link:](https://github.com/daneden/animate.css))
 - classnames ([github :link:](https://github.com/JedWatson/classnames))
 - react-motion ([github :link:](https://github.com/chenglou/react-motion))
-- Webpack 2.x ([github :link:](https://github.com/webpack/webpack))
+- Webpack 3.x ([github :link:](https://github.com/webpack/webpack))
 - babel 6+ ([github :link:](https://github.com/babel/babel))
 - axios ([github :link:](https://github.com/mzabriskie/axios) *Why: simple, complete, isomorphic ...*)
 
