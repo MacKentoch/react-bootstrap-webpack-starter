@@ -13,6 +13,7 @@ import auth           from '../../services/auth';
 import axios          from 'axios';
 import { appConfig }  from '../../config/appConfig';
 import getLocationOrigin  from '../../services/utils/getLocationOrigin';
+import userInfoMock       from '../../mock/userInfo.json';
 
 class Login extends PureComponent {
   static propTypes= {
@@ -227,11 +228,9 @@ class Login extends PureComponent {
     };
 
     if (appConfig.DEV_MODE) {
+
       return new Promise(
-        resolve => setTimeout(resolve({ data: {
-          token: '11111',
-          user: {id: 'AZERTY', fistname: 'John', lastname: 'Doe'}}
-        }))
+        resolve => setTimeout(resolve({ data: userInfoMock }))
       );
     }
 

@@ -7,7 +7,7 @@ const path      = require('path');
 const chalk     = require('chalk');
 
 const app       = express();
-const DOCS_PATH = '../../../docs/';
+const DOCS_PATH = '../../docs/';
 const PORT      = 8082;
 const IP_ADRESS = 'localhost';
 

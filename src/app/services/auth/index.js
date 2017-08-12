@@ -132,33 +132,13 @@ export const auth = {
   },
 
   /**
-   * return expiration date from token
-   *
-   * @param {string} encodedToken - base 64 token received from server and stored in local storage
-   * @returns {date | null} returns expiration date or null id expired props not found in decoded token
-   */
-  getTokenExpirationDate(
-    encodedToken: string
-  ): any {
-    const token = decode(encodedToken);
-    if (!token.exp) {
-      return null;
-    }
-
-    // const date = new Date(0);
-    // date.setUTCSeconds(token.exp);
-    // return date;
-    const expirationDate = moment(token.exp);
-    return expirationDate;
-  },
-
-  /**
    * delete token
    *
    * @param {any} [tokenKey='token'] token key
    * @returns {bool} success/failure flag
    */
   clearToken(
+    storage: Storage  = APP_PERSIST_STORES_TYPES[0],
     tokenKey: TokenKey = TOKEN_KEY
   ): boolean {
     // localStorage:
@@ -175,6 +155,43 @@ export const auth = {
     return false;
   },
 
+  /**
+   * return expiration date from token
+   *
+   * @param {string} encodedToken - base 64 token received from server and stored in local storage
+   * @returns {date | null} returns expiration date or null id expired props not found in decoded token
+   */
+  getTokenExpirationDate(
+    encodedToken: any
+  ): Date {
+    if (!encodedToken) {
+      return new Date(0); // is expired
+    }
+
+    const token = decode(encodedToken);
+    if (!token.exp) {
+      return new Date(0); // is expired
+    }
+
+    const expirationDate = new Date(token.exp*1000);
+    return expirationDate;
+  },
+
+  /**
+   * tell is token is expired (compared to now)
+   *
+   * @param {string} encodedToken - base 64 token received from server and stored in local storage
+   * @returns {bool} returns true if expired else false
+   */
+  isExpiredToken(
+    encodedToken: any
+  ): boolean {
+    const expirationDate = this.getTokenExpirationDate(encodedToken);
+    const rightNow       = moment();
+    const isExpiredToken = moment(rightNow).isAfter(moment(expirationDate));
+
+    return isExpiredToken;
+  },
 
   // /////////////////////////////////////////////////////////////
   // USER_INFO

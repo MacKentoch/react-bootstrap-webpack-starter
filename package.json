@@ -64,6 +64,7 @@
     "dirty-chai": "^1.2.2",
     "enzyme": "^2.8.2",
     "eslint": "^3.19.0",
+    "eslint-plugin-flowtype": "^2.35.0",
     "eslint-plugin-react": "^7.0.1",
     "expose-loader": "^0.7.3",
     "express": "^4.15.3",
