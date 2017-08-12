@@ -1,4 +1,4 @@
-React Bootstrap webpack 2 with Hot Reload STARTER
+React Bootstrap webpack 3 with Hot Reload STARTER
 ==========
 [![npm](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](https://github.com/MacKentoch/react-bootstrap-webpack-starter)
 [![Build Status](https://travis-ci.org/MacKentoch/react-bootstrap-webpack-starter.svg?branch=master)](https://travis-ci.org/MacKentoch/react-bootstrap-webpack-starter)
