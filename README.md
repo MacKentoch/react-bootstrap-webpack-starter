@@ -18,6 +18,10 @@ React Bootstrap webpack 3 with Hot Reload STARTER
 
 ![preview](./preview/preview.png)
 
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/Mp96tCWH2KdajZuBzqB6jwj8/MacKentoch/react-bootstrap-webpack-starter'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/Mp96tCWH2KdajZuBzqB6jwj8/MacKentoch/react-bootstrap-webpack-starter.svg' />
+</a>
+
 > *Looking for server side rendering?* check this project with SSR added [here](https://github.com/MacKentoch/react-bootstrap-webpack-ssr-starter#react-bootstrap-with-server-side-rendering-starter)
 
 ## HUGE Breaking changes since 3.0.0
