@@ -4,6 +4,10 @@ React Bootstrap webpack 3 with Hot Reload STARTER
 [![Build Status](https://travis-ci.org/MacKentoch/react-bootstrap-webpack-starter.svg?branch=master)](https://travis-ci.org/MacKentoch/react-bootstrap-webpack-starter)
 [![Coverage Status](https://coveralls.io/repos/github/MacKentoch/react-bootstrap-webpack-starter/badge.svg?branch=master)](https://coveralls.io/github/MacKentoch/react-bootstrap-webpack-starter?branch=master)
 
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/Mp96tCWH2KdajZuBzqB6jwj8/MacKentoch/react-bootstrap-webpack-starter'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/Mp96tCWH2KdajZuBzqB6jwj8/MacKentoch/react-bootstrap-webpack-starter.svg' />
+</a>
+
 ### ReactJS + Bootstrap starter with hot reload
 
 #### Full client and server side in ES6+-ES2015+
@@ -17,10 +21,6 @@ React Bootstrap webpack 3 with Hot Reload STARTER
 - *ReactJS Components written with `optimization tricks` (stateless, pure render...).*
 
 ![preview](./preview/preview.png)
-
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/Mp96tCWH2KdajZuBzqB6jwj8/MacKentoch/react-bootstrap-webpack-starter'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/Mp96tCWH2KdajZuBzqB6jwj8/MacKentoch/react-bootstrap-webpack-starter.svg' />
-</a>
 
 > *Looking for server side rendering?* check this project with SSR added [here](https://github.com/MacKentoch/react-bootstrap-webpack-ssr-starter#react-bootstrap-with-server-side-rendering-starter)
 
