@@ -1,28 +1,36 @@
 // @flow weak
 
+// #region imports
 import React, {
   Component
 }                               from 'react';
-// import PropTypes    from 'prop-types';
 import {
-  // BrowserRouter as Router,
-  HashRouter as Router,
+  Router,
   Switch,
   Route
 }                               from 'react-router-dom';
-import { createBrowserHistory } from 'history';
+// #region import createHistory from hashHistory or BrowserHistory:
+import createHistory            from 'history/createHashHistory';
+// import createHistory            from 'history/createBrowserHistory';
+// #endregion
 import App                      from './containers/app/App';
 import ScrollToTop              from './components/scrollToTop/ScrollToTop';
 import Login                    from './views/login/Login';
 import PageNotFound             from './views/pageNotFound/PageNotFound'; // not connected to redux (no index.js)
 import LogoutRoute              from './components/logoutRoute/LogoutRoute';
+// #endregion
 
-const browserHistory = createBrowserHistory();
+// #region flow types
+type Props = any;
+type State = any;
+// #endregion
+
+const history = createHistory();
 
 class Root extends Component {
   render() {
     return (
-      <Router history={browserHistory}>
+      <Router history={history}>
         <Switch>
           <Route exact path="/login" component={Login} />
           <App />

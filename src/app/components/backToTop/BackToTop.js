@@ -16,7 +16,7 @@ class BackToTop extends Component {
     onScrollDone: PropTypes.func
   };
 
-  defaultProps = {
+  static defaultProps = {
     minScrollY: 120
   };
 

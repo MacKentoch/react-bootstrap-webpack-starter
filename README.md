@@ -1,4 +1,4 @@
-React Bootstrap webpack 3 with Hot Reload STARTER
+React 16 Bootstrap webpack 3 with Hot Reload STARTER
 ==========
 [![npm](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](https://github.com/MacKentoch/react-bootstrap-webpack-starter)
 [![Build Status](https://travis-ci.org/MacKentoch/react-bootstrap-webpack-starter.svg?branch=master)](https://travis-ci.org/MacKentoch/react-bootstrap-webpack-starter)
@@ -23,6 +23,13 @@ React Bootstrap webpack 3 with Hot Reload STARTER
 ![preview](./preview/preview.png)
 
 > *Looking for server side rendering?* check this project with SSR added [here](https://github.com/MacKentoch/react-bootstrap-webpack-ssr-starter#react-bootstrap-with-server-side-rendering-starter)
+
+## Breaking changes since v5.0.0
+- upgrade to React 16.x
+- `react-router 4+` (*read this [nice article about migrating from react-router 3 to react-router 4](https://codeburst.io/react-router-v4-unofficial-migration-guide-5a370b8905a)*)
+- add few flow types (*still keep propTypes*)
+- updated hot reload (*[read hot reload starter](https://gaearon.github.io/react-hot-loader/getstarted/)*)
+
 
 ## HUGE Breaking changes since 3.0.0
 - upgrade to `React 15.6.x`
