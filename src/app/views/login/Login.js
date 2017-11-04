@@ -1,5 +1,6 @@
-// @flow weak
+// @flow
 
+// #region imports
 import React, {
   PureComponent
 }                     from 'react';
@@ -14,8 +15,25 @@ import axios          from 'axios';
 import { appConfig }  from '../../config/appConfig';
 import getLocationOrigin  from '../../services/utils/getLocationOrigin';
 import userInfoMock       from '../../mock/userInfo.json';
+// #endregion
 
-class Login extends PureComponent {
+// #region flow types
+type Props = {
+  // react-router 4:
+  match: any,
+  location: any,
+  history: any,
+
+};
+
+type State = {
+  email: string,
+  password: string,
+  isLogging: boolean
+};
+// #endregion
+
+class Login extends PureComponent<Props, State> {
   static propTypes= {
     // react-router 4:
     match:    PropTypes.object.isRequired,
@@ -23,34 +41,22 @@ class Login extends PureComponent {
     history:  PropTypes.object.isRequired
   };
 
-  static defaultProps = {
-    isFetching:      false,
-    isLogging:       false
-  }
-
   state = {
-    email:          '',
-    password:       ''
+    email:      '',
+    password:   '',
+    isLogging:  false
   };
 
   componentDidMount() {
-    const {
-      enterLogin,
-      disconnectUser
-    } = this.props;
-
     this.disconnectUser(); // diconnect user: remove token and user info
   }
 
   render() {
     const {
       email,
-      password
-    } = this.state;
-
-    const {
+      password,
       isLogging
-    } = this.props
+    } = this.state;
 
     return (
       <div className="content">
@@ -63,7 +69,8 @@ class Login extends PureComponent {
           >
             <form
               className="form-horizontal"
-              noValidate>
+              noValidate
+            >
               <fieldset>
                 <legend>
                   Login
@@ -75,7 +82,7 @@ class Login extends PureComponent {
                     className="col-lg-2 control-label">
                     Email
                   </label>
-                  <div className="col-lg-10">
+                  <Col lg={10}>
                     <input
                       type="text"
                       className="form-control"
@@ -84,7 +91,7 @@ class Login extends PureComponent {
                       value={email}
                       onChange={this.handlesOnEmailChange}
                     />
-                  </div>
+                  </Col>
                 </div>
 
                 <div className="form-group">
@@ -93,7 +100,7 @@ class Login extends PureComponent {
                     className="col-lg-2 control-label">
                     Password
                   </label>
-                  <div className="col-lg-10">
+                  <Col lg={10}>
                     <input
                       type="password"
                       className="form-control"
@@ -102,8 +109,9 @@ class Login extends PureComponent {
                       value={password}
                       onChange={this.handlesOnPasswordChange}
                     />
-                  </div>
+                  </Col>
                 </div>
+
                 <div className="form-group">
                   <Col
                     lg={10}
@@ -143,12 +151,15 @@ class Login extends PureComponent {
             xs={10}
             xsOffset={1}
           >
-            <Button
-              bsStyle="primary"
-              onClick={this.goHome}
-            >
-              back to home
-            </Button>
+            <div className="pull-right">
+              <Button
+                bsStyle="info"
+                className="btn-block"
+                onClick={this.goHome}
+              >
+                back to home
+              </Button>
+            </div>
           </Col>
         </Row>
       </div>
@@ -159,26 +170,31 @@ class Login extends PureComponent {
     auth.clearAllAppStorage();
   }
 
-  handlesOnEmailChange = (event) => {
+  handlesOnEmailChange = (
+    event: SyntheticEvent<>
+  ) => {
     event.preventDefault();
     // should add some validator before setState in real use cases
     this.setState({ email: event.target.value.trim() });
   }
 
-  handlesOnPasswordChange = (event) => {
+  handlesOnPasswordChange = (
+    event: SyntheticEvent<>
+  ) => {
     event.preventDefault();
     // should add some validator before setState in real use cases
     this.setState({ password: event.target.value.trim() });
   }
 
-  handlesOnLogin = async (event) => {
+  handlesOnLogin = async (
+    event: SyntheticEvent<>
+  ) => {
     if (event) {
       event.preventDefault();
     }
 
     const {
-      history,
-      logUserIfNeeded
+      history
     } = this.props;
 
     const {
@@ -192,6 +208,7 @@ class Login extends PureComponent {
     };
 
     try {
+      this.setState({ isLogging: true });
       const response = await this.logUser(userLogin);
       const {
         data: {
@@ -202,9 +219,11 @@ class Login extends PureComponent {
 
       auth.setToken(token);
       auth.setUserInfo(user);
+      this.setState({ isLogging: false });
 
       history.push({ pathname: '/' }); // back to Home
     } catch (error) {
+      this.setState({ isLogging: false });
       /* eslint-disable no-console */
       console.log('login went wrong..., error: ', error);
       /* eslint-enable no-console */
@@ -228,9 +247,8 @@ class Login extends PureComponent {
     };
 
     if (appConfig.DEV_MODE) {
-
       return new Promise(
-        resolve => setTimeout(resolve({ data: userInfoMock }))
+        resolve => setTimeout(resolve({ data: userInfoMock }), 3000)
       );
     }
 
