@@ -9,8 +9,8 @@
   ],
   "plugins": [
     "transform-regenerator",
-    "transform-async-to-generator",
-    "react-hot-loader/babel"
+    "transform-async-to-generator"
+    // "react-hot-loader/babel", // better use webpack way
   ],
   "env": {
     "production": {
