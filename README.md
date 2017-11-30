@@ -29,7 +29,7 @@ React 16 Bootstrap webpack 3 with Hot Reload STARTER
 - `react-router 4+` (*read this [nice article about migrating from react-router 3 to react-router 4](https://codeburst.io/react-router-v4-unofficial-migration-guide-5a370b8905a)*)
 - add few flow types (*still keep propTypes*)
 - updated hot reload (*[read hot reload starter](https://gaearon.github.io/react-hot-loader/getstarted/)*)
-- use `CSS module` (*keep coding style with SASS but get benefit css module*)
+- use `CSS module` (*keep coding style with SASS but get benefit of css module for a more peasant coding*)
 
 
 ## HUGE Breaking changes since 3.0.0

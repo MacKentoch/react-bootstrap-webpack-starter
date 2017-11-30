@@ -29,7 +29,7 @@ class Home extends PureComponent {
             <h1
               className={styles.mainTitle}
             >
-              ReactJS + Bootstrap
+              ReactJS 16 + Bootstrap
             </h1>
             <h2>
               with Hot Reload (<i>react-hot-loader 3.1+</i>)!!!
