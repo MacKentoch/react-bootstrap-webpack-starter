@@ -11,7 +11,10 @@ const SPLIT_STYLE = true;
 
 const config = {
   entry: {
-    app:    indexFile,
+    app: [
+      'babel-polyfill',
+      indexFile
+    ],
     vendor: [
       'react',
       'react-dom',

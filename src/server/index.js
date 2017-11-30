@@ -1,6 +1,4 @@
-// @flow weak
-
-'use strict';
+// @flow
 
 const express   = require('express');
 const path      = require('path');
