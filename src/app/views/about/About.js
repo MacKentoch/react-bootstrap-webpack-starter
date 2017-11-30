@@ -5,6 +5,7 @@ import React, {
 }                     from 'react';
 import PropTypes      from 'prop-types';
 import AnimatedView   from '../../components/animatedView/AnimatedView';
+import styles         from './about.scss';
 
 class About extends PureComponent {
   static propTypes= {

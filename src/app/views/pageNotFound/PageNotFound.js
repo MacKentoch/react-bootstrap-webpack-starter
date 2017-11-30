@@ -5,6 +5,7 @@ import React, {
 }                     from 'react';
 import PropTypes      from 'prop-types';
 import {Jumbotron}    from '../../components';
+import styles         from './pageNotFound.scss';
 import AnimatedView   from '../../components/animatedView/AnimatedView';
 
 class PageNotFound extends PureComponent {

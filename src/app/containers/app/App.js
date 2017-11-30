@@ -3,14 +3,14 @@
 import React, {
   Component
 }                         from 'react';
-// import PropTypes          from 'prop-types';
+import { withRouter }     from 'react-router';
 import {
   NavigationBar,
   BackToTop
 }                         from '../../components';
 import navigationModel    from '../../config/navigation.json';
 import MainRoutes         from '../../routes/MainRoutes';
-import { withRouter }     from 'react-router';
+import styles             from './app.scss';
 
 class App extends Component {
   state = { navModel: navigationModel };

@@ -3,16 +3,17 @@
 // #region imports
 import React, {
   PureComponent
-}                     from 'react';
-import PropTypes      from 'prop-types';
+}                         from 'react';
+import PropTypes          from 'prop-types';
+import axios              from 'axios';
 import {
   Row,
   Col,
   Button
-}                     from 'react-bootstrap';
-import auth           from '../../services/auth';
-import axios          from 'axios';
-import { appConfig }  from '../../config/appConfig';
+}                         from 'react-bootstrap';
+import styles             from './login.scss';
+import auth               from '../../services/auth';
+import { appConfig }      from '../../config/appConfig';
 import getLocationOrigin  from '../../services/utils/getLocationOrigin';
 import userInfoMock       from '../../mock/userInfo.json';
 // #endregion

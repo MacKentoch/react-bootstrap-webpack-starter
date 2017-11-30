@@ -55,9 +55,9 @@ const config = {
             ]
           })
           : [
-            'style-loader',
-            {loader: 'css-loader', options: { importLoaders: 1 }},
-            'postcss-loader'
+              'style-loader',
+              {loader: 'css-loader', options: { importLoaders: 1 }},
+              'postcss-loader'
           ]
       },
       {
@@ -66,14 +66,30 @@ const config = {
         ? ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
-            {loader: 'css-loader', options: { importLoaders: 1 }},
+            {
+              loader: 'css-loader',
+              query: {
+                modules: true,
+                sourceMap: true,
+                importLoaders: 1,
+                localIdentName: '[name]__[local]___[hash:base64:5]'
+              }
+            },
             'postcss-loader',
             'sass-loader'
           ]
         })
         : [
-          'style-loader',
-          {loader: 'css-loader', options: { importLoaders: 1 }},
+          { loader: "style-loader" },
+          {
+            loader: 'css-loader',
+            query: {
+              modules: true,
+              sourceMap: true,
+              importLoaders: 1,
+              localIdentName: '[name]__[local]___[hash:base64:5]'
+            }
+          },
           'postcss-loader',
           'sass-loader'
         ]
