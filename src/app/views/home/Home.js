@@ -5,10 +5,13 @@ import React, {
 }                     from 'react';
 import PropTypes      from 'prop-types';
 import {Jumbotron}    from '../../components';
-import cx             from 'classnames';
+import classnames     from 'classnames/bind';
 import { Link }       from 'react-router-dom';
 import AnimatedView   from '../../components/animatedView/AnimatedView';
 import styles         from './home.scss';
+
+// IMPORTANT: we need to bind classnames to CSSModule generated classes:
+const cx = classnames.bind(styles);
 
 class Home extends PureComponent {
   static propTypes= {
@@ -19,7 +22,6 @@ class Home extends PureComponent {
   };
 
   render() {
-    console.log('styles', styles);
     return(
       <AnimatedView>
         <Jumbotron>
