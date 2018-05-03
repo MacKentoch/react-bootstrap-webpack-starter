@@ -8,13 +8,32 @@
     "flow"
   ],
   "plugins": [
+    "loadable-components/babel",
     "transform-regenerator",
     "transform-async-to-generator"
-    // "react-hot-loader/babel", // better use webpack way
   ],
   "env": {
+    "test": {
+      "presets": [
+        ["env", {
+          "modules": "commonjs"
+        }],
+        "react",
+        "stage-2",
+        "flow",
+        "jest"
+      ],
+      "plugins": [
+        "loadable-components/babel",
+        "transform-regenerator",
+        "transform-async-to-generator"
+      ]
+    },
     "production": {
-      "presets": ["react-optimize"]
+      "presets": [
+        "react-optimize"
+      ],
+      "comments": false
     }
   }
 }
