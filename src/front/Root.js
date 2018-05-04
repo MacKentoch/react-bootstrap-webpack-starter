@@ -5,8 +5,8 @@ import React, { Component } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
 import compose from 'recompose/compose';
 // #region import createHistory from hashHistory or BrowserHistory:
-import createHistory from 'history/createHashHistory';
-// import createHistory            from 'history/createBrowserHistory';
+// import createHistory from 'history/createHashHistory';
+import createHistory from 'history/createBrowserHistory';
 // #endregion
 import withMainLayout from './hoc/withMainLayout';
 import MainRoutes from './routes/MainRoutes';

@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "8661037e2fcce7abfb0be34134d2011a",
+    "revision": "37bca9797bd98513b76d46469767622a",
     "url": "public/assets/vendors.js.gz"
   },
   {
-    "revision": "90fad960c0fd37bd5780",
+    "revision": "cebcd87f82cb8bfa4612",
     "url": "public/assets/vendors.js"
   },
   {
@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "public/assets/app.js.gz"
   },
   {
-    "revision": "0787263fa6f80c6f7491",
+    "revision": "8511e1d60725bd9a359b",
     "url": "public/assets/app.js"
   },
   {
