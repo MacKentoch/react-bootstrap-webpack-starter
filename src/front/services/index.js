@@ -1,9 +1,6 @@
-// @flow weak
+// @flow
 
-import * as fetchTools  from './fetchTools';
-import {getSomething}   from './API/example';
+import * as fetchTools from './fetchTools';
+import { getSomething } from './API/example';
 
-export {
-  fetchTools,
-  getSomething
-};
+export { fetchTools, getSomething };

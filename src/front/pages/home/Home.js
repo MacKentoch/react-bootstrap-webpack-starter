@@ -7,9 +7,11 @@ import {
   type Location,
   type RouterHistory,
 } from 'react-router-dom';
-import styled from 'styled-components';
-import { Jumbotron } from '../../components';
+import Jumbotron from '../../components/jumbotron/Jumbotron';
 import { Link } from 'react-router-dom';
+import HomeInfo from './styled/HomeInfo';
+import MainTitle from './styled/MainTitle';
+import LightNote from './styled/LightNote';
 // #endregion
 
 // #region flow types
@@ -24,19 +26,6 @@ type Props = {
 type State = any;
 // #endregion
 
-// #region styled-components
-const HomeInfo = styled.div``;
-
-const MainTitle = styled.h1`
-  color: #222 !important;
-  font-weight: 800;
-`;
-
-const LightNote = styled.i`
-  font-size: 0.7em;
-`;
-// #endregion
-
 class Home extends PureComponent<Props, State> {
   // #region lifecycle
   render() {
@@ -44,16 +33,15 @@ class Home extends PureComponent<Props, State> {
       <div>
         <Jumbotron>
           <HomeInfo>
-            <MainTitle>ReactJS 16 + Bootstrap</MainTitle>
+            <MainTitle>ReactJS 16.3+ Bootstrap</MainTitle>
             <h2>
-              with Hot Reload (<i>react-hot-loader 3.1+</i>)!!!
+              with Hot Reload (<i>react-hot-loader 4+</i>)!!!
             </h2>
             <h2>and React Router v4</h2>
-            <h2>and webpack 3.x</h2>
+            <h2>and webpack 4.x</h2>
             <h2>
-              and CSSModule (<LightNote>
-                so keep using SCSS as you did before but import your class in
-                your components like it were JS files
+              and styled-components (<LightNote>
+                so keep using SCSS like styles and benefit performant css-in-js
               </LightNote>)
             </h2>
             <h1>Starter</h1>

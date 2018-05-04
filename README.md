@@ -32,6 +32,7 @@ _Concept behind:_ **this starter is an easy way to understand and ready to use R
 * `workbox-webpack-plugin` (_service worker caching powerful tool from Google_)
 * [loadable-components](https://github.com/smooth-code/loadable-components) (_split your code: here splitted just by routes, by you can split a component level if you feel the need_)
 * `webpack-bundle-analyzer`: analyze your bundle size (_maybe you should split or lazy load some part of your application: you will see clearly how to fix that_)
+* drop `moment` for `date-fns` (*since far smaller size and job's done*)
 
 ## Breaking changes since v5.0.0
 

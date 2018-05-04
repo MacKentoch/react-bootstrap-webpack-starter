@@ -3,38 +3,13 @@
 // #region imports
 import React, { Component } from 'react';
 import wrapDisplayName from 'recompose/wrapDisplayName';
-import styled, { keyframes, css } from 'styled-components';
+import AnimatedDiv from './styled/AnimatedDiv';
 // #endregion
 
 // #region flow types
 type Props = any;
 
 type State = any;
-// #endregion
-
-// #region styled components
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-`;
-
-const AnimatedDiv = styled.div`
-  ${({ viewEnter }) =>
-    viewEnter &&
-    css`
-      opacity: 0;
-      animation-name: ${fadeIn};
-      animation-timing-function: ease-in;
-      animation-duration: 0.7s;
-      animation-delay: 0s;
-      animation-fill-mode: both;
-    `};
-`;
 // #endregion
 
 function withEnterAnimation() {

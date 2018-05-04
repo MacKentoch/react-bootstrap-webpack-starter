@@ -9,5 +9,5 @@ export const About = loadable(() => import('../pages/about'));
 export const Protected = loadable(() => import('../pages/protected'));
 export const PageNotFound = loadable(() => import('../pages/pageNotFound'));
 export const PrivateRoute = loadable(() =>
-  import('../components/privateRoute'),
+  import('../components/privateRoute/PrivateRoute'),
 );

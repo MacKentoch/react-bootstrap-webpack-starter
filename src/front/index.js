@@ -1,12 +1,13 @@
 // @flow
 
 // #region imports
+import 'babel-polyfill'; // NOTE: REALLY important to avoid "regeneratorRuntime is not defined"
 import React from 'react';
 import { render } from 'react-dom';
 import injectTpEventPlugin from 'react-tap-event-plugin';
 import { AppContainer } from 'react-hot-loader';
 import smoothScrollPolyfill from 'smoothscroll-polyfill';
-import injectGlobalStyle from './style/injectGlobalStyle';
+import injectGlobalStyle from './style/injectGlobalStyles';
 import Root from './Root';
 // #endregion
 

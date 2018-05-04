@@ -3,8 +3,8 @@
 // #region imports
 import React from 'react';
 import cx from 'classnames';
-import styled from 'styled-components';
 import UpIcon from './UpIcon';
+import WithRightMargin from './styled/WithRightMargin';
 // #endregion
 
 // #region flow types
@@ -34,12 +34,6 @@ const defaultStyle = {
   opacity: defaultOpacity,
   backgroundColor: defaultBackGroundColor,
 };
-// #endregion
-
-// #region styled-components
-const WithRightMargin = styled.div`
-  margin-right: 10px;
-`;
 // #endregion
 
 const BackToTopButton = ({

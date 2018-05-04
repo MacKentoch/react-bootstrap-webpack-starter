@@ -4,7 +4,6 @@
 /// <reference path="globals/jest/index.d.ts" />
 /// <reference path="globals/js-base64/index.d.ts" />
 /// <reference path="globals/mocha/index.d.ts" />
-/// <reference path="globals/moment/index.d.ts" />
 /// <reference path="globals/node/index.d.ts" />
 /// <reference path="globals/react-router-dom/index.d.ts" />
 /// <reference path="globals/recompose/index.d.ts" />
