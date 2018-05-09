@@ -28,4 +28,12 @@ class LocalStorageMock {
 
 const localStorage = new LocalStorageMock();
 
+if (!window.localStorage) {
+  window.localStorage = localStorage;
+}
+
+if (!window.sessionStorage) {
+  window.sessionStorage = localStorage;
+}
+
 export default localStorage;
