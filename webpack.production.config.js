@@ -4,10 +4,12 @@ const webpack = require('webpack');
 const path = require('path');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const workboxPlugin = require('workbox-webpack-plugin');
 
-const assetsDir = path.join(__dirname, 'docs/public/assets');
-const publicAssets = 'public/assets/';
+const outputPath = path.join(__dirname, 'docs/public/assets');
+const publicPath = 'public/assets/';
 const nodeModulesDir = path.join(__dirname, 'node_modules');
 const indexFile = path.join(__dirname, 'src/front/index.js');
 
@@ -19,8 +21,8 @@ const config = {
     extensions: ['.js', 'jsx'],
   },
   output: {
-    path: assetsDir,
-    publicPath: publicAssets,
+    path: outputPath,
+    publicPath,
     filename: '[name].js',
     chunkFilename: '[name].js',
   },
@@ -30,6 +32,10 @@ const config = {
         test: /\.jsx?$/,
         exclude: [nodeModulesDir],
         loader: 'babel-loader',
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif)(\?\S*)?$/,
@@ -54,14 +60,25 @@ const config = {
           name: 'vendors',
           chunks: 'all',
         },
+        styles: {
+          name: 'styles',
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true,
+        },
       },
     },
     minimizer: [
+      new MiniCssExtractPlugin({
+        filename: '[name].css',
+        chunkFilename: '[id].css',
+      }),
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
         sourceMap: true,
       }),
+      new OptimizeCSSAssetsPlugin({}),
     ],
   },
   plugins: [
@@ -77,6 +94,7 @@ const config = {
       threshold: 10240,
       minRatio: 0.8,
     }),
+    // IPORTANT: we need to serve app through https otherwise SW will throw error (so no SW in this simple case)
     new workboxPlugin.GenerateSW({
       swDest: 'sw.js',
       clientsClaim: true,

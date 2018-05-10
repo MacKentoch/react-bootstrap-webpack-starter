@@ -2,11 +2,12 @@
 
 const webpack = require('webpack');
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
-const assetsDir = path.join(__dirname, 'docs/public/assets');
-const rootPath = path.join(__dirname, 'docs');
-const publicAssets = 'public/assets/';
+const outputPath = path.join(__dirname, 'docs/public/assets');
+const devServerRootPath = path.join(__dirname, 'docs');
+const publicPath = 'public/assets/';
 const nodeModulesDir = path.join(__dirname, 'node_modules');
 const srcInclude = path.join(__dirname, 'src/front');
 const indexFile = path.join(__dirname, 'src/front/index.js');
@@ -22,8 +23,8 @@ const config = {
     extensions: ['*', '.js', '.jsx'],
   },
   output: {
-    path: assetsDir,
-    publicPath: publicAssets,
+    path: outputPath,
+    publicPath,
     filename: '[name].js',
     chunkFilename: '[name].js',
   },
@@ -34,6 +35,10 @@ const config = {
         include: srcInclude,
         exclude: [nodeModulesDir],
         loaders: ['babel-loader'],
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif)(\?\S*)?$/,
@@ -58,10 +63,20 @@ const config = {
           name: 'vendors',
           chunks: 'all',
         },
+        styles: {
+          name: 'styles',
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true,
+        },
       },
     },
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
     new ProgressBarPlugin({
       format: 'Build [:bar] :percent (:elapsed seconds)',
       clear: false,
@@ -70,7 +85,7 @@ const config = {
     new webpack.NoEmitOnErrorsPlugin(),
   ],
   devServer: {
-    contentBase: rootPath,
+    contentBase: devServerRootPath,
     port: 3001,
     hot: true,
     historyApiFallback: true,
