@@ -1,11 +1,11 @@
 // @flow
 
+// #region imports
 import { Base64 } from 'js-base64';
+// #endregion
 
-/*
-  window.location.origin polyfill
- */
-export const getLocationOrigin = () => {
+// #region  window.location.origin polyfill
+export const getLocationOrigin = (): string => {
   if (!window.location.origin) {
     window.location.origin = `${window.location.protocol}//${
       window.location.hostname
@@ -13,10 +13,9 @@ export const getLocationOrigin = () => {
   }
   return window.location.origin;
 };
+// #endregion
 
-/*
-  query options:
- */
+// #region query options:
 export const getMethod = {
   method: 'get',
 };
@@ -36,10 +35,10 @@ export const jsonHeader = {
     // 'Access-control-Allow-Origin': '*'
   },
 };
+// #endregion
 
-/*
- general helpers
- */
-export const encodeBase64 = stringToEncode => {
+// #region general helpers
+export const encodeBase64 = (stringToEncode: string = ''): string => {
   return Base64.encode(stringToEncode);
 };
+// #endregion

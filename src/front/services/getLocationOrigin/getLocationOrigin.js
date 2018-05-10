@@ -1,6 +1,6 @@
 // @flow
 
-export const getLocationOrigin: () => string = () => {
+export const getLocationOrigin = (): string => {
   if (!window.location.origin) {
     window.location.origin = `${window.location.protocol}//${
       window.location.hostname

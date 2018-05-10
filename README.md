@@ -66,7 +66,7 @@ _Concept behind:_ **this starter is an easy way to understand and ready to use R
 
 **Front:**
 
-* React JS (15.6.x - [github :link:](https://github.com/facebook/react))
+* React JS (16.3.x - [github :link:](https://github.com/facebook/react))
 * react-router (4.x- [github :link:](https://github.com/reactjs/react-router))
 * Bootstrap (3.x - [github :link:](https://github.com/twbs/bootstrap))
 * React-Bootstrap ([github :link:](https://github.com/react-bootstrap/react-bootstrap))
@@ -85,21 +85,15 @@ _Concept behind:_ **this starter is an easy way to understand and ready to use R
 * hot reload
 * loaders
   * `js` / `jsx`
-  * sass
   * css
   * json
   * images formats
   * svg and fonts formats
-* postcss / cssnext
 
 **tests:**
 
-* jsdom 11+
-* Mocha
-* Chai (_+ dirty-chai_)
-* enzyme
-* Sinon
-* nyc
+- Jest
+- enzyme
 
 ## Usage
 

@@ -1,14 +1,18 @@
 // @flow
 
+// #region imports
 import axios from 'axios';
 import {
   getMethod,
   jsonHeader,
   defaultOptions,
   getLocationOrigin,
-} from '../fetchTools';
+} from './fetchTools';
+// #endregion
 
-export const getSomething = (endpoint = 'api/getSomethingByDefault') => {
+export const getSomething = (
+  endpoint = 'api/getSomethingByDefault',
+): Promise<any> => {
   const method = getMethod.method;
   const headers = jsonHeader;
   const url = `${getLocationOrigin()}/${endpoint}`;

@@ -12,7 +12,7 @@ import withMainLayout from './hoc/withMainLayout';
 import MainRoutes from './routes/MainRoutes';
 import ScrollToTop from './components/scrollToTop/ScrollToTop';
 import Login from './pages/login';
-import PageNotFound from './pages/pageNotFound'; // not connected to redux (no index.js)
+import { PageNotFound } from './routes/routes';
 import LogoutRoute from './components/logoutRoute/LogoutRoute';
 // #endregion
 

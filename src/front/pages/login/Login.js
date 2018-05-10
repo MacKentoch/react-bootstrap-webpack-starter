@@ -11,7 +11,7 @@ import {
 import { Row, Col, Button } from 'react-bootstrap';
 import auth from '../../services/auth';
 import { appConfig } from '../../config/appConfig';
-import getLocationOrigin from '../../services/utils/getLocationOrigin';
+import { getLocationOrigin } from '../../services/API/fetchTools';
 import userInfoMock from '../../mock/userInfo.json';
 // #endregion
 

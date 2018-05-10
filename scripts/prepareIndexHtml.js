@@ -9,6 +9,7 @@ const chalk = require('chalk');
 // #region constants
 const indexRaw = join(__dirname, '../docs/index-raw.html');
 const snapDoneHtml = join(__dirname, '../docs/200.html');
+const snapFailedHtml = join(__dirname, '../docs/404.html');
 const destHtml = join(__dirname, '../docs/index.html');
 // #endregion
 
@@ -30,6 +31,14 @@ function prepareIndexHtml() {
       deleteFile(snapDoneHtml);
       console.log(
         `${chalk.default.redBright('==== 200.html deleted 🔫 ====')}`,
+      );
+    }
+
+    if (fs.existsSync(snapFailedHtml)) {
+      // 404.html delete
+      deleteFile(snapFailedHtml);
+      console.log(
+        `${chalk.default.redBright('==== 404.html deleted 🔫 ====')}`,
       );
     }
 
