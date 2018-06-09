@@ -36,4 +36,4 @@ if (!window.sessionStorage) {
   window.sessionStorage = localStorage;
 }
 
-export default localStorage;
+module.exports = localStorage;
