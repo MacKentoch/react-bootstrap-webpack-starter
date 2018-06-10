@@ -17,7 +17,7 @@
   },
   "scripts": {
     "flow": "node_modules/.bin/flow",
-    "test": "cross-env NODE_ENV=test jest",
+    "test": "cross-env NODE_ENV=test jest --no-cache",
     "analyze": "rimraf docs/public/assets && cross-env NODE_ENV=production webpack -p --config webpack.analyze.config.js",
     "dev": "rimraf docs/public/assets && cross-env NODE_ENV=dev webpack --config webpack.dev.config.js",
     "prod": "rimraf docs/public/assets && cross-env NODE_ENV=production webpack -p --config webpack.production.config.js",
