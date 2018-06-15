@@ -18,12 +18,23 @@
   "scripts": {
     "flow": "node_modules/.bin/flow",
     "test": "cross-env NODE_ENV=test jest --no-cache",
+    "clean-docs": "rimraf docs/*",
     "analyze": "rimraf docs/public/assets && cross-env NODE_ENV=production webpack -p --config webpack.analyze.config.js",
+
+    "predev": "npm run clean-docs",
     "dev": "rimraf docs/public/assets && cross-env NODE_ENV=dev webpack --config webpack.dev.config.js",
-    "prod": "rimraf docs/public/assets && cross-env NODE_ENV=production webpack -p --config webpack.production.config.js",
+    "postdev": "react-snap",
+
+    "preprod": "npm run clean-docs",
+    "prod": "cross-env NODE_ENV=production webpack -p --config webpack.production.config.js",
+    "postprod": "react-snap",
+
     "start": "cross-env NODE_ENV=dev webpack-dev-server --config ./webpack.hot.reload.config.js --mode development",
     "serve-dev": "npm run dev && nodemon ./src/server/server.js",
     "serve-prod": "npm run prod && node ./src/server/server.js"
+  },
+  "reactSnap": {
+    "source": "docs"
   },
   "keywords": [
     "react",
@@ -64,6 +75,7 @@
     "@types/react-motion": "^0.0.23",
     "@types/react-router": "^4.0.16",
     "@types/react-router-dom": "^4.2.0",
+    "@types/reactstrap": "^5.0.27",
     "@types/redux": "^3.6.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
@@ -93,6 +105,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
     "flow-bin": "^0.71.0",
+    "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.1.0",
     "json-loader": "^0.5.7",
@@ -101,7 +114,7 @@
     "optimize-css-assets-webpack-plugin": "^4.0.1",
     "progress-bar-webpack-plugin": "^1.11.0",
     "react-hot-loader": "^4.0.0",
-    "react-snap": "^1.12.2",
+    "react-snap": "^1.13.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.0.1",
     "sinon": "^2.3.1",
@@ -120,6 +133,7 @@
     "animate.css": "^3.5.2",
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
+    "boostrap": "^2.0.0",
     "bootstrap": "^4.1.1",
     "chalk": "^2.4.1",
     "classnames": "^2.2.5",
@@ -133,6 +147,8 @@
     "loadable-components": "^1.4.0",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
+    "modernizr": "^3.6.0",
+    "modernizr-webpack-plugin": "^1.0.7",
     "prettier-eslint": "^8.8.1",
     "pretty-error": "^2.1.1",
     "react": "^16.3.2",
@@ -143,6 +159,7 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-tap-event-plugin": "^3.0.2",
+    "reactstrap": "^6.1.0",
     "recompose": "^0.27.0",
     "serve-favicon": "^2.5.0",
     "smoothscroll-polyfill": "^0.4.3",

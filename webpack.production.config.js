@@ -1,5 +1,6 @@
 // @flow
 
+// #region imports
 const webpack = require('webpack');
 const path = require('path');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
@@ -7,11 +8,16 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const workboxPlugin = require('workbox-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ModernizrWebpackPlugin = require('modernizr-webpack-plugin');
+// #endregion
 
-const outputPath = path.join(__dirname, 'docs/public/assets');
-const publicPath = 'public/assets/';
+// #region constants
+const outputPath = path.join(__dirname, 'docs/assets');
+const publicPath = '/assets/';
 const nodeModulesDir = path.join(__dirname, 'node_modules');
 const indexFile = path.join(__dirname, 'src/front/index.js');
+// #endregion
 
 const config = {
   mode: 'production',
@@ -23,8 +29,8 @@ const config = {
   output: {
     path: outputPath,
     publicPath,
-    filename: '[name].js',
-    chunkFilename: '[name].js',
+    filename: '[name].[hash].js',
+    chunkFilename: '[name].[hash].js',
   },
   module: {
     rules: [
@@ -70,8 +76,8 @@ const config = {
     },
     minimizer: [
       new MiniCssExtractPlugin({
-        filename: '[name].css',
-        chunkFilename: '[id].css',
+        filename: '[name].[hash].css',
+        chunkFilename: '[id].[hash].css',
       }),
       new UglifyJsPlugin({
         cache: true,
@@ -82,6 +88,13 @@ const config = {
     ],
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      filename: '../index.html',
+      template: 'src/front/statics/index.html',
+    }),
+    new ModernizrWebpackPlugin({
+      htmlWebpackPlugin: true,
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
