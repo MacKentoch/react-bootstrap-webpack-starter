@@ -1,16 +1,21 @@
 // @flow
 
+// #region imports
 const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+// #endregion
 
+// #region constants
 const outputPath = path.join(__dirname, 'docs/public/assets');
 const devServerRootPath = path.join(__dirname, 'docs');
 const publicPath = 'public/assets/';
 const nodeModulesDir = path.join(__dirname, 'node_modules');
 const srcInclude = path.join(__dirname, 'src/front');
 const indexFile = path.join(__dirname, 'src/front/index.js');
+// #endregion
 
 const config = {
   mode: 'development',
@@ -25,8 +30,8 @@ const config = {
   output: {
     path: outputPath,
     publicPath,
-    filename: '[name].js',
-    chunkFilename: '[name].js',
+    filename: '[name].[hash].js',
+    chunkFilename: '[name].[hash].js',
   },
   module: {
     rules: [
@@ -73,9 +78,17 @@ const config = {
     },
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      filename: '../index.html',
+      template: 'src/front/statics/index.html',
+    }),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
+      filename: '[name].[hash].css',
+      chunkFilename: '[id].[hash].css',
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash].css',
+      chunkFilename: '[id].[hash].css',
     }),
     new ProgressBarPlugin({
       format: 'Build [:bar] :percent (:elapsed seconds)',
