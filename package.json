@@ -19,16 +19,16 @@
     "flow": "node_modules/.bin/flow",
     "test": "cross-env NODE_ENV=test jest --no-cache",
     "clean-docs": "rimraf docs/*",
+    "prepare:index-html": "node ./scripts/prepareIndexHtml.js",
     "analyze": "rimraf docs/public/assets && cross-env NODE_ENV=production webpack -p --config webpack.analyze.config.js",
-
     "predev": "npm run clean-docs",
     "dev": "rimraf docs/public/assets && cross-env NODE_ENV=dev webpack --config webpack.dev.config.js",
     "postdev": "react-snap",
-
     "preprod": "npm run clean-docs",
     "prod": "cross-env NODE_ENV=production webpack -p --config webpack.production.config.js",
     "postprod": "react-snap",
 
+    "prestart": "npm run clean-docs && npm run prepare:index-html",
     "start": "cross-env NODE_ENV=dev webpack-dev-server --config ./webpack.hot.reload.config.js --mode development",
     "serve-dev": "npm run dev && nodemon ./src/server/server.js",
     "serve-prod": "npm run prod && node ./src/server/server.js"
@@ -74,6 +74,7 @@
     "@types/react-dom": "^16.0.2",
     "@types/react-motion": "^0.0.23",
     "@types/react-router": "^4.0.16",
+    "@types/react-router-bootstrap": "^0.24.5",
     "@types/react-router-dom": "^4.2.0",
     "@types/reactstrap": "^5.0.27",
     "@types/redux": "^3.6.0",
@@ -157,6 +158,7 @@
     "react-motion": "^0.5.2",
     "react-overdrive": "^0.0.9",
     "react-router": "^4.2.0",
+    "react-router-bootstrap": "^0.24.4",
     "react-router-dom": "^4.2.2",
     "react-tap-event-plugin": "^3.0.2",
     "reactstrap": "^6.1.0",

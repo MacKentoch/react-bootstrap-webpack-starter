@@ -41,6 +41,7 @@ function withMainLayout(/* no args option yet, but could pass them here */) {
       componentDidMount() {
         // register service worker (no worry about multiple attempts to register, browser will ignore when already registered)
         registerServiceWorker();
+        console.log('TETS');
       }
 
       render() {

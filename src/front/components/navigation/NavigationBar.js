@@ -1,10 +1,22 @@
 // @flow
 
 // #region imports
-import React from 'react';
-import Humburger from './humburger/Humburger';
-import LeftNav from './leftNav/LeftNav';
-import RightNav from './rightNav/RightNav';
+import React, { PureComponent, SyntheticEvent } from 'react';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from 'reactstrap';
+import { withRouter } from 'react-router-dom';
+import {
+  type Match,
+  type Location,
+  type RouterHistory,
+} from 'react-router-dom';
 import { type LeftLink, type OnLeftNavButtonClick } from './leftNav/LeftNav';
 import {
   type RightLink,
@@ -14,11 +26,15 @@ import {
 
 // #region flow types
 type Props = {
-  brand: string,
+  // withRouter HOC:
+  match: Match,
+  location: Location,
+  history: RouterHistory,
 
+  // parent props:
+  brand: string,
   handleLeftNavItemClick: OnLeftNavButtonClick,
   handleRightNavItemClick: OnRightNavButtonClick,
-
   navModel: {
     leftLinks: Array<LeftLink>,
     rightLinks: Array<RightLink>,
@@ -26,51 +42,71 @@ type Props = {
 
   ...any,
 };
-// #endregion
 
-const NavigationBar = ({
-  brand,
-  navModel,
-  handleLeftNavItemClick,
-  handleRightNavItemClick,
-}: Props) => {
-  return (
-    <nav className="navbar navbar-default">
-      <div className="containersCustom">
-        <div className="navbar-header">
-          {<Humburger />}
-          <a className="navbar-brand">{brand}</a>
-        </div>
-        <div
-          className="collapse navbar-collapse"
-          id="bs-example-navbar-collapse-1"
-        >
-          <ul className="nav navbar-nav">
-            {
-              <LeftNav
-                leftLinks={navModel.leftLinks}
-                onLeftNavButtonClick={handleLeftNavItemClick}
-              />
-            }
-          </ul>
-          <ul className="nav navbar-nav navbar-right">
-            {
-              <RightNav
-                rightLinks={navModel.rightLinks}
-                onRightNavButtonClick={handleRightNavItemClick}
-              />
-            }
-          </ul>
-        </div>
-      </div>
-    </nav>
-  );
+type State = {
+  isOpen: boolean,
+  ...any,
 };
-
-// #region statics
-NavigationBar.defaultProps = { brand: 'brand' };
-
-NavigationBar.displayName = 'NavigationBar';
 // #endregion
 
-export default NavigationBar;
+class NavigationBar extends PureComponent<Props, State> {
+  static defaultProps = {
+    brand: 'brand',
+  };
+
+  state = {
+    isOpen: false,
+  };
+
+  // #region lifecycle
+  render() {
+    const {
+      brand,
+      navModel: { rightLinks },
+      handleLeftNavItemClick,
+      handleRightNavItemClick,
+    } = this.props;
+
+    console.log('rendering navabr');
+
+    return (
+      <Navbar color="light" light expand="md">
+        <NavbarBrand href="/">{brand}</NavbarBrand>
+        <NavbarToggler onClick={this.toggle} />
+        <Collapse isOpen={this.state.isOpen} navbar>
+          <Nav className="ml-auto" navbar>
+            {rightLinks.map(({ label, link, viewName }, index) => (
+              <NavItem key={`${index}`}>
+                <NavLink href="#" onClick={this.handlesNavItemClick(link)}>
+                  {label}
+                </NavLink>
+              </NavItem>
+            ))}
+          </Nav>
+        </Collapse>
+      </Navbar>
+    );
+  }
+  // #endregion
+
+  // #region navigation bar toggle
+  toggle = (evt: SyntheticEvent<>) => {
+    if (evt) {
+      evt.preventDefault();
+    }
+    this.setState((isOpen: prevIsOpened) => ({ isOpen: !prevIsOpened }));
+  };
+  // #endregion
+
+  // #region handlesNavItemClick event
+  handlesNavItemClick = (link: string = '/') => (evt: SyntheticEvent<>) => {
+    if (evt) {
+      evt.preventDefault();
+    }
+    const { history } = this.props;
+    history.push(link);
+  };
+  // #endregion
+}
+
+export default withRouter(NavigationBar);

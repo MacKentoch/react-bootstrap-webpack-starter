@@ -9,9 +9,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // #endregion
 
 // #region constants
-const outputPath = path.join(__dirname, 'docs/public/assets');
+const outputPath = path.join(__dirname, 'docs/assets');
 const devServerRootPath = path.join(__dirname, 'docs');
-const publicPath = 'public/assets/';
+const publicPath = '/assets/';
 const nodeModulesDir = path.join(__dirname, 'node_modules');
 const srcInclude = path.join(__dirname, 'src/front');
 const indexFile = path.join(__dirname, 'src/front/index.js');
@@ -30,8 +30,8 @@ const config = {
   output: {
     path: outputPath,
     publicPath,
-    filename: '[name].[hash].js',
-    chunkFilename: '[name].[hash].js',
+    filename: '[name].js',
+    chunkFilename: '[name].js',
   },
   module: {
     rules: [
@@ -87,8 +87,8 @@ const config = {
       chunkFilename: '[id].[hash].css',
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[hash].css',
-      chunkFilename: '[id].[hash].css',
+      filename: '[name].css',
+      chunkFilename: '[id].css',
     }),
     new ProgressBarPlugin({
       format: 'Build [:bar] :percent (:elapsed seconds)',

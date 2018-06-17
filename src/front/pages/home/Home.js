@@ -33,10 +33,11 @@ class Home extends PureComponent<Props, State> {
       <div>
         <Jumbotron>
           <HomeInfo>
-            <MainTitle>ReactJS 16.3+ Bootstrap</MainTitle>
+            <MainTitle>ReactJS 16.3+ Bootstrap 4</MainTitle>
             <h2>
               with Hot Reload (<i>react-hot-loader 4+</i>)!!!
             </h2>
+            <h2>and React 16.3+ Context API</h2>
             <h2>and React Router v4</h2>
             <h2>and webpack 4.x</h2>
             <h2>
