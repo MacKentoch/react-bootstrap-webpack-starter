@@ -8,7 +8,7 @@ import {
   type Location,
   type RouterHistory,
 } from 'react-router-dom';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col, Button } from 'reactstrap';
 import auth from '../../services/auth';
 import { appConfig } from '../../config/appConfig';
 import { getLocationOrigin } from '../../services/API/fetchTools';
@@ -52,7 +52,7 @@ class Login extends PureComponent<Props, State> {
     return (
       <div className="content">
         <Row>
-          <Col md={4} mdOffset={4} xs={10} xsOffset={1}>
+          <Col md={{ size: 4, offset: 4 }} xs={{ size: 10, offset: 1 }}>
             <form className="form-horizontal" noValidate>
               <fieldset>
                 <legend>Login</legend>
@@ -64,7 +64,7 @@ class Login extends PureComponent<Props, State> {
                   >
                     Email
                   </label>
-                  <Col lg={10}>
+                  <Col lg={12}>
                     <input
                       type="text"
                       className="form-control"
@@ -83,7 +83,7 @@ class Login extends PureComponent<Props, State> {
                   >
                     Password
                   </label>
-                  <Col lg={10}>
+                  <Col lg={12}>
                     <input
                       type="password"
                       className="form-control"
@@ -96,10 +96,10 @@ class Login extends PureComponent<Props, State> {
                 </div>
 
                 <div className="form-group">
-                  <Col lg={10} lgOffset={2}>
+                  <Col lg={{ size: 12 }}>
                     <Button
                       className="login-button btn-block"
-                      bsStyle="primary"
+                      color="primary"
                       disabled={isLogging}
                       onClick={this.handlesOnLogin}
                     >
@@ -119,7 +119,7 @@ class Login extends PureComponent<Props, State> {
           </Col>
         </Row>
         <Row>
-          <Col md={4} mdOffset={4} xs={10} xsOffset={1}>
+          <Col md={{ size: 4, offset: 4 }} xs={{ size: 10, offset: 1 }}>
             <div className="pull-right">
               <Button
                 bsStyle="info"
