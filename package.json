@@ -27,7 +27,6 @@
     "preprod": "npm run clean-docs",
     "prod": "cross-env NODE_ENV=production webpack -p --config webpack.production.config.js",
     "postprod": "react-snap",
-
     "prestart": "npm run clean-docs && npm run prepare:index-html",
     "start": "cross-env NODE_ENV=dev webpack-dev-server --config ./webpack.hot.reload.config.js --mode development",
     "serve-dev": "npm run dev && nodemon ./src/server/server.js",
@@ -70,7 +69,6 @@
     "@types/js-base64": "^2.3.1",
     "@types/jwt-decode": "^2.2.1",
     "@types/react": "^16.3.13",
-    "@types/react-bootstrap": "^0.31.6",
     "@types/react-dom": "^16.0.2",
     "@types/react-motion": "^0.0.23",
     "@types/react-router": "^4.0.16",
@@ -153,7 +151,6 @@
     "prettier-eslint": "^8.8.1",
     "pretty-error": "^2.1.1",
     "react": "^16.3.2",
-    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.3.2",
     "react-motion": "^0.5.2",
     "react-overdrive": "^0.0.9",

@@ -8,7 +8,9 @@ import {
   type Location,
   type RouterHistory,
 } from 'react-router-dom';
-import { Row, Col, Button } from 'reactstrap';
+import Button from 'reactstrap/lib/Button';
+import Row from 'reactstrap/lib/Row';
+import Col from 'reactstrap/lib/Col';
 import auth from '../../services/auth';
 import { appConfig } from '../../config/appConfig';
 import { getLocationOrigin } from '../../services/API/fetchTools';

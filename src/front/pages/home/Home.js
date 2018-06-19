@@ -7,7 +7,7 @@ import {
   type Location,
   type RouterHistory,
 } from 'react-router-dom';
-import Jumbotron from '../../components/jumbotron/Jumbotron';
+import Jumbotron from 'reactstrap/lib/Jumbotron';
 import { Link } from 'react-router-dom';
 import HomeInfo from './styled/HomeInfo';
 import MainTitle from './styled/MainTitle';

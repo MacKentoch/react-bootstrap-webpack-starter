@@ -6,6 +6,7 @@ import wrapDisplayName from 'recompose/wrapDisplayName';
 import compose from 'recompose/compose';
 import { withRouter } from 'react-router';
 import { type Match, type Location, type RouterHistory } from 'react-router';
+import Container from 'reactstrap/lib/Container';
 import NavigationBar from '../../components/navigation/NavigationBar';
 import BackToTop from '../../components/backToTop/BackToTop';
 import navigationModel from '../../config/navigation';
@@ -41,7 +42,6 @@ function withMainLayout(/* no args option yet, but could pass them here */) {
       componentDidMount() {
         // register service worker (no worry about multiple attempts to register, browser will ignore when already registered)
         registerServiceWorker();
-        console.log('TETS');
       }
 
       render() {
@@ -58,9 +58,9 @@ function withMainLayout(/* no args option yet, but could pass them here */) {
               handleLeftNavItemClick={this.handleLeftNavItemClick}
               handleRightNavItemClick={this.handleRightNavItemClick}
             />
-            <div className="container-fluid">
+            <Container fluid>
               <BaseComponent {...passProps} />
-            </div>
+            </Container>
             <BackToTop minScrollY={40} scrollTo={'appContainer'} />
           </div>
         );
