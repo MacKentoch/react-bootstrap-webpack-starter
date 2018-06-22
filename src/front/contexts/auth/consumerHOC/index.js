@@ -3,11 +3,11 @@
 // #region imports
 import React, { Component } from 'react';
 import wrapDisplayName from 'recompose/wrapDisplayName';
-import { AuthContextConsumer } from '../context/index';
+import { AuthContextConsumer, type AuthData } from '../context/index';
 // #endregion
 
 // #region flow types
-export type AuthContextProps = { ...any };
+export type AuthContextProps = { ...any } & AuthData;
 // #endregion
 
 // #region CONSUMER HOC
