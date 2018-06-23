@@ -3,7 +3,7 @@
 // #region imports
 import React, { Component } from 'react';
 import { AuthContextProvider, type AuthData } from '../context';
-import { isAuthenticated } from '../../../services/auth';
+import auth from '../../../services/auth';
 // #endregion
 
 // #region flow types
@@ -11,6 +11,7 @@ export type AuthProviderProps = {
   initialState: {} & AuthData,
 };
 export type AuthProviderState = {
+  checkIsAuthenticated: () => boolean,
   ...any,
 } & AuthData;
 // #endregion
@@ -21,10 +22,7 @@ export default class AuthProvider extends Component<
   AuthProviderState,
 > {
   static defaultProps = {
-    initialState: {
-      isAuthenticated: false,
-      lastAuthDate: null,
-    },
+    initialState: { isAuthenticated: false, lastAuthDate: null },
   };
 
   // #region lifecyle
@@ -34,6 +32,7 @@ export default class AuthProvider extends Component<
     // initialize state in constructor (otherwise function won't be passed)
     this.state = {
       ...this.props.initialState,
+      checkIsAuthenticated: this.checkIsAuthenticated,
     };
   }
 
@@ -47,5 +46,11 @@ export default class AuthProvider extends Component<
     );
   }
   // #endregion
+
+  checkIsAuthenticated = () => {
+    const isAuthenticated = auth.isAuthenticated();
+    this.setState({ isAuthenticated });
+    return isAuthenticated;
+  };
 }
 // #endregion
