@@ -148,7 +148,7 @@
     "lodash.throttle": "^4.1.1",
     "modernizr": "^3.6.0",
     "modernizr-webpack-plugin": "^1.0.7",
-    "prettier-eslint": "^8.8.1",
+    "prettier-eslint": "^8.8.2",
     "pretty-error": "^2.1.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",

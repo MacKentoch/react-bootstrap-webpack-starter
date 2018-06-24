@@ -2,7 +2,7 @@
 
 // #region imports
 import React, { Component } from 'react';
-import { AuthContextProvider, type AuthData } from '../context';
+import { AuthContextProvider, type AuthData, type User } from '../context';
 import auth from '../../../services/auth';
 // #endregion
 
@@ -22,7 +22,12 @@ export default class AuthProvider extends Component<
   AuthProviderState,
 > {
   static defaultProps = {
-    initialState: { isAuthenticated: false, lastAuthDate: null },
+    initialState: {
+      token: null,
+      user: null,
+      isAuthenticated: false,
+      lastAuthDate: null,
+    },
   };
 
   // #region lifecyle
@@ -40,8 +45,13 @@ export default class AuthProvider extends Component<
     const { children } = this.props;
 
     return (
-      <AuthContextProvider value={{ ...this.state }}>
-        {children}
+      <AuthContextProvider
+        value={{
+          ...this.state,
+        }}
+      >
+        {' '}
+        {children}{' '}
       </AuthContextProvider>
     );
   }
@@ -49,8 +59,22 @@ export default class AuthProvider extends Component<
 
   checkIsAuthenticated = () => {
     const isAuthenticated = auth.isAuthenticated();
-    this.setState({ isAuthenticated });
+    this.setState({
+      isAuthenticated,
+    });
     return isAuthenticated;
+  };
+
+  setToken = (token: string = '') => {
+    auth.setToken(token);
+    this.setState({ token, isAuthenticated: true });
+  };
+
+  setUserInfo = (user: User = null) => {
+    if (typeof user === 'object') {
+      auth.setUserInfo(user);
+      this.setState({ user });
+    }
   };
 }
 // #endregion
