@@ -1,7 +1,7 @@
 // @flow
 
 // #region imports
-import React, { PureComponent, SyntheticEvent } from 'react';
+import React, { PureComponent } from 'react';
 import {
   Collapse,
   Navbar,
@@ -17,11 +17,6 @@ import {
   type Location,
   type RouterHistory,
 } from 'react-router-dom';
-import { type LeftLink, type OnLeftNavButtonClick } from './leftNav/LeftNav';
-import {
-  type RightLink,
-  type OnRightNavButtonClick,
-} from './rightNav/RightNav';
 // #endregion
 
 // #region flow types
@@ -63,8 +58,6 @@ class NavigationBar extends PureComponent<Props, State> {
     const {
       brand,
       navModel: { rightLinks },
-      handleLeftNavItemClick,
-      handleRightNavItemClick,
     } = this.props;
 
     console.log('rendering navabr');
