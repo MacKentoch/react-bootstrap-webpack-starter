@@ -15,6 +15,7 @@ import auth from '../../services/auth';
 import { appConfig } from '../../config/appConfig';
 import { getLocationOrigin } from '../../services/API/fetchTools';
 import userInfoMock from '../../mock/userInfo.json';
+import { type AuthContextProps } from '../../contexts/auth/consumerHOC';
 // #endregion
 
 // #region flow types
@@ -25,7 +26,7 @@ type Props = {
   history: RouterHistory,
 
   ...any,
-};
+} & AuthContextProps;
 
 type State = {
   email: string,
@@ -160,9 +161,7 @@ class Login extends PureComponent<Props, State> {
     }
 
     const { history } = this.props;
-
     const { email, password } = this.state;
-
     const userLogin = {
       login: email,
       password: password,

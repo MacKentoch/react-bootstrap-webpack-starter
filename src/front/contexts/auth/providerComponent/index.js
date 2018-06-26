@@ -12,6 +12,10 @@ export type AuthProviderProps = {
 };
 export type AuthProviderState = {
   checkIsAuthenticated: () => boolean,
+  setToken: (token: string) => any,
+  setUserInfo: (user: User) => any,
+  disconnectUser: () => boolean,
+
   ...any,
 } & AuthData;
 // #endregion
@@ -38,6 +42,9 @@ export default class AuthProvider extends Component<
     this.state = {
       ...this.props.initialState,
       checkIsAuthenticated: this.checkIsAuthenticated,
+      disconnectUser: this.disconnectUser,
+      setToken: this.setToken,
+      setUserInfo: this.setUserInfo,
     };
   }
 
@@ -75,6 +82,11 @@ export default class AuthProvider extends Component<
       auth.setUserInfo(user);
       this.setState({ user });
     }
+  };
+
+  disconnectUser = (): boolean => {
+    auth.clearAllAppStorage();
+    return true;
   };
 }
 // #endregion
