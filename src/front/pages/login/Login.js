@@ -11,7 +11,6 @@ import {
 import Button from 'reactstrap/lib/Button';
 import Row from 'reactstrap/lib/Row';
 import Col from 'reactstrap/lib/Col';
-import auth from '../../services/auth';
 import { appConfig } from '../../config/appConfig';
 import { getLocationOrigin } from '../../services/API/fetchTools';
 import userInfoMock from '../../mock/userInfo.json';
@@ -140,7 +139,8 @@ class Login extends PureComponent<Props, State> {
   // #endregion
 
   disconnectUser = () => {
-    auth.clearAllAppStorage();
+    const { disconnectUser } = this.props;
+    disconnectUser();
   };
 
   handlesOnEmailChange = (event: SyntheticEvent<>) => {
@@ -160,8 +160,9 @@ class Login extends PureComponent<Props, State> {
       event.preventDefault();
     }
 
-    const { history } = this.props;
+    const { history, setToken, setUserInfo } = this.props;
     const { email, password } = this.state;
+
     const userLogin = {
       login: email,
       password: password,
@@ -174,8 +175,9 @@ class Login extends PureComponent<Props, State> {
         data: { token, user },
       } = response;
 
-      auth.setToken(token);
-      auth.setUserInfo(user);
+      setToken(token);
+      setUserInfo(user);
+
       this.setState({ isLogging: false });
 
       history.push({ pathname: '/' }); // back to Home
