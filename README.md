@@ -21,6 +21,11 @@ _Concept behind:_ **this starter is an easy way to understand and ready to use R
 
 > _Looking for server side rendering?_ check this project with SSR added [here](https://github.com/MacKentoch/react-bootstrap-webpack-ssr-starter#react-bootstrap-with-server-side-rendering-starter)
 
+## Breaking changes since v6.1.0
+
+* add `React 16.3.x` new context API use case (*you may no more need redux*)
+* migrated to bootstrap 4
+
 ## Breaking changes since v6.0.0
 
 * upgrade to `React 16.3.x`
