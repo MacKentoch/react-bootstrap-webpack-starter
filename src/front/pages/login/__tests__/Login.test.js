@@ -10,8 +10,12 @@ import Login from '../Login';
 describe('Login page', () => {
   it('renders as expected', () => {
     const props = {
-      actions: {},
+      disconnectUser: () => {},
+      setToken: () => {},
+      setUserInfo: () => {},
+      checkIsAuthenticated: () => {},
     };
+
     const component = renderer
       .create(
         <div>

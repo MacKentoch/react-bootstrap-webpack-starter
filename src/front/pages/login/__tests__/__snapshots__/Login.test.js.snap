@@ -9,7 +9,7 @@ exports[`Login page renders as expected 1`] = `
       className="row"
     >
       <div
-        className="col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1"
+        className="col-10 offset-1 col-md-4 offset-md-4"
       >
         <form
           className="form-horizontal"
@@ -29,7 +29,7 @@ exports[`Login page renders as expected 1`] = `
                 Email
               </label>
               <div
-                className="col-lg-10"
+                className="col-lg-12"
               >
                 <input
                   className="form-control"
@@ -51,7 +51,7 @@ exports[`Login page renders as expected 1`] = `
                 Password
               </label>
               <div
-                className="col-lg-10"
+                className="col-lg-12"
               >
                 <input
                   className="form-control"
@@ -67,7 +67,7 @@ exports[`Login page renders as expected 1`] = `
               className="form-group"
             >
               <div
-                className="col-lg-10 col-lg-offset-2"
+                className="col-lg-12"
               >
                 <button
                   className="login-button btn-block btn btn-primary"
@@ -89,14 +89,14 @@ exports[`Login page renders as expected 1`] = `
       className="row"
     >
       <div
-        className="col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1"
+        className="col-10 offset-1 col-md-4 offset-md-4"
       >
         <div
           className="pull-right"
         >
           <button
-            className="btn-block btn btn-info"
-            disabled={false}
+            bsStyle="info"
+            className="btn-block btn btn-secondary"
             onClick={[Function]}
             type="button"
           >
