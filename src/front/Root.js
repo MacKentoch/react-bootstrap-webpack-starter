@@ -13,7 +13,7 @@ import MainRoutes from './routes/MainRoutes';
 import ScrollToTop from './components/scrollToTop/ScrollToTop';
 import Login from './pages/login';
 import { PageNotFound } from './routes/routes';
-import LogoutRoute from './components/logoutRoute/LogoutRoute';
+import LogoutRoute from './components/logoutRoute';
 import AuthProvider from './contexts/auth/providerComponent';
 // #endregion
 

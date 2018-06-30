@@ -8,7 +8,7 @@ import {
   type Location,
   type RouterHistory,
 } from 'react-router-dom';
-import auth from '../../services/auth';
+import { type AuthContextProps } from '../../contexts/auth/consumerHOC';
 // #endregion
 
 // #region flow types
@@ -19,14 +19,16 @@ type Props = {
   history: RouterHistory,
 
   ...any,
-};
+} & AuthContextProps;
+
 type State = any;
 // #endregion
 
 class LogoutRoute extends PureComponent<Props, State> {
   // #region lifecycle
   componentDidMount() {
-    auth.clearAllAppStorage();
+    const { disconnectUser } = this.props;
+    disconnectUser();
   }
 
   render() {
