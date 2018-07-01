@@ -8,6 +8,7 @@ import {
   type Location,
   type RouterHistory,
 } from 'react-router-dom';
+import { type AuthContextProps } from '../../contexts/auth/consumerHOC';
 import auth from '../../services/auth';
 // #endregion
 
@@ -23,7 +24,8 @@ type Props = {
   path: string,
 
   ...any,
-};
+} & AuthContextProps;
+
 type State = any;
 // #endregion
 
