@@ -55,9 +55,7 @@ class PrivateRoute extends Component<Props, State> {
 
   isAuthenticated() {
     const { checkIsAuthenticated } = this.props;
-    const checkUserHasId = user => user && user.id;
-    const user = auth.getUserInfo() ? auth.getUserInfo() : null;
-    const isAuthenticated = auth.getToken() && checkUserHasId(user);
+    const isAuthenticated = checkIsAuthenticated();
     return isAuthenticated;
   }
 

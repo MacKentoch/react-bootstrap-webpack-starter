@@ -12,6 +12,7 @@ export type AuthProviderProps = {
 };
 export type AuthProviderState = {
   checkIsAuthenticated: () => boolean,
+  checkTokenIsExpired: () => boolean,
   setToken: (token: string) => any,
   setUserInfo: (user: User) => any,
   disconnectUser: () => boolean,
@@ -30,6 +31,7 @@ export default class AuthProvider extends Component<
       token: null,
       user: null,
       isAuthenticated: false,
+      isExpiredToken: true,
       lastAuthDate: null,
     },
   };
@@ -42,6 +44,7 @@ export default class AuthProvider extends Component<
     this.state = {
       ...this.props.initialState,
       checkIsAuthenticated: this.checkIsAuthenticated,
+      checkTokenIsExpired: this.checkTokenIsExpired,
       disconnectUser: this.disconnectUser,
       setToken: this.setToken,
       setUserInfo: this.setUserInfo,
@@ -64,12 +67,25 @@ export default class AuthProvider extends Component<
   }
   // #endregion
 
-  checkIsAuthenticated = () => {
-    const isAuthenticated = auth.isAuthenticated();
+  checkIsAuthenticated = (): boolean => {
+    const checkUserHasId = user => user && user.id;
+    const user = auth.getUserInfo() ? auth.getUserInfo() : null;
+    const isAuthenticated = auth.getToken() && checkUserHasId(user);
+
     this.setState({
       isAuthenticated,
     });
     return isAuthenticated;
+  };
+
+  checkTokenIsExpired = (): boolean => {
+    const token = auth.getToken();
+    const isExpiredToken = auth.isExpiredToken(token);
+
+    this.setState({
+      isExpiredToken,
+    });
+    return isExpiredToken;
   };
 
   setToken = (token: string = '') => {

@@ -11,6 +11,7 @@ export type User = {
 
 export type AuthData = {
   isAuthenticated: boolean,
+  isExpiredToken: boolean,
   lastAuthDate?: Date,
 
   token: string,
