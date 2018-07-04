@@ -9,7 +9,6 @@ import {
   type RouterHistory,
 } from 'react-router-dom';
 import { type AuthContextProps } from '../../contexts/auth/consumerHOC';
-import auth from '../../services/auth';
 // #endregion
 
 // #region flow types
@@ -60,7 +59,9 @@ class PrivateRoute extends Component<Props, State> {
   }
 
   isExpired() {
-    return auth.isExpiredToken(auth.getToken());
+    const { checkTokenIsExpired } = this.props;
+    const isExpired = checkTokenIsExpired();
+    return isExpired;
   }
 }
 
