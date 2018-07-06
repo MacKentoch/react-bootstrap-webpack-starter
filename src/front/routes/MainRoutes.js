@@ -9,6 +9,7 @@ import { Home, About, Protected, PrivateRoute, PageNotFound } from './routes';
 const MainRoutes = () => {
   return (
     <Switch>
+      {/* public views: */}
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
       {/* private views: need user to be authenticated */}
