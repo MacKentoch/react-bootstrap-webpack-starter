@@ -60,8 +60,6 @@ class NavigationBar extends PureComponent<Props, State> {
       navModel: { rightLinks },
     } = this.props;
 
-    console.log('rendering navabr');
-
     return (
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/">{brand}</NavbarBrand>
