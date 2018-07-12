@@ -6,28 +6,35 @@ import renderer from 'react-test-renderer'; // needed both for snpashot testing 
 import { Router, Switch } from 'react-router';
 import { Route } from 'react-router';
 import createHistory from 'history/createHashHistory';
-import Login from '../../../pages/login';
 import PrivateRoute from '../PrivateRoute';
 // #endregion
 
 // #region constants
 const history = createHistory();
-// window.location.pathname = '/';
+
+const Home = p => {
+  p.history.push('/protected');
+  return <p>home</p>;
+};
 // #enregion
 
 describe('PrivateRoute component', () => {
   it('renders as expected', () => {
     const props = {
       checkIsAuthenticated: () => false,
-      checkTokenIsExpired: () => false,
     };
 
     const component = renderer
       .create(
         <Router history={history}>
           <Switch>
-            <PrivateRoute {...props} />
-            <Route exact path="/login" component={Login} />
+            <Route exact path="/" component={Home} />
+            <PrivateRoute
+              {...props}
+              path="/protected"
+              component={() => <p>private</p>}
+            />
+            <Route exact path="/login" component={() => <p>login</p>} />
           </Switch>
         </Router>,
       )
