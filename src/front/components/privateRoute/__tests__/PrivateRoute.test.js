@@ -3,6 +3,7 @@
 // #region imports
 import React from 'react';
 import renderer from 'react-test-renderer'; // needed both for snpashot testing but also to prevent errors from enzyme
+import { render } from 'enzyme';
 import { Router, Switch } from 'react-router';
 import { Route } from 'react-router';
 import createHistory from 'history/createHashHistory';
@@ -21,7 +22,7 @@ const Home = p => {
 describe('PrivateRoute component', () => {
   it('renders as expected', () => {
     const props = {
-      checkIsAuthenticated: () => false,
+      checkIsAuthenticated: () => true,
     };
 
     const component = renderer
@@ -40,5 +41,27 @@ describe('PrivateRoute component', () => {
       )
       .toJSON();
     expect(component).toMatchSnapshot();
+  });
+
+  it('redirects to login', () => {
+    const props = {
+      checkIsAuthenticated: () => false,
+    };
+
+    const wrapper = render(
+      <Router history={history}>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <PrivateRoute
+            {...props}
+            path="/protected"
+            component={() => <p>private</p>}
+          />
+          <Route exact path="/login" component={() => <p>login</p>} />
+        </Switch>
+      </Router>,
+    );
+
+    expect(wrapper.find('p').first()).toEqual('private');
   });
 });
