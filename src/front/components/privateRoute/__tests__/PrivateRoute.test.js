@@ -3,7 +3,7 @@
 // #region imports
 import React from 'react';
 import renderer from 'react-test-renderer'; // needed both for snpashot testing but also to prevent errors from enzyme
-import { render } from 'enzyme';
+import { mount } from 'enzyme';
 import { Router, Switch } from 'react-router';
 import { Route } from 'react-router';
 import createHistory from 'history/createHashHistory';
@@ -43,25 +43,54 @@ describe('PrivateRoute component', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('redirects to login', () => {
+  it('redirects to login when not authenticated', () => {
     const props = {
       checkIsAuthenticated: () => false,
     };
 
-    const wrapper = render(
+    const wrapper = mount(
       <Router history={history}>
         <Switch>
           <Route exact path="/" component={Home} />
           <PrivateRoute
             {...props}
             path="/protected"
-            component={() => <p>private</p>}
+            component={() => <p id="private">private</p>}
           />
-          <Route exact path="/login" component={() => <p>login</p>} />
+          <Route
+            exact
+            path="/login"
+            component={() => <p id="login">login</p>}
+          />
         </Switch>
       </Router>,
     );
 
-    expect(wrapper.find('p').first()).toEqual('private');
+    expect(wrapper.find('#login')).toHaveLength(1);
+  });
+
+  it('does not redirects to login when authenticated', () => {
+    const props = {
+      checkIsAuthenticated: () => true,
+    };
+
+    const wrapper = mount(
+      <Router history={history}>
+        <Switch>
+          <PrivateRoute
+            {...props}
+            path="/"
+            component={() => <p id="private">private</p>}
+          />
+          <Route
+            exact
+            path="/login"
+            component={() => <p id="login">login</p>}
+          />
+        </Switch>
+      </Router>,
+    );
+
+    expect(wrapper.find('#private')).toHaveLength(1);
   });
 });
