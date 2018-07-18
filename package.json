@@ -175,7 +175,8 @@
       "<rootDir>/src/test/__mocks__"
     ],
     "setupFiles": [
-      "<rootDir>/src/test/__mocks__/localStorage.js"
+      "<rootDir>/src/test/__mocks__/localStorage.js",
+      "<rootDir>/src/test/__mocks__/sessionStorage.js"
     ],
     "setupTestFrameworkScriptFile": "<rootDir>/src/test/setupTests.js",
     "moduleNameMapper": {
