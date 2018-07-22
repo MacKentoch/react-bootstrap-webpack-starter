@@ -73,13 +73,13 @@ _Concept behind:_ **this starter is an easy way to understand and ready to use R
 
 * React JS (16.3.x - [github :link:](https://github.com/facebook/react))
 * react-router (4.x- [github :link:](https://github.com/reactjs/react-router))
-* Bootstrap (3.x - [github :link:](https://github.com/twbs/bootstrap))
-* React-Bootstrap ([github :link:](https://github.com/react-bootstrap/react-bootstrap))
+* Bootstrap (4.x - [github :link:](https://github.com/twbs/bootstrap))
+* react-strap ([github :link:](https://reactstrap.github.io/))
 * font-awesome ([github :link:](https://github.com/FortAwesome/Font-Awesome))
 * animate.css ([github :link:](https://github.com/daneden/animate.css))
 * classnames ([github :link:](https://github.com/JedWatson/classnames))
 * react-motion ([github :link:](https://github.com/chenglou/react-motion))
-* Webpack 3.x ([github :link:](https://github.com/webpack/webpack))
+* Webpack 4.x ([github :link:](https://github.com/webpack/webpack))
 * babel 6+ ([github :link:](https://github.com/babel/babel))
 * axios ([github :link:](https://github.com/mzabriskie/axios) _Why: simple, complete, isomorphic ..._)
 
