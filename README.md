@@ -126,6 +126,12 @@ npm run dev
 npm run start
 ```
 
+### bundle size analyze
+
+```bash
+npm run analyze
+```
+
 ### tests
 
 ```bash
