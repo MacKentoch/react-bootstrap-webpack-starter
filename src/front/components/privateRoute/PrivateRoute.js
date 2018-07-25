@@ -32,16 +32,15 @@ class PrivateRoute extends Component<Props, State> {
   // #region lifecycle
   render() {
     const { component: InnerComponent, ...rest } = this.props;
-    const { location } = this.props;
+    const { location, isAuthenticated } = this.props;
 
-    const isUserAuthenticated = this.isAuthenticated();
     const isTokenExpired = false; // this.isExpired();
 
     return (
       <Route
         {...rest}
         render={props =>
-          !isTokenExpired && isUserAuthenticated ? (
+          !isTokenExpired && isAuthenticated ? (
             <InnerComponent {...props} />
           ) : (
             <Redirect to={{ pathname: '/login', state: { from: location } }} />
@@ -51,12 +50,6 @@ class PrivateRoute extends Component<Props, State> {
     );
   }
   // #endregion
-
-  isAuthenticated() {
-    const { checkIsAuthenticated } = this.props;
-    const isAuthenticated = checkIsAuthenticated();
-    return isAuthenticated;
-  }
 
   isExpired() {
     const { checkTokenIsExpired } = this.props;

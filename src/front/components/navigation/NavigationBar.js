@@ -60,11 +60,13 @@ class NavigationBar extends PureComponent<Props, State> {
       navModel: { rightLinks },
     } = this.props;
 
+    const { isOpen } = this.state;
+
     return (
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/">{brand}</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
-        <Collapse isOpen={this.state.isOpen} navbar>
+        <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             {rightLinks.map(({ label, link, viewName }, index) => (
               <NavItem key={`${index}`}>
