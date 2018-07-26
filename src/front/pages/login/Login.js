@@ -72,6 +72,7 @@ class Login extends PureComponent<Props, State> {
                       className="form-control"
                       id="inputEmail"
                       placeholder="Email"
+                      autoComplete="username email"
                       value={email}
                       onChange={this.handlesOnEmailChange}
                     />
@@ -91,6 +92,7 @@ class Login extends PureComponent<Props, State> {
                       className="form-control"
                       id="inputPassword"
                       placeholder="Password"
+                      autoComplete="current-password"
                       value={password}
                       onChange={this.handlesOnPasswordChange}
                     />
@@ -123,11 +125,7 @@ class Login extends PureComponent<Props, State> {
         <Row>
           <Col md={{ size: 4, offset: 4 }} xs={{ size: 10, offset: 1 }}>
             <div className="pull-right">
-              <Button
-                bsStyle="info"
-                className="btn-block"
-                onClick={this.goHome}
-              >
+              <Button className="btn-block" onClick={this.goHome}>
                 back to home
               </Button>
             </div>
