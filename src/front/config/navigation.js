@@ -35,12 +35,6 @@ const navigation = {
       view: 'about',
       isRouteBtn: true,
     },
-    {
-      label: 'Disconnect',
-      link: '/login',
-      view: 'login',
-      isRouteBtn: true,
-    },
   ],
 };
 

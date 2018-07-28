@@ -7,7 +7,7 @@ import compose from 'recompose/compose';
 import { withRouter } from 'react-router';
 import { type Match, type Location, type RouterHistory } from 'react-router';
 import Container from 'reactstrap/lib/Container';
-import NavigationBar from '../../components/navigation/NavigationBar';
+import NavigationBar from '../../components/navigation';
 import BackToTop from '../../components/backToTop/BackToTop';
 import navigationModel from '../../config/navigation';
 import { type Navigation } from '../../config/navigation';

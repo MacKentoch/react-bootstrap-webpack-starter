@@ -17,6 +17,7 @@ import {
   type Location,
   type RouterHistory,
 } from 'react-router-dom';
+import { type AuthContextProps } from '../../contexts/auth/consumerHOC';
 // #endregion
 
 // #region flow types
@@ -36,7 +37,7 @@ type Props = {
   },
 
   ...any,
-};
+} & AuthContextProps;
 
 type State = {
   isOpen: boolean,
@@ -58,6 +59,7 @@ class NavigationBar extends PureComponent<Props, State> {
     const {
       brand,
       navModel: { rightLinks },
+      isAuthenticated,
     } = this.props;
 
     const { isOpen } = this.state;
@@ -75,6 +77,13 @@ class NavigationBar extends PureComponent<Props, State> {
                 </NavLink>
               </NavItem>
             ))}
+            {isAuthenticated && (
+              <NavItem>
+                <NavLink href="#" onClick={this.handlesNavItemClick('/login')}>
+                  Disconnect
+                </NavLink>
+              </NavItem>
+            )}
           </Nav>
         </Collapse>
       </Navbar>
