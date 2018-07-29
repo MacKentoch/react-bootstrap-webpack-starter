@@ -102,6 +102,7 @@ export default class AuthProvider extends Component<
 
   disconnectUser = (): boolean => {
     auth.clearAllAppStorage();
+    this.checkIsAuthenticated();
     return true;
   };
 }

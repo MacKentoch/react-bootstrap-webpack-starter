@@ -79,7 +79,7 @@ class NavigationBar extends PureComponent<Props, State> {
             ))}
             {isAuthenticated && (
               <NavItem>
-                <NavLink href="#" onClick={this.handlesNavItemClick('/login')}>
+                <NavLink href="#" onClick={this.handlesDisconnect}>
                   Disconnect
                 </NavLink>
               </NavItem>
@@ -107,6 +107,18 @@ class NavigationBar extends PureComponent<Props, State> {
     }
     const { history } = this.props;
     history.push(link);
+  };
+  // #endregion
+
+  // #region disconnect
+  handlesDisconnect = (evt: SyntheticEvent<>) => {
+    if (evt) {
+      evt.preventDefault();
+    }
+    const { history, disconnectUser } = this.props;
+
+    disconnectUser();
+    history.push('/');
   };
   // #endregion
 }
