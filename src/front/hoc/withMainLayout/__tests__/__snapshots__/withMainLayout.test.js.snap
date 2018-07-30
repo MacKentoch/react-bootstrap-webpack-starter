@@ -62,17 +62,6 @@ exports[`withMainLayout HOC renders as expected 1`] = `
             About
           </a>
         </li>
-        <li
-          className="nav-item"
-        >
-          <a
-            className="nav-link"
-            href="#"
-            onClick={[Function]}
-          >
-            Disconnect
-          </a>
-        </li>
       </ul>
     </div>
   </nav>

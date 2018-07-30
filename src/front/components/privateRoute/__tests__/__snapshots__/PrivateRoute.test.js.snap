@@ -2,6 +2,6 @@
 
 exports[`PrivateRoute component renders as expected 1`] = `
 <p>
-  private
+  login
 </p>
 `;

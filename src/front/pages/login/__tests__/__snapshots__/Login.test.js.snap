@@ -32,6 +32,7 @@ exports[`Login page renders as expected 1`] = `
                 className="col-lg-12"
               >
                 <input
+                  autoComplete="username email"
                   className="form-control"
                   id="inputEmail"
                   onChange={[Function]}
@@ -54,6 +55,7 @@ exports[`Login page renders as expected 1`] = `
                 className="col-lg-12"
               >
                 <input
+                  autoComplete="current-password"
                   className="form-control"
                   id="inputPassword"
                   onChange={[Function]}
@@ -95,7 +97,6 @@ exports[`Login page renders as expected 1`] = `
           className="pull-right"
         >
           <button
-            bsStyle="info"
             className="btn-block btn btn-secondary"
             onClick={[Function]}
             type="button"
