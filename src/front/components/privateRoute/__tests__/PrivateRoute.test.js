@@ -72,14 +72,16 @@ describe('PrivateRoute component', () => {
   it('does not redirects to login when authenticated', () => {
     const props = {
       checkIsAuthenticated: () => true,
+      isAuthenticated: true,
     };
 
-    const wrapper = shallow(
+    const wrapper = mount(
       <Router history={history}>
         <Switch>
+          <Route exact path="/" component={Home} />
           <PrivateRoute
             {...props}
-            path="/"
+            path="/protected"
             component={() => <p id="private">private</p>}
           />
           <Route
