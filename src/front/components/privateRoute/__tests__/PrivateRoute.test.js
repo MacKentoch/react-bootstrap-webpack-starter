@@ -3,7 +3,7 @@
 // #region imports
 import React from 'react';
 import renderer from 'react-test-renderer'; // needed both for snpashot testing but also to prevent errors from enzyme
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { Router, Switch } from 'react-router';
 import { Route } from 'react-router';
 import createHistory from 'history/createHashHistory';
@@ -12,7 +12,6 @@ import PrivateRoute from '../PrivateRoute';
 
 // #region constants
 const history = createHistory();
-
 const Home = p => {
   p.history.push('/protected');
   return <p>home</p>;
