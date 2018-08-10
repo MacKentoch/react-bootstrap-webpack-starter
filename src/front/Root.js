@@ -12,8 +12,6 @@ import createHistory from 'history/createBrowserHistory';
 import withMainLayout from './hoc/withMainLayout';
 import MainRoutes from './routes/MainRoutes';
 import ScrollToTop from './components/scrollToTop/ScrollToTop';
-import Login from './pages/login';
-import { PageNotFound } from './routes/routes';
 import LogoutRoute from './components/logoutRoute';
 import AuthProvider from './contexts/auth/providerComponent';
 // #endregion

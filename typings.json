@@ -5,6 +5,7 @@
     "js-base64": "registry:dt/js-base64#2.1.9+20161025033459",
     "modernizr": "registry:dt/modernizr#3.3.0+20170302103631",
     "node": "registry:dt/node#7.0.0+20170322231424",
+    "popper.js": "registry:dt/popper.js#0.4.0+20161005184000",
     "react-router-dom": "registry:dt/react-router-dom#4.0.0+20170323201651",
     "recompose": "registry:dt/recompose#0.22.0+20170306203754"
   },
