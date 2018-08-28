@@ -8,4 +8,9 @@ public/assets/
 /coverage
 /.nyc_output
 
+# lock files
+#
+yarn.lock
+package-lock.json
+
 .DS_Store

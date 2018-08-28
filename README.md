@@ -1,4 +1,4 @@
-# React 16+ Bootstrap webpack 4 with Hot Reload STARTER
+# React 16+ Bootstrap webpack 4 Babel 7 with Hot Reload STARTER
 
 [![npm](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](https://github.com/MacKentoch/react-bootstrap-webpack-starter)
 [![Build Status](https://travis-ci.org/MacKentoch/react-bootstrap-webpack-starter.svg?branch=master)](https://travis-ci.org/MacKentoch/react-bootstrap-webpack-starter)
@@ -20,6 +20,12 @@ _Concept behind:_ **this starter is an easy way to understand and ready to use R
 ![preview](./preview/preview.png)
 
 > _Looking for server side rendering?_ check this project with SSR added [here](https://github.com/MacKentoch/react-bootstrap-webpack-ssr-starter#react-bootstrap-with-server-side-rendering-starter)
+
+## Breaking changes since v7.0.0
+
+* migrated to `babel 7`
+* update to `React 16.4.x`
+
 
 ## Breaking changes since v6.1.0
 
@@ -71,7 +77,7 @@ _Concept behind:_ **this starter is an easy way to understand and ready to use R
 
 **Front:**
 
-* React JS (16.3.x - [github :link:](https://github.com/facebook/react))
+* React JS (16.4.x - [github :link:](https://github.com/facebook/react))
 * react-router (4.x- [github :link:](https://github.com/reactjs/react-router))
 * Bootstrap (4.x - [github :link:](https://github.com/twbs/bootstrap))
 * react-strap ([github :link:](https://reactstrap.github.io/))
@@ -80,12 +86,12 @@ _Concept behind:_ **this starter is an easy way to understand and ready to use R
 * classnames ([github :link:](https://github.com/JedWatson/classnames))
 * react-motion ([github :link:](https://github.com/chenglou/react-motion))
 * Webpack 4.x ([github :link:](https://github.com/webpack/webpack))
-* babel 6+ ([github :link:](https://github.com/babel/babel))
+* babel 7+ ([github :link:](https://github.com/babel/babel))
 * axios ([github :link:](https://github.com/mzabriskie/axios) _Why: simple, complete, isomorphic ..._)
 
 **Tool chain:**
 
-* babel 6+
+* babel 7+
 * eslint
 * hot reload
 * loaders
