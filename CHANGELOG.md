@@ -1,3 +1,7 @@
+# v7.1.0
+
+* connect React Context API to redux DevTools (*also works for a React-Native app*) for dev only.
+
 # v7.0.0
 
 * migrated to `babel 7`
