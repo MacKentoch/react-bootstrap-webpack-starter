@@ -14,6 +14,7 @@ import MainRoutes from './routes/MainRoutes';
 import ScrollToTop from './components/scrollToTop/ScrollToTop';
 import LogoutRoute from './components/logoutRoute';
 import AuthProvider from './contexts/auth/providerComponent';
+import { devToolsStore } from './contexts/withDevTools';
 // #endregion
 
 // #region flow types
@@ -30,6 +31,16 @@ const LoadablePageNotFound = loadable(() => import('./pages/pageNotFound'));
 // #endregion
 
 class Root extends Component<Props, State> {
+  componentDidMount() {
+    // init devTools (so that will be visible in Chrome redux devtools tab):
+    devToolsStore && devToolsStore.init();
+  }
+
+  componentWillUnmount() {
+    // disconnect devTools here at top level application:
+    devToolsStore && devToolsStore.disconnect();
+  }
+
   render() {
     return (
       <Router history={history}>

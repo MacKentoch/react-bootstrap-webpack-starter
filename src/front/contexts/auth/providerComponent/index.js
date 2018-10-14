@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import { AuthContextProvider, type AuthData, type User } from '../context';
 import auth from '../../../services/auth';
+import { devToolsStore } from '../../withDevTools';
 // #endregion
 
 // #region flow types
@@ -21,6 +22,16 @@ export type AuthProviderState = {
 } & AuthData;
 // #endregion
 
+// #region constants
+const initialState = {
+  token: null,
+  user: null,
+  isAuthenticated: false,
+  isExpiredToken: true,
+  lastAuthDate: null,
+};
+// #endregion
+
 // #region PROVIDER component
 export default class AuthProvider extends Component<
   AuthProviderProps,
@@ -28,11 +39,7 @@ export default class AuthProvider extends Component<
 > {
   static defaultProps = {
     initialState: {
-      token: null,
-      user: null,
-      isAuthenticated: false,
-      isExpiredToken: true,
-      lastAuthDate: null,
+      ...initialState,
     },
   };
 
@@ -72,6 +79,12 @@ export default class AuthProvider extends Component<
     const user = auth.getUserInfo() ? auth.getUserInfo() : null;
     const isAuthenticated = auth.getToken() && checkUserHasId(user);
 
+    devToolsStore &&
+      devToolsStore.dispatch({
+        type: 'AUTH_CHECK_IS_AUTHENTICATED',
+        state: { ...this.state, isAuthenticated },
+      });
+
     this.setState({
       isAuthenticated,
     });
@@ -82,6 +95,12 @@ export default class AuthProvider extends Component<
     const token = auth.getToken();
     const isExpiredToken = auth.isExpiredToken(token);
 
+    devToolsStore &&
+      devToolsStore.dispatch({
+        type: 'AUTH_CHECK_TOKEN_IS_EXPIRED',
+        state: { ...this.state, isExpiredToken },
+      });
+
     this.setState({
       isExpiredToken,
     });
@@ -90,12 +109,26 @@ export default class AuthProvider extends Component<
 
   setToken = (token: string = '') => {
     auth.setToken(token);
+
+    devToolsStore &&
+      devToolsStore.dispatch({
+        type: 'AUTH_SET_TOKEN',
+        state: { ...this.state, token, isAuthenticated: true },
+      });
+
     this.setState({ token, isAuthenticated: true });
   };
 
   setUserInfo = (user: User = null) => {
     if (typeof user === 'object') {
       auth.setUserInfo(user);
+
+      devToolsStore &&
+        devToolsStore.dispatch({
+          type: 'AUTH_SET_USER_INFO',
+          state: { ...this.state, user },
+        });
+
       this.setState({ user });
     }
   };
@@ -103,6 +136,15 @@ export default class AuthProvider extends Component<
   disconnectUser = (): boolean => {
     auth.clearAllAppStorage();
     this.checkIsAuthenticated();
+
+    devToolsStore &&
+      devToolsStore.dispatch({
+        type: 'AUTH_DISCONNECT_USER',
+        state: { ...initialState },
+      });
+
+    this.setState({ ...initialState });
+
     return true;
   };
 }
