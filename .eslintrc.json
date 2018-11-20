@@ -3,8 +3,7 @@
   "env": {
     "browser": true,
     "es6": true,
-    "jest": true,
-    "mocha": true
+    "jest": true
   },
   "plugins": ["react", "flowtype"],
   "extends": ["plugin:react/recommended", "plugin:flowtype/recommended"],

@@ -1,7 +1,7 @@
 // @flow
 
 // #region imports
-import loadable from 'loadable-components';
+import loadable from '@loadable/component';
 // #endregion
 
 export const Home = loadable(() => import('../pages/home'));

@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
 import compose from 'recompose/compose';
-import loadable from 'loadable-components';
+import loadable from '@loadable/component';
 // #region import createHistory from hashHistory or BrowserHistory:
 // import createHistory from 'history/createHashHistory';
 import createHistory from 'history/createBrowserHistory';
