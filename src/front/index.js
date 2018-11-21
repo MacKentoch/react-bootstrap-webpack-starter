@@ -6,7 +6,6 @@ import React from 'react';
 import { hydrate, render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import smoothScrollPolyfill from 'smoothscroll-polyfill';
-import { loadableReady } from '@loadable/component';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import injectGlobalStyle from './style/injectGlobalStyles';
 import Root from './Root';
@@ -15,7 +14,6 @@ import Root from './Root';
 // #region constants
 const ELEMENT_TO_BOOTSTRAP = 'root';
 const bootstrapedElement = document.getElementById(ELEMENT_TO_BOOTSTRAP);
-// window.snapSaveState = () => getState();
 // #endregion
 
 // #region globals (styles, polyfill ...)
@@ -37,10 +35,9 @@ const renderApp = RootComponent => {
 
   // needed for react-snap:
   if (bootstrapedElement.hasChildNodes()) {
-    loadableReady().then(() => {
-      return hydrate(<Application />, bootstrapedElement);
-    });
+    return hydrate(<Application />, bootstrapedElement);
   }
+
   return render(<Application />, bootstrapedElement);
 };
 

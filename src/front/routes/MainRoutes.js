@@ -3,19 +3,25 @@
 // #region imports
 import React from 'react';
 import { Route, Switch } from 'react-router';
-import { Home, About, Protected, PrivateRoute, PageNotFound } from './routes';
+import PrivateRoute from '../components/privateRoute';
+// #endregion
+
+// #region constants
+const AsyncHome = React.lazy(() => import('../pages/home'));
+// const AsyncAbout = React.lazy(() => import('../pages/about'));
+// const AsyncProtected = React.lazy(() => import('../pages/protected'));
+// const AsyncPageNotFound = React.lazy(() => import('../pages/pageNotFound'));
 // #endregion
 
 const MainRoutes = () => {
   return (
     <Switch>
       {/* public views: */}
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
+      <Route exact path="/" component={AsyncHome} />
+      {/* <Route path="/about" component={AsyncAbout} /> */}
       {/* private views: need user to be authenticated */}
-      <PrivateRoute path="/protected" component={Protected} />
-      {/* page not found */}
-      <Route component={PageNotFound} />
+      {/* <PrivateRoute path="/protected" component={AsyncProtected} /> */}
+      {/* <Route component={AsyncPageNotFound} /> */}
     </Switch>
   );
 };
