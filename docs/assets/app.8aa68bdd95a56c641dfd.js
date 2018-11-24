@@ -61,7 +61,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({}[chunkId]||chunkId) + "." + "069dedc2af161bc9f0fb" + ".js"
+/******/ 		return __webpack_require__.p + "" + ({}[chunkId]||chunkId) + "." + "8aa68bdd95a56c641dfd" + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -2101,8 +2101,25 @@ var bootstrapedElement = document.getElementById(ELEMENT_TO_BOOTSTRAP); // #endr
 smoothscroll_polyfill__WEBPACK_IMPORTED_MODULE_4___default.a.polyfill(); // force polyfill (even if browser partially implements it)
 
 window.__forceSmoothScrollPolyfill__ = true;
-Object(_style_injectGlobalStyles__WEBPACK_IMPORTED_MODULE_6__["default"])(); // #endregion
+Object(_style_injectGlobalStyles__WEBPACK_IMPORTED_MODULE_6__["default"])();
+
+window.snapSaveState = function () {
+  return {
+    __LOADABLE_STATE__: {
+      children: [{
+        id: '../pages/home'
+      }, {
+        id: '../pages/about'
+      }, {
+        id: '../pages/protected'
+      }, {
+        id: '../pages/pageNotFound'
+      }]
+    }
+  };
+}; // #endregion
 // #region render (with hot reload if dev)
+
 
 var renderApp = function renderApp(RootComponent) {
   var Application = function Application() {
@@ -3018,4 +3035,4 @@ var injectGlobalStyle = function injectGlobalStyle() {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.069dedc2af161bc9f0fb.js.map
+//# sourceMappingURL=app.8aa68bdd95a56c641dfd.js.map

@@ -23,6 +23,26 @@ smoothScrollPolyfill.polyfill();
 window.__forceSmoothScrollPolyfill__ = true;
 
 injectGlobalStyle();
+
+window.snapSaveState = () => ({
+  __LOADABLE_STATE__: {
+    children: [
+      {
+        id: '../pages/home',
+      },
+      {
+        id: '../pages/about',
+      },
+      {
+        id: '../pages/protected',
+      },
+      {
+        id: '../pages/pageNotFound',
+      },
+    ],
+  },
+});
+
 // #endregion
 
 // #region render (with hot reload if dev)
