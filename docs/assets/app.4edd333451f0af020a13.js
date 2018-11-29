@@ -61,7 +61,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({}[chunkId]||chunkId) + "." + "8aa68bdd95a56c641dfd" + ".js"
+/******/ 		return __webpack_require__.p + "" + ({}[chunkId]||chunkId) + "." + "4edd333451f0af020a13" + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -2094,7 +2094,8 @@ __webpack_require__.r(__webpack_exports__);
 // #region constants
 
 var ELEMENT_TO_BOOTSTRAP = 'root';
-var bootstrapedElement = document.getElementById(ELEMENT_TO_BOOTSTRAP); // #endregion
+var bootstrapedElement = document.getElementById(ELEMENT_TO_BOOTSTRAP);
+var root = Object(react_dom__WEBPACK_IMPORTED_MODULE_2__["unstable_createRoot"])(bootstrapedElement); // #endregion
 // #region globals (styles, polyfill ...)
 // smoothscroll polyfill
 
@@ -2124,14 +2125,13 @@ window.snapSaveState = function () {
 var renderApp = function renderApp(RootComponent) {
   var Application = function Application() {
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_hot_loader__WEBPACK_IMPORTED_MODULE_3__["AppContainer"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(RootComponent, null));
-  }; // needed for react-snap:
+  }; // // needed for react-snap:
+  // if (bootstrapedElement.hasChildNodes()) {
+  //   return hydrate(<Application />, bootstrapedElement);
+  // }
 
 
-  if (bootstrapedElement.hasChildNodes()) {
-    return Object(react_dom__WEBPACK_IMPORTED_MODULE_2__["hydrate"])(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Application, null), bootstrapedElement);
-  }
-
-  return Object(react_dom__WEBPACK_IMPORTED_MODULE_2__["render"])(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Application, null), bootstrapedElement);
+  return root.render(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Application, null));
 };
 
 renderApp(_Root__WEBPACK_IMPORTED_MODULE_7__["default"]);
@@ -3035,4 +3035,4 @@ var injectGlobalStyle = function injectGlobalStyle() {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.8aa68bdd95a56c641dfd.js.map
+//# sourceMappingURL=app.4edd333451f0af020a13.js.map

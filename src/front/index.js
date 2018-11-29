@@ -3,7 +3,7 @@
 // #region imports
 import '@babel/polyfill'; // NOTE: REALLY important to avoid "regeneratorRuntime is not defined"
 import React from 'react';
-import { hydrate, render } from 'react-dom';
+import { hydrate, unstable_createRoot } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import smoothScrollPolyfill from 'smoothscroll-polyfill';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,6 +14,7 @@ import Root from './Root';
 // #region constants
 const ELEMENT_TO_BOOTSTRAP = 'root';
 const bootstrapedElement = document.getElementById(ELEMENT_TO_BOOTSTRAP);
+const root = unstable_createRoot(bootstrapedElement);
 // #endregion
 
 // #region globals (styles, polyfill ...)
@@ -53,12 +54,12 @@ const renderApp = RootComponent => {
     </AppContainer>
   );
 
-  // needed for react-snap:
-  if (bootstrapedElement.hasChildNodes()) {
-    return hydrate(<Application />, bootstrapedElement);
-  }
+  // // needed for react-snap:
+  // if (bootstrapedElement.hasChildNodes()) {
+  //   return hydrate(<Application />, bootstrapedElement);
+  // }
 
-  return render(<Application />, bootstrapedElement);
+  return root.render(<Application />);
 };
 
 renderApp(Root);
