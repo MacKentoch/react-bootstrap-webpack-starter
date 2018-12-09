@@ -61,7 +61,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({}[chunkId]||chunkId) + "." + "4edd333451f0af020a13" + ".js"
+/******/ 		return __webpack_require__.p + "" + ({}[chunkId]||chunkId) + "." + "3c573a3fa45adc425fad" + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -2126,10 +2126,11 @@ var renderApp = function renderApp(RootComponent) {
   var Application = function Application() {
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_hot_loader__WEBPACK_IMPORTED_MODULE_3__["AppContainer"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(RootComponent, null));
   }; // // needed for react-snap:
-  // if (bootstrapedElement.hasChildNodes()) {
-  //   return hydrate(<Application />, bootstrapedElement);
-  // }
 
+
+  if (bootstrapedElement.hasChildNodes()) {
+    return Object(react_dom__WEBPACK_IMPORTED_MODULE_2__["hydrate"])(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Application, null), bootstrapedElement);
+  }
 
   return root.render(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Application, null));
 };
@@ -3035,4 +3036,4 @@ var injectGlobalStyle = function injectGlobalStyle() {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.4edd333451f0af020a13.js.map
+//# sourceMappingURL=app.3c573a3fa45adc425fad.js.map
