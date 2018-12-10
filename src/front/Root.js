@@ -1,7 +1,7 @@
 // @flow
 
 // #region imports
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
 import compose from 'recompose/compose';
 import createHistory from 'history/createBrowserHistory';
@@ -12,6 +12,7 @@ import LogoutRoute from './components/logoutRoute';
 import AuthProvider from './contexts/auth/providerComponent';
 import { devToolsStore } from './contexts/withDevTools';
 import Login from './pages/login';
+import GlobalStyle from './style/GlobalStyles';
 // #endregion
 
 // #region flow types
@@ -34,17 +35,20 @@ class Root extends Component<Props, State> {
   render() {
     return (
       <Router history={history}>
-        <AuthProvider>
-          <ScrollToTop>
-            <Switch>
-              <Route exact path="/login" component={Login} />
-              {/* Application with main layout (could have multiple applications with different layouts) */}
-              <MainApp />
-              {/* logout: just redirects to login (App will take care of removing the token) */}
-              <LogoutRoute path="/logout" />
-            </Switch>
-          </ScrollToTop>
-        </AuthProvider>
+        <Fragment>
+          <GlobalStyle />
+          <AuthProvider>
+            <ScrollToTop>
+              <Switch>
+                <Route exact path="/login" component={Login} />
+                {/* Application with main layout (could have multiple applications with different layouts) */}
+                <MainApp />
+                {/* logout: just redirects to login (App will take care of removing the token) */}
+                <LogoutRoute path="/logout" />
+              </Switch>
+            </ScrollToTop>
+          </AuthProvider>
+        </Fragment>
       </Router>
     );
   }

@@ -34,7 +34,7 @@ class BackToTop extends Component<Props, State> {
   };
 
   // #region lifecycle methods
-  componentWillMount() {
+  componentDidMount() {
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', this.handleWindowScroll);
     }

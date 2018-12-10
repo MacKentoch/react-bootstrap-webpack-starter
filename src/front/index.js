@@ -7,7 +7,6 @@ import { hydrate, unstable_createRoot } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import smoothScrollPolyfill from 'smoothscroll-polyfill';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import injectGlobalStyle from './style/injectGlobalStyles';
 import Root from './Root';
 // #endregion
 
@@ -22,8 +21,6 @@ const root = unstable_createRoot(bootstrapedElement);
 smoothScrollPolyfill.polyfill();
 // force polyfill (even if browser partially implements it)
 window.__forceSmoothScrollPolyfill__ = true;
-
-injectGlobalStyle();
 
 window.snapSaveState = () => ({
   __LOADABLE_STATE__: {
@@ -55,9 +52,9 @@ const renderApp = RootComponent => {
   );
 
   // // needed for react-snap:
-  if (bootstrapedElement.hasChildNodes()) {
-    return hydrate(<Application />, bootstrapedElement);
-  }
+  // if (bootstrapedElement.hasChildNodes()) {
+  //   return hydrate(<Application />, bootstrapedElement);
+  // }
 
   return root.render(<Application />);
 };
