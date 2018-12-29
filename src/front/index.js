@@ -51,10 +51,10 @@ const renderApp = RootComponent => {
     </AppContainer>
   );
 
-  // // needed for react-snap:
-  // if (bootstrapedElement.hasChildNodes()) {
-  //   return hydrate(<Application />, bootstrapedElement);
-  // }
+  // needed for react-snap:
+  if (bootstrapedElement.hasChildNodes()) {
+    return hydrate(<Application />, bootstrapedElement);
+  }
 
   return root.render(<Application />);
 };
