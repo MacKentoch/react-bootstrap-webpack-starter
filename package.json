@@ -138,7 +138,7 @@
     "@babel/polyfill": "^7.2.5",
     "@types/recompose": "^0.30.2",
     "animate.css": "^3.5.2",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "bootstrap": "^4.1.1",
     "chalk": "^2.4.1",
     "classnames": "^2.2.6",
