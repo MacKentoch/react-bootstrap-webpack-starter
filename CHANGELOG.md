@@ -1,3 +1,7 @@
+# v8.0.0
+* Typescript migration
+* Upgrade React to v16.9+
+
 # v7.1.0
 
 * connect React Context API to redux DevTools (*also works for a React-Native app*) for dev only.
