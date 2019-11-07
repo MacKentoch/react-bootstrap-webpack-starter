@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login page renders as expected 1`] = `
+<div>
+  <div
+    className="content"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-10 offset-1 col-md-4 offset-md-4"
+      >
+        <form
+          className="form-horizontal"
+          noValidate={true}
+        >
+          <fieldset>
+            <legend>
+              Login
+            </legend>
+            <div
+              className="form-group"
+            >
+              <label
+                className="col-lg-2 control-label"
+                htmlFor="inputEmail"
+              >
+                Email
+              </label>
+              <div
+                className="col-lg-12"
+              >
+                <input
+                  autoComplete="username email"
+                  className="form-control"
+                  id="inputEmail"
+                  onChange={[Function]}
+                  placeholder="Email"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              className="form-group"
+            >
+              <label
+                className="col-lg-2 control-label"
+                htmlFor="inputPassword"
+              >
+                Password
+              </label>
+              <div
+                className="col-lg-12"
+              >
+                <input
+                  autoComplete="current-password"
+                  className="form-control"
+                  id="inputPassword"
+                  onChange={[Function]}
+                  placeholder="Password"
+                  type="password"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              className="form-group"
+            >
+              <div
+                className="col-lg-12"
+              >
+                <button
+                  aria-label={null}
+                  className="login-button btn-block btn btn-primary"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <span>
+                    Login
+                  </span>
+                </button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-10 offset-1 col-md-4 offset-md-4"
+      >
+        <div
+          className="pull-right"
+        >
+          <button
+            aria-label={null}
+            className="btn-block btn btn-secondary"
+            onClick={[Function]}
+            type="button"
+          >
+            back to home
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
