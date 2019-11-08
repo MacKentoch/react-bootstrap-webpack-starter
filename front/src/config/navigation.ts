@@ -1,21 +1,19 @@
-// @flow
-
-// #flow types
+// #region types
 export type Link = {
-  label: string,
-  link: string,
-  view?: string,
-  isRouteBtn?: boolean,
+  label: string;
+  link: string;
+  view?: string;
+  isRouteBtn?: boolean;
 };
 
 export type Navigation = {
-  brand: string,
-  leftLinks: Array<Link>,
-  rightLinks: Array<Link>,
+  brand: string;
+  leftLinks: Array<Link>;
+  rightLinks: Array<Link>;
 };
 // #endregion
 
-const navigation = {
+const navigation = Object.freeze({
   brand: 'React Bootstrap Starter',
   leftLinks: [],
   rightLinks: [
@@ -36,6 +34,6 @@ const navigation = {
       isRouteBtn: true,
     },
   ],
-};
+});
 
 export default navigation;
