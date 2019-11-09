@@ -1,12 +1,8 @@
-// @flow
-
-// #region imports
 import React from 'react';
-// #endregion
 
-// #region flow types
+// #region types
 type Props = {
-  color: string,
+  color: string;
 };
 // #endregion
 
