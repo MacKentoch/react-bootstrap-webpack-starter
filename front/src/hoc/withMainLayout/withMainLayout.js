@@ -3,7 +3,7 @@
 // #region imports
 import React, { Component } from 'react';
 import wrapDisplayName from 'recompose/wrapDisplayName';
-import compose from 'recompose/compose';
+import {compose} from 'redux';
 import { withRouter } from 'react-router';
 import { type Match, type Location, type RouterHistory } from 'react-router';
 import Container from 'reactstrap/lib/Container';

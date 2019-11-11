@@ -3,7 +3,7 @@
 // #region imports
 import React, { Component, Fragment } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
-import compose from 'recompose/compose';
+import { compose } from 'redux';
 import createHistory from 'history/createBrowserHistory';
 import withMainLayout from './hoc/withMainLayout';
 import MainRoutes from './routes/MainRoutes';

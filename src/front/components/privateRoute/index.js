@@ -1,7 +1,7 @@
 // @flow
 
 // #region imports
-import compose from 'recompose/compose';
+import { compose } from 'redux';
 import PrivateRoute from './PrivateRoute';
 import withAuth from '../../contexts/auth/consumerHOC';
 // #endregion

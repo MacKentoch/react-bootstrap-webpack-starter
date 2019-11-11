@@ -1,17 +1,13 @@
-// @flow
-
-// #region imports
 import React from 'react';
-// #endregion
 
-// #region flow types
-type Props = {
-  ...any,
-};
+// #region types
+type Props = {};
 // #endregion
 
 function LoadingContent(props: Props) {
   return <div>loading...</div>;
 }
+
+LoadingContent.displayName = 'LoadingContent';
 
 export default LoadingContent;

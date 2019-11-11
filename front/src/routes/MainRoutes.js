@@ -2,7 +2,7 @@
 
 // #region imports
 import React from 'react';
-import compose from 'recompose/compose';
+import { compose } from 'redux';
 import withSuspense from '../hoc/withSuspense';
 import { Route, Switch } from 'react-router';
 import PrivateRoute from '../components/privateRoute';
