@@ -1,34 +1,27 @@
-// @flow
-
-// #region imports
 import { createContext } from 'react';
-// #endregion
 
 // #region flow types
 export type User = {
-  email: string,
+  email: string;
 };
 
 export type AuthData = {
-  isAuthenticated: boolean,
-  isExpiredToken: boolean,
-  lastAuthDate?: Date,
-
-  token: string,
-  user: User,
-  ...any,
+  isAuthenticated: boolean;
+  isExpiredToken?: boolean;
+  lastAuthDate?: Date;
+  token?: string;
+  user?: User;
 };
 // #endregion
 
 // #region default context value
-export const authDefault = {
+export const authDefault: AuthData = {
   isAuthenticated: false,
-  lastAuthDate: null,
 };
 // #endregion
 
 // #region context
-const AuthContext = createContext({
+const AuthContext = createContext<AuthData>({
   ...authDefault,
 });
 
