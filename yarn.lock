@@ -1031,10 +1031,10 @@
     "@types/react" "*"
     popper.js "^1.14.1"
 
-"@types/recompose@^0.30.2":
-  version "0.30.2"
-  resolved "https://registry.yarnpkg.com/@types/recompose/-/recompose-0.30.2.tgz#3bdb7fd37460242ef82f6d6a7428e3c96d3a1b9a"
-  integrity sha512-O22WmEWoA2z2nbGmX4LqZ9zKzInN+KoyN0Stks9PMhj4GqDDwy2x3Gh0apNhCMzy3HLrCPkb+mH2QxZNtK5grw==
+"@types/recompose@^0.30.7":
+  version "0.30.7"
+  resolved "https://registry.yarnpkg.com/@types/recompose/-/recompose-0.30.7.tgz#0d47f3da3bdf889a4f36d4ca7531fac1eee1c6bd"
+  integrity sha512-kEvD7XMguXgG7jJJS//cE1QTbkFj2qDtIPAg1FvXxE8D6jD1C0WabJjT7cVitC7TK0N5I3yp2955hqNFFZV0wg==
   dependencies:
     "@types/react" "*"
 

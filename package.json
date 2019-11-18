@@ -137,7 +137,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
     "@hot-loader/react-dom": "^16.10.2",
-    "@types/recompose": "^0.30.2",
+    "@types/recompose": "^0.30.7",
     "animate.css": "^3.5.2",
     "axios": "^0.19.0",
     "babel-polyfill": "^6.26.0",
