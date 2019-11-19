@@ -1,41 +1,35 @@
-// @flow
-
-// #region imports
 import React, { Component } from 'react';
-import { AuthContextProvider, type AuthData, type User } from '../context';
+import { AuthContextProvider, AuthData, User } from '../context';
 import auth from '../../../services/auth';
 import { devToolsStore } from '../../withDevTools';
-// #endregion
 
-// #region flow types
+// #region  types
 export type AuthProviderProps = {
-  initialState: {} & AuthData,
+  initialState: {} & AuthData;
 };
 export type AuthProviderState = {
-  checkIsAuthenticated: () => boolean,
-  checkTokenIsExpired: () => boolean,
-  setToken: (token: string) => any,
-  setUserInfo: (user: User) => any,
-  disconnectUser: () => boolean,
-
-  ...any,
+  checkIsAuthenticated: () => boolean;
+  checkTokenIsExpired: () => boolean;
+  setToken: (token: string) => any;
+  setUserInfo: (user: User) => any;
+  disconnectUser: () => boolean;
 } & AuthData;
 // #endregion
 
 // #region constants
-const initialState = {
-  token: null,
-  user: null,
+const initialState: AuthData = {
+  token: '',
+  user: undefined,
   isAuthenticated: false,
   isExpiredToken: true,
-  lastAuthDate: null,
+  lastAuthDate: undefined,
 };
 // #endregion
 
 // #region PROVIDER component
 export default class AuthProvider extends Component<
   AuthProviderProps,
-  AuthProviderState,
+  AuthProviderState
 > {
   static defaultProps = {
     initialState: {
@@ -44,7 +38,7 @@ export default class AuthProvider extends Component<
   };
 
   // #region lifecyle
-  constructor(props) {
+  constructor(props: AuthProviderProps) {
     super(props);
 
     // initialize state in constructor (otherwise function won't be passed)
@@ -67,15 +61,14 @@ export default class AuthProvider extends Component<
           ...this.state,
         }}
       >
-        {' '}
-        {children}{' '}
+        {children}
       </AuthContextProvider>
     );
   }
   // #endregion
 
   checkIsAuthenticated = (): boolean => {
-    const checkUserHasId = user => user && user.id;
+    const checkUserHasId = (user: User) => user && user.id;
     const user = auth.getUserInfo() ? auth.getUserInfo() : null;
     const isAuthenticated = auth.getToken() && checkUserHasId(user);
 
@@ -119,7 +112,7 @@ export default class AuthProvider extends Component<
     this.setState({ token, isAuthenticated: true });
   };
 
-  setUserInfo = (user: User = null) => {
+  setUserInfo = (user: User) => {
     if (typeof user === 'object') {
       auth.setUserInfo(user);
 
