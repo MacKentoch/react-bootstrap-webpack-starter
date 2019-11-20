@@ -1,16 +1,5 @@
-// @flow
-
-// #region imports
 import decode from 'jwt-decode';
-import isAfter from 'date-fns/is_after';
-// #endregion
-
-// #region flow types
-export type STORES_TYPES = 'localStorage' | 'sessionStorage';
-export type Storage = STORES_TYPES;
-export type TokenKey = string;
-export type UserInfoKey = string;
-// #endregion
+import { isAfter } from 'date-fns';
 
 // #region constants
 const TOKEN_KEY = 'token';
@@ -44,9 +33,9 @@ export const auth = {
    * @returns {string} token value
    */
   getToken(
-    fromStorage: Storage = APP_PERSIST_STORES_TYPES[0],
+    fromStorage: STORES_TYPES = APP_PERSIST_STORES_TYPES[0],
     tokenKey: TokenKey = TOKEN_KEY,
-  ): ?string {
+  ): string | null {
     // localStorage:
     if (fromStorage === APP_PERSIST_STORES_TYPES[0]) {
       return (localStorage && localStorage.getItem(tokenKey)) || null;
@@ -69,9 +58,9 @@ export const auth = {
    */
   setToken(
     value: string = '',
-    toStorage: Storage = APP_PERSIST_STORES_TYPES[0],
+    toStorage: STORES_TYPES = APP_PERSIST_STORES_TYPES[0],
     tokenKey: TokenKey = TOKEN_KEY,
-  ): ?string {
+  ): void {
     if (!value || value.length <= 0) {
       return;
     }
@@ -79,12 +68,14 @@ export const auth = {
     if (toStorage === APP_PERSIST_STORES_TYPES[0]) {
       if (localStorage) {
         localStorage.setItem(tokenKey, value);
+        return;
       }
     }
     // sessionStorage:
     if (toStorage === APP_PERSIST_STORES_TYPES[1]) {
       if (sessionStorage) {
         sessionStorage.setItem(tokenKey, value);
+        return;
       }
     }
   },
@@ -111,25 +102,25 @@ export const auth = {
    * @returns {bool} is authenticed response
    */
   isAuthenticated(
-    fromStorage: Storage = APP_PERSIST_STORES_TYPES[0],
+    fromStorage: STORES_TYPES = APP_PERSIST_STORES_TYPES[0],
     tokenKey: TokenKey = TOKEN_KEY,
   ): boolean {
     // localStorage:
     if (fromStorage === APP_PERSIST_STORES_TYPES[0]) {
       if (localStorage && localStorage.getItem(tokenKey)) {
         return true;
-      } else {
-        return false;
       }
+      return false;
     }
+
     // sessionStorage:
     if (fromStorage === APP_PERSIST_STORES_TYPES[1]) {
       if (sessionStorage && sessionStorage.getItem(tokenKey)) {
         return true;
-      } else {
-        return false;
       }
+      return false;
     }
+
     // default:
     return false;
   },
@@ -141,7 +132,7 @@ export const auth = {
    * @returns {bool} success/failure flag
    */
   clearToken(
-    storage: Storage = APP_PERSIST_STORES_TYPES[0],
+    storage: STORES_TYPES = APP_PERSIST_STORES_TYPES[0],
     tokenKey: TokenKey = TOKEN_KEY,
   ): boolean {
     // localStorage:
@@ -169,7 +160,7 @@ export const auth = {
       return new Date(0); // is expired
     }
 
-    const token = decode(encodedToken);
+    const token: { exp: number } = decode(encodedToken);
     if (!token.exp) {
       return new Date(0); // is expired
     }
@@ -203,18 +194,34 @@ export const auth = {
    * @returns {string} token value
    */
   getUserInfo(
-    fromStorage: Storage = APP_PERSIST_STORES_TYPES[0],
+    fromStorage: STORES_TYPES = APP_PERSIST_STORES_TYPES[0],
     userInfoKey: UserInfoKey = USER_INFO,
-  ): ?string {
+  ): any {
     // localStorage:
     if (fromStorage === APP_PERSIST_STORES_TYPES[0]) {
-      return (localStorage && parse(localStorage.getItem(userInfoKey))) || null;
+      try {
+        return (
+          (window &&
+            localStorage &&
+            parse(localStorage.getItem(userInfoKey) || '')) ||
+          null
+        );
+      } catch (error) {
+        return null;
+      }
     }
     // sessionStorage:
     if (fromStorage === APP_PERSIST_STORES_TYPES[1]) {
-      return (
-        (sessionStorage && parse(sessionStorage.getItem(userInfoKey))) || null
-      );
+      try {
+        return (
+          (window &&
+            sessionStorage &&
+            parse(sessionStorage.getItem(userInfoKey) || '')) ||
+          null
+        );
+      } catch (error) {
+        return null;
+      }
     }
     // default:
     return null;
@@ -230,22 +237,26 @@ export const auth = {
    */
   setUserInfo(
     value: string = '',
-    toStorage: Storage = APP_PERSIST_STORES_TYPES[0],
+    toStorage: STORES_TYPES = APP_PERSIST_STORES_TYPES[0],
     userInfoKey: UserInfoKey = USER_INFO,
   ): any {
     if (!value || value.length <= 0) {
       return;
     }
+
     // localStorage:
     if (toStorage === APP_PERSIST_STORES_TYPES[0]) {
       if (localStorage) {
         localStorage.setItem(userInfoKey, stringify(value));
+        return;
       }
     }
+
     // sessionStorage:
     if (toStorage === APP_PERSIST_STORES_TYPES[1]) {
       if (sessionStorage) {
         sessionStorage.setItem(userInfoKey, stringify(value));
+        return;
       }
     }
   },
@@ -260,10 +271,13 @@ export const auth = {
     // localStorage:
     if (localStorage && localStorage[userInfoKey]) {
       localStorage.removeItem(userInfoKey);
+      return;
     }
+
     // sessionStorage:
     if (sessionStorage && sessionStorage[userInfoKey]) {
       sessionStorage.removeItem(userInfoKey);
+      return;
     }
   },
 
@@ -278,9 +292,12 @@ export const auth = {
   clearAllAppStorage(): any {
     if (localStorage) {
       localStorage.clear();
+      return;
     }
+
     if (sessionStorage) {
       sessionStorage.clear();
+      return;
     }
   },
 };
