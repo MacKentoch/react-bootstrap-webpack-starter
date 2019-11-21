@@ -68,7 +68,7 @@ export default class AuthProvider extends Component<
   // #endregion
 
   checkIsAuthenticated = (): boolean => {
-    const checkUserHasId = (user: User) => user && user.id;
+    const checkUserHasId = (user: User) => user && user?.id;
     const user = auth.getUserInfo() ? auth.getUserInfo() : null;
     const isAuthenticated = auth.getToken() && checkUserHasId(user);
 
@@ -114,7 +114,7 @@ export default class AuthProvider extends Component<
 
   setUserInfo = (user: User) => {
     if (typeof user === 'object') {
-      auth.setUserInfo(user);
+      auth.setUserInfo(JSON.stringify(user));
 
       devToolsStore &&
         devToolsStore.dispatch({

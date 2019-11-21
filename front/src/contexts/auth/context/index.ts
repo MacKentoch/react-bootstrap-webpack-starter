@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-// #region flow types
+// #region types
 export type User = {
   email: string;
 };

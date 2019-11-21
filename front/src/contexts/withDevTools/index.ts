@@ -1,28 +1,23 @@
-// @flow
-
-// #region flow types
+// #region types
 export type DevToolsMessageType = 'DISPATCH' | string;
 
 export type DevToolsMessagePayload = {
-  type?: string,
-  state?: any,
-  ...any,
+  type?: string;
+  state?: any;
 };
 
 export type DevToolsMessage = {
-  type?: DevToolsMessageType,
-  payload?: DevToolsMessagePayload,
-  ...any,
+  type?: DevToolsMessageType;
+  payload?: DevToolsMessagePayload;
 };
 
 export type DevTools = {
-  connect: () => any,
-  subscribe: (message: DevToolsMessage) => any,
-  send: (type: string, state: any) => any,
-  unsubscribe: () => any,
-  dispatch: (action: { type: string, ...any }) => any,
-  disconnect: () => any,
-  ...any,
+  connect: () => any;
+  subscribe: (message: DevToolsMessage) => any;
+  send: (action: { type: string; state?: any }, newState: any) => any;
+  unsubscribe: () => any;
+  dispatch: (action: { type: string }) => any;
+  disconnect: () => any;
 };
 // #endregion
 
@@ -30,23 +25,29 @@ export type DevTools = {
 const isDEV = process.env.NODE_ENV === 'development';
 
 export const withDevTools =
-  isDEV && typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__;
+  isDEV &&
+  typeof window !== 'undefined' &&
+  (window as any).__REDUX_DEVTOOLS_EXTENSION__;
 
-// $FlowIgnore
 const devTools: DevTools = !withDevTools
   ? null
-  : window.__REDUX_DEVTOOLS_EXTENSION__.connect();
+  : (window as any).__REDUX_DEVTOOLS_EXTENSION__.connect();
 // #endregion
 
 // #region devtools reducer
-const initialState = {
+type State = {
+  auth: any;
+};
+type Action = {
+  type: string;
+  state?: any;
+};
+
+const initialState: State = {
   auth: {},
 };
 
-export const reducer = (
-  state: any = initialState,
-  action: { type: string, ...any },
-) => {
+export const reducer = (state: State = initialState, action: Action) => {
   /* eslint-disable no-unused-vars */
   switch (action.type) {
     // #region auth context
@@ -68,7 +69,7 @@ export const reducer = (
 // #endregion
 
 // #region singleton devtools local state
-let state;
+let state: State;
 // #endregion
 
 // #region devToolsStore (redux like)
@@ -77,7 +78,7 @@ export const devToolsStore = !withDevTools
   ? null
   : {
       ...devTools,
-      dispatch: action => {
+      dispatch: (action: Action) => {
         // #region action validation
         if (!action) {
           throw new Error('devTools dispatched action should be defined');
