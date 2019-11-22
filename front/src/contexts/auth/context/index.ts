@@ -1,9 +1,6 @@
 import { createContext } from 'react';
 
 // #region types
-export type User = {
-  email: string;
-};
 
 export type AuthData = {
   isAuthenticated: boolean;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AuthContextProvider, AuthData, User } from '../context';
+import { AuthContextProvider, AuthData } from '../context';
 import auth from '../../../services/auth';
 import { devToolsStore } from '../../withDevTools';
 
@@ -68,7 +68,7 @@ export default class AuthProvider extends Component<
   // #endregion
 
   checkIsAuthenticated = (): boolean => {
-    const checkUserHasId = (user: User) => user && user?.id;
+    const checkUserHasId = (user: User) => user?.id ?? '';
     const user = auth.getUserInfo() ? auth.getUserInfo() : null;
     const isAuthenticated = auth.getToken() && checkUserHasId(user);
 
