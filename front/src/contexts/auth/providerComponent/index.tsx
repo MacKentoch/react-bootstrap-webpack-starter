@@ -3,7 +3,7 @@ import { AuthContextProvider, AuthData } from '../context';
 import auth from '../../../services/auth';
 import { devToolsStore } from '../../withDevTools';
 
-// #region  types
+// #region types
 export type AuthProviderProps = {
   initialState: {} & AuthData;
 };
@@ -68,9 +68,9 @@ export default class AuthProvider extends Component<
   // #endregion
 
   checkIsAuthenticated = (): boolean => {
-    const checkUserHasId = (user: User) => user?.id ?? '';
+    const checkUserHasId = (user: User) => user.id;
     const user = auth.getUserInfo() ? auth.getUserInfo() : null;
-    const isAuthenticated = auth.getToken() && checkUserHasId(user);
+    const isAuthenticated = !!(auth.getToken() && checkUserHasId(user));
 
     devToolsStore &&
       devToolsStore.dispatch({
@@ -78,9 +78,7 @@ export default class AuthProvider extends Component<
         state: { ...this.state, isAuthenticated },
       });
 
-    this.setState({
-      isAuthenticated,
-    });
+    this.setState({ isAuthenticated });
     return isAuthenticated;
   };
 
@@ -94,9 +92,7 @@ export default class AuthProvider extends Component<
         state: { ...this.state, isExpiredToken },
       });
 
-    this.setState({
-      isExpiredToken,
-    });
+    this.setState({ isExpiredToken });
     return isExpiredToken;
   };
 

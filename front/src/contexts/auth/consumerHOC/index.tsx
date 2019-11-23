@@ -16,7 +16,7 @@ export default function withAuth(/* additionnal args if needed */) {
 
         return (
           <AuthContextConsumer>
-            {(fromAuthProps: AuthContextProps) => (
+            {(fromAuthProps: Partial<AuthContextProps>) => (
               <BaseComponent {...fromAuthProps} {...passProps} />
             )}
           </AuthContextConsumer>
