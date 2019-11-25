@@ -1,4 +1,4 @@
-import styled, { keyframes, css, ThemeProps } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 const fadeIn = keyframes`
   from {
@@ -10,12 +10,7 @@ const fadeIn = keyframes`
   }
 `;
 
-type Props = {
-  readonly theme: ThemeProps<any>;
-  readonly viewEnter: boolean;
-};
-
-const AnimatedDiv = styled.div<Props>`
+export const AnimatedDiv = styled.div`
   ${({ viewEnter }) =>
     viewEnter &&
     css`

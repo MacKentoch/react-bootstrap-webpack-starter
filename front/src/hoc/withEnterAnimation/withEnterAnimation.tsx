@@ -16,6 +16,7 @@ function withEnterAnimation() {
         const { ...passProps } = this.props;
 
         return (
+          // @ts-ignore
           <AnimatedDiv viewEnter>
             <BaseComponent {...passProps} />
           </AnimatedDiv>
@@ -24,6 +25,7 @@ function withEnterAnimation() {
     }
 
     /* eslint-disable no-process-env */
+    // @ts-ignore
     if (process.env.NODE_ENV !== 'production') {
       // HOC would obfuscate component name, this trick is helpful for dev (we don't care in production)
       (WithEnterAnimation as any).displayName = wrapDisplayName(
