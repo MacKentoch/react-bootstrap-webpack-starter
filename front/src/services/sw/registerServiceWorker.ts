@@ -1,8 +1,4 @@
-// @flow
-
-// #region  imports
 import appConfig from '../../config/appConfig';
-// #endregion
 
 // #region constants
 const { path: swPath } = appConfig.sw;
@@ -12,7 +8,6 @@ function registerServiceWorker(): void {
   if (typeof window !== undefined) {
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        // $FlowIgnore
         navigator.serviceWorker
           .register(swPath)
           .then(registration => {
