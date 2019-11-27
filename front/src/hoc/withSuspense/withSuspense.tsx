@@ -1,10 +1,7 @@
-// @flow
-
-// #region imports
 import React, { Component, Suspense } from 'react';
+// @ts-ignore
 import wrapDisplayName from 'recompose/wrapDisplayName';
 import LoadingContent from '../../components/loadingContent';
-// #endregion
 
 // #region flow types
 type Props = any;
@@ -27,9 +24,13 @@ function withSuspense() {
     }
 
     /* eslint-disable no-process-env */
+    // @ts-ignore
     if (process.env.NODE_ENV !== 'production') {
       // HOC would obfuscate component name, this trick is helpful for dev (we don't care in production)
-      WithSuspense.displayName = wrapDisplayName(BaseComponent, 'withSuspense');
+      (WithSuspense as any).displayName = wrapDisplayName(
+        BaseComponent,
+        'withSuspense',
+      );
     }
     /* eslint-enable no-process-env */
 
