@@ -1,8 +1,4 @@
-// @flow
-
-// @region imports
 import styled, { keyframes, css } from 'styled-components';
-// #endregion
 
 const fadeIn = keyframes`
   from {
