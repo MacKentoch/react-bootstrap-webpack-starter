@@ -5,13 +5,10 @@ import About from '../About';
 
 describe('About page', () => {
   it('renders as expected', () => {
-    const props = {
-      actions: {},
-    };
     const component = shallow(
       <div>
         <MemoryRouter>
-          <About {...props} />
+          <About />
         </MemoryRouter>
       </div>,
     );
