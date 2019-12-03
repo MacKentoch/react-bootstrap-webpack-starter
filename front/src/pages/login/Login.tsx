@@ -1,38 +1,21 @@
-// @flow
-
-// #region imports
 import React, { PureComponent } from 'react';
 import axios from 'axios';
-import {
-  type Match,
-  type Location,
-  type RouterHistory,
-} from 'react-router-dom';
+import { RouteComponentProps } from 'react-router';
 import Button from 'reactstrap/lib/Button';
 import Row from 'reactstrap/lib/Row';
 import Col from 'reactstrap/lib/Col';
 import { appConfig } from '../../config/appConfig';
 import { getLocationOrigin } from '../../services/API/fetchTools';
 import userInfoMock from '../../mock/userInfo.json';
-import { type AuthContextProps } from '../../contexts/auth/consumerHOC';
-// #endregion
+import { AuthContextProps } from '../../contexts/auth/consumerHOC';
 
-// #region flow types
-type Props = {
-  // react-router 4:
-  match: Match,
-  location: Location,
-  history: RouterHistory,
-
-  ...any,
-} & AuthContextProps;
+// #region types
+type Props = {} & RouteComponentProps & AuthContextProps;
 
 type State = {
-  email: string,
-  password: string,
-  isLogging: boolean,
-
-  ...any,
+  email: string;
+  password: string;
+  isLogging: boolean;
 };
 // #endregion
 
@@ -141,19 +124,19 @@ class Login extends PureComponent<Props, State> {
     disconnectUser();
   };
 
-  handlesOnEmailChange = (event: SyntheticEvent<>) => {
+  handlesOnEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     // should add some validator before setState in real use cases
     this.setState({ email: event.target.value.trim() });
   };
 
-  handlesOnPasswordChange = (event: SyntheticEvent<>) => {
+  handlesOnPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     // should add some validator before setState in real use cases
     this.setState({ password: event.target.value.trim() });
   };
 
-  handlesOnLogin = async (event: SyntheticEvent<>) => {
+  handlesOnLogin = async (event: React.MouseEvent<HTMLButtonElement>) => {
     if (event) {
       event.preventDefault();
     }
@@ -226,7 +209,7 @@ class Login extends PureComponent<Props, State> {
     }
   };
 
-  goHome = (event: any) => {
+  goHome = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (event) {
       event.preventDefault();
     }
