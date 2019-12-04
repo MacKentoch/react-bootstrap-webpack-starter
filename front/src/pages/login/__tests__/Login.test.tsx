@@ -1,11 +1,7 @@
-// @flow
-
-// #region imports
 import React from 'react';
-import renderer from 'react-test-renderer'; // needed both for snpashot testing but also to prevent errors from enzyme
+import { shallow } from 'enzyme';
 import { MemoryRouter } from 'react-router';
 import Login from '../Login';
-// #endregion
 
 describe('Login page', () => {
   it('renders as expected', () => {
@@ -16,15 +12,13 @@ describe('Login page', () => {
       checkIsAuthenticated: () => {},
     };
 
-    const component = renderer
-      .create(
-        <div>
-          <MemoryRouter>
-            <Login {...props} />
-          </MemoryRouter>
-        </div>,
-      )
-      .toJSON();
+    const component = shallow(
+      <div>
+        <MemoryRouter>
+          <Login {...props} />
+        </MemoryRouter>
+      </div>,
+    );
     expect(component).toMatchSnapshot();
   });
 });
