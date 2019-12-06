@@ -1,13 +1,14 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+import FadeInEntrance from '../../components/fadeInEntrance';
 
 type Props = {} & RouteComponentProps<any, any>;
 
 function About({}: Props) {
   return (
-    <div>
+    <FadeInEntrance>
       <h1>About</h1>
-    </div>
+    </FadeInEntrance>
   );
 }
 

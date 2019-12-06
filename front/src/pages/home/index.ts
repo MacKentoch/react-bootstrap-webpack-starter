@@ -1,5 +1,4 @@
 import { compose } from 'redux';
 import Home from './Home';
-import withEnterAnimation from '../../hoc/withEnterAnimation';
 
-export default compose(withEnterAnimation(/* no option yet */))(Home);
+export default compose()(Home);

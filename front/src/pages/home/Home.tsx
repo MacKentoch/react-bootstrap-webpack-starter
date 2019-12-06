@@ -5,12 +5,13 @@ import { Link } from 'react-router-dom';
 import HomeInfo from './styled/HomeInfo';
 import MainTitle from './styled/MainTitle';
 import LightNote from './styled/LightNote';
+import FadeInEntrance from '../../components/fadeInEntrance';
 
 type Props = {} & RouteComponentProps<any, any>;
 
 function Home({}: Props) {
   return (
-    <div>
+    <FadeInEntrance>
       <Jumbotron>
         <HomeInfo>
           <MainTitle>ReactJS 16.4+ Bootstrap 4</MainTitle>
@@ -38,7 +39,7 @@ function Home({}: Props) {
           </p>
         </HomeInfo>
       </Jumbotron>
-    </div>
+    </FadeInEntrance>
   );
 }
 
