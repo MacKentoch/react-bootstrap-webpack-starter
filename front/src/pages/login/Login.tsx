@@ -8,6 +8,7 @@ import { appConfig } from '../../config/appConfig';
 import { getLocationOrigin } from '../../services/API/fetchTools';
 import userInfoMock from '../../mock/userInfo.json';
 import { AuthContextProps } from '../../contexts/auth/consumerHOC';
+import FadeInEntrance from '../../components/fadeInEntrance';
 
 // #region types
 type Props = {} & RouteComponentProps & AuthContextProps;
@@ -35,86 +36,88 @@ class Login extends PureComponent<Props, State> {
     const { email, password, isLogging } = this.state;
 
     return (
-      <div className="content">
-        <Row>
-          <Col md={{ size: 4, offset: 4 }} xs={{ size: 10, offset: 1 }}>
-            <form className="form-horizontal" noValidate>
-              <fieldset>
-                <legend>Login</legend>
+      <FadeInEntrance>
+        <div className="content">
+          <Row>
+            <Col md={{ size: 4, offset: 4 }} xs={{ size: 10, offset: 1 }}>
+              <form className="form-horizontal" noValidate>
+                <fieldset>
+                  <legend>Login</legend>
 
-                <div className="form-group">
-                  <label
-                    htmlFor="inputEmail"
-                    className="col-lg-2 control-label"
-                  >
-                    Email
-                  </label>
-                  <Col lg={12}>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="inputEmail"
-                      placeholder="Email"
-                      autoComplete="username email"
-                      value={email}
-                      onChange={this.handlesOnEmailChange}
-                    />
-                  </Col>
-                </div>
-
-                <div className="form-group">
-                  <label
-                    htmlFor="inputPassword"
-                    className="col-lg-2 control-label"
-                  >
-                    Password
-                  </label>
-                  <Col lg={12}>
-                    <input
-                      type="password"
-                      className="form-control"
-                      id="inputPassword"
-                      placeholder="Password"
-                      autoComplete="current-password"
-                      value={password}
-                      onChange={this.handlesOnPasswordChange}
-                    />
-                  </Col>
-                </div>
-
-                <div className="form-group">
-                  <Col lg={{ size: 12 }}>
-                    <Button
-                      className="login-button btn-block"
-                      color="primary"
-                      disabled={isLogging}
-                      onClick={this.handlesOnLogin}
+                  <div className="form-group">
+                    <label
+                      htmlFor="inputEmail"
+                      className="col-lg-2 control-label"
                     >
-                      {isLogging ? (
-                        <span>
-                          login in... &nbsp;
-                          <i className="fa fa-spinner fa-pulse fa-fw" />
-                        </span>
-                      ) : (
-                        <span>Login</span>
-                      )}
-                    </Button>
-                  </Col>
-                </div>
-              </fieldset>
-            </form>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={{ size: 4, offset: 4 }} xs={{ size: 10, offset: 1 }}>
-            <div className="pull-right">
-              <Button className="btn-block" onClick={this.goHome}>
-                back to home
-              </Button>
-            </div>
-          </Col>
-        </Row>
-      </div>
+                      Email
+                    </label>
+                    <Col lg={12}>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="inputEmail"
+                        placeholder="Email"
+                        autoComplete="username email"
+                        value={email}
+                        onChange={this.handlesOnEmailChange}
+                      />
+                    </Col>
+                  </div>
+
+                  <div className="form-group">
+                    <label
+                      htmlFor="inputPassword"
+                      className="col-lg-2 control-label"
+                    >
+                      Password
+                    </label>
+                    <Col lg={12}>
+                      <input
+                        type="password"
+                        className="form-control"
+                        id="inputPassword"
+                        placeholder="Password"
+                        autoComplete="current-password"
+                        value={password}
+                        onChange={this.handlesOnPasswordChange}
+                      />
+                    </Col>
+                  </div>
+
+                  <div className="form-group">
+                    <Col lg={{ size: 12 }}>
+                      <Button
+                        className="login-button btn-block"
+                        color="primary"
+                        disabled={isLogging}
+                        onClick={this.handlesOnLogin}
+                      >
+                        {isLogging ? (
+                          <span>
+                            login in... &nbsp;
+                            <i className="fa fa-spinner fa-pulse fa-fw" />
+                          </span>
+                        ) : (
+                          <span>Login</span>
+                        )}
+                      </Button>
+                    </Col>
+                  </div>
+                </fieldset>
+              </form>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={{ size: 4, offset: 4 }} xs={{ size: 10, offset: 1 }}>
+              <div className="pull-right">
+                <Button className="btn-block" onClick={this.goHome}>
+                  back to home
+                </Button>
+              </div>
+            </Col>
+          </Row>
+        </div>
+      </FadeInEntrance>
     );
   }
   // #endregion
