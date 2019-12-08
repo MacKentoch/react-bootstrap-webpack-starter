@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { RouteComponentProps } from 'react-router';
 import Button from 'reactstrap/lib/Button';
@@ -10,30 +10,34 @@ import userInfoMock from '../../mock/userInfo.json';
 import { AuthContextProps } from '../../contexts/auth/consumerHOC';
 import FadeInEntrance from '../../components/fadeInEntrance';
 
-// #region types
-type Props = {} & RouteComponentProps & AuthContextProps;
 
-type State = {
-  email: string;
-  password: string;
-  isLogging: boolean;
-};
-// #endregion
+type Props = {} & RouteComponentProps<any, any> & AuthContextProps;
 
-class Login extends PureComponent<Props, State> {
-  state = {
-    email: '',
-    password: '',
-    isLogging: false,
+
+function Login({disconnectUser = () => {}, history, setToken, setUserInfo}: Props) {
+  const [email, setEmail] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
+  const [isLogging, setIsLogging] = useState<boolean>(false)
+
+  // #region on mount
+  useEffect(() => {
+    disconnectUser(); // diconnect user: remove token and user info
+  }, [])
+  // #endregion
+
+  // #region input callbacks
+  const handlesOnEmailChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+    event && event.preventDefault();
+    // should add some validator before setState in real use cases
+    setEmail(event.target.value.trim());
+  }, []);
+
+  const handlesOnPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    event && event.preventDefault();
+    // should add some validator before setState in real use cases
+    setPassword(event.target.value.trim());
   };
-
-  // #region lifecycle
-  componentDidMount() {
-    this.disconnectUser(); // diconnect user: remove token and user info
-  }
-
-  render() {
-    const { email, password, isLogging } = this.state;
+  // #endregion
 
     return (
       <FadeInEntrance>
@@ -59,7 +63,7 @@ class Login extends PureComponent<Props, State> {
                         placeholder="Email"
                         autoComplete="username email"
                         value={email}
-                        onChange={this.handlesOnEmailChange}
+                        onChange={handlesOnEmailChange}
                       />
                     </Col>
                   </div>
@@ -120,24 +124,13 @@ class Login extends PureComponent<Props, State> {
       </FadeInEntrance>
     );
   }
-  // #endregion
 
-  disconnectUser = () => {
-    const { disconnectUser } = this.props;
-    disconnectUser();
-  };
 
-  handlesOnEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    event.preventDefault();
-    // should add some validator before setState in real use cases
-    this.setState({ email: event.target.value.trim() });
-  };
 
-  handlesOnPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    event.preventDefault();
-    // should add some validator before setState in real use cases
-    this.setState({ password: event.target.value.trim() });
-  };
+
+
+
+
 
   handlesOnLogin = async (event: React.MouseEvent<HTMLButtonElement>) => {
     if (event) {
