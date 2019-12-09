@@ -10,132 +10,49 @@ import userInfoMock from '../../mock/userInfo.json';
 import { AuthContextProps } from '../../contexts/auth/consumerHOC';
 import FadeInEntrance from '../../components/fadeInEntrance';
 
-
 type Props = {} & RouteComponentProps<any, any> & AuthContextProps;
 
-
-function Login({disconnectUser = () => {}, history, setToken, setUserInfo}: Props) {
-  const [email, setEmail] = useState<string>('')
-  const [password, setPassword] = useState<string>('')
-  const [isLogging, setIsLogging] = useState<boolean>(false)
+function Login({
+  disconnectUser = () => {},
+  history,
+  setToken,
+  setUserInfo,
+}: Props) {
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [isLogging, setIsLogging] = useState<boolean>(false);
 
   // #region on mount
   useEffect(() => {
     disconnectUser(); // diconnect user: remove token and user info
-  }, [])
+  }, []);
   // #endregion
 
   // #region input callbacks
-  const handlesOnEmailChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+  const goHome = useCallback((event: React.MouseEvent<HTMLButtonElement>) => {
     event && event.preventDefault();
-    // should add some validator before setState in real use cases
-    setEmail(event.target.value.trim());
+    history.push({ pathname: '/' });
   }, []);
 
-  const handlesOnPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handlesOnEmailChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      event && event.preventDefault();
+      // should add some validator before setState in real use cases
+      setEmail(event.target.value.trim());
+    },
+    [],
+  );
+
+  const handlesOnPasswordChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     event && event.preventDefault();
     // should add some validator before setState in real use cases
     setPassword(event.target.value.trim());
   };
-  // #endregion
 
-    return (
-      <FadeInEntrance>
-        <div className="content">
-          <Row>
-            <Col md={{ size: 4, offset: 4 }} xs={{ size: 10, offset: 1 }}>
-              <form className="form-horizontal" noValidate>
-                <fieldset>
-                  <legend>Login</legend>
-
-                  <div className="form-group">
-                    <label
-                      htmlFor="inputEmail"
-                      className="col-lg-2 control-label"
-                    >
-                      Email
-                    </label>
-                    <Col lg={12}>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="inputEmail"
-                        placeholder="Email"
-                        autoComplete="username email"
-                        value={email}
-                        onChange={handlesOnEmailChange}
-                      />
-                    </Col>
-                  </div>
-
-                  <div className="form-group">
-                    <label
-                      htmlFor="inputPassword"
-                      className="col-lg-2 control-label"
-                    >
-                      Password
-                    </label>
-                    <Col lg={12}>
-                      <input
-                        type="password"
-                        className="form-control"
-                        id="inputPassword"
-                        placeholder="Password"
-                        autoComplete="current-password"
-                        value={password}
-                        onChange={this.handlesOnPasswordChange}
-                      />
-                    </Col>
-                  </div>
-
-                  <div className="form-group">
-                    <Col lg={{ size: 12 }}>
-                      <Button
-                        className="login-button btn-block"
-                        color="primary"
-                        disabled={isLogging}
-                        onClick={this.handlesOnLogin}
-                      >
-                        {isLogging ? (
-                          <span>
-                            login in... &nbsp;
-                            <i className="fa fa-spinner fa-pulse fa-fw" />
-                          </span>
-                        ) : (
-                          <span>Login</span>
-                        )}
-                      </Button>
-                    </Col>
-                  </div>
-                </fieldset>
-              </form>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={{ size: 4, offset: 4 }} xs={{ size: 10, offset: 1 }}>
-              <div className="pull-right">
-                <Button className="btn-block" onClick={this.goHome}>
-                  back to home
-                </Button>
-              </div>
-            </Col>
-          </Row>
-        </div>
-      </FadeInEntrance>
-    );
-  }
-
-
-
-
-
-
-
-
-  handlesOnLogin = async (event: React.MouseEvent<HTMLButtonElement>) => {
-    if (event) {
-      event.preventDefault();
-    }
+  const handlesOnLogin = async (event: React.MouseEvent<HTMLButtonElement>) => {
+    event && event.preventDefault();
 
     const { history, setToken, setUserInfo } = this.props;
     const { email, password } = this.state;
@@ -147,7 +64,7 @@ function Login({disconnectUser = () => {}, history, setToken, setUserInfo}: Prop
 
     try {
       this.setState({ isLogging: true });
-      const response = await this.logUser(userLogin);
+      const response = await logUser(userLogin);
       const {
         data: { token, user },
       } = response;
@@ -165,8 +82,9 @@ function Login({disconnectUser = () => {}, history, setToken, setUserInfo}: Prop
       /* eslint-enable no-console */
     }
   };
+  // #endregion
 
-  logUser = async (login: string = '', password: string = '') => {
+  const logUser = async (login: string = '', password: string = '') => {
     const __SOME_LOGIN_API__ = 'login';
     const url = `${getLocationOrigin()}/${__SOME_LOGIN_API__}`;
     const method = 'post';
@@ -205,13 +123,92 @@ function Login({disconnectUser = () => {}, history, setToken, setUserInfo}: Prop
     }
   };
 
-  goHome = (event: React.MouseEvent<HTMLButtonElement>) => {
-    if (event) {
-      event.preventDefault();
-    }
-    const { history } = this.props;
-    history.push({ pathname: '/' });
-  };
+  return (
+    <FadeInEntrance>
+      <div className="content">
+        <Row>
+          <Col md={{ size: 4, offset: 4 }} xs={{ size: 10, offset: 1 }}>
+            <form className="form-horizontal" noValidate>
+              <fieldset>
+                <legend>Login</legend>
+
+                <div className="form-group">
+                  <label
+                    htmlFor="inputEmail"
+                    className="col-lg-2 control-label"
+                  >
+                    Email
+                  </label>
+                  <Col lg={12}>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="inputEmail"
+                      placeholder="Email"
+                      autoComplete="username email"
+                      value={email}
+                      onChange={handlesOnEmailChange}
+                    />
+                  </Col>
+                </div>
+
+                <div className="form-group">
+                  <label
+                    htmlFor="inputPassword"
+                    className="col-lg-2 control-label"
+                  >
+                    Password
+                  </label>
+                  <Col lg={12}>
+                    <input
+                      type="password"
+                      className="form-control"
+                      id="inputPassword"
+                      placeholder="Password"
+                      autoComplete="current-password"
+                      value={password}
+                      onChange={handlesOnPasswordChange}
+                    />
+                  </Col>
+                </div>
+
+                <div className="form-group">
+                  <Col lg={{ size: 12 }}>
+                    <Button
+                      className="login-button btn-block"
+                      color="primary"
+                      disabled={isLogging}
+                      onClick={handlesOnLogin}
+                    >
+                      {isLogging ? (
+                        <span>
+                          login in... &nbsp;
+                          <i className="fa fa-spinner fa-pulse fa-fw" />
+                        </span>
+                      ) : (
+                        <span>Login</span>
+                      )}
+                    </Button>
+                  </Col>
+                </div>
+              </fieldset>
+            </form>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={{ size: 4, offset: 4 }} xs={{ size: 10, offset: 1 }}>
+            <div className="pull-right">
+              <Button className="btn-block" onClick={goHome}>
+                back to home
+              </Button>
+            </div>
+          </Col>
+        </Row>
+      </div>
+    </FadeInEntrance>
+  );
 }
+
+Login.DisplayName = 'Login';
 
 export default Login;
