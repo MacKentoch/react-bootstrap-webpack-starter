@@ -43,13 +43,14 @@ function Login({
     [],
   );
 
-  const handlesOnPasswordChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
-  ) => {
-    event && event.preventDefault();
-    // should add some validator before setState in real use cases
-    setPassword(event.target.value.trim());
-  };
+  const handlesOnPasswordChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      event && event.preventDefault();
+      // should add some validator before setState in real use cases
+      setPassword(event.target.value.trim());
+    },
+    [],
+  );
 
   const handlesOnLogin = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event && event.preventDefault();
@@ -84,44 +85,49 @@ function Login({
   };
   // #endregion
 
-  const logUser = async (login: string = '', password: string = '') => {
-    const __SOME_LOGIN_API__ = 'login';
-    const url = `${getLocationOrigin()}/${__SOME_LOGIN_API__}`;
-    const method = 'post';
-    const headers = {};
-    const options = {
-      credentials: 'same-origin',
-      data: {
-        login,
-        password,
-      },
-    };
-
-    if (appConfig.DEV_MODE) {
-      return new Promise(resolve =>
-        setTimeout(resolve({ data: userInfoMock }), 3000),
-      );
-    }
-
-    try {
-      const response = await axios.request({
-        method,
-        url,
-        withCredentials: true,
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-          'Acces-Control-Allow-Origin': '*',
-          ...headers,
+  // #region log user request
+  const logUser = useCallback(
+    async (login: string = '', password: string = '') => {
+      const __SOME_LOGIN_API__ = 'login';
+      const url = `${getLocationOrigin()}/${__SOME_LOGIN_API__}`;
+      const method = 'post';
+      const headers = {};
+      const options = {
+        credentials: 'same-origin',
+        data: {
+          login,
+          password,
         },
-        ...options,
-      });
+      };
 
-      return Promise.resolve(response);
-    } catch (error) {
-      return Promise.reject(error);
-    }
-  };
+      if (appConfig.DEV_MODE) {
+        return new Promise(resolve =>
+          setTimeout(() => resolve({ data: userInfoMock }), 3000),
+        );
+      }
+
+      try {
+        const response = await axios.request({
+          method,
+          url,
+          withCredentials: true,
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            'Acces-Control-Allow-Origin': '*',
+            ...headers,
+          },
+          ...options,
+        });
+
+        return Promise.resolve(response);
+      } catch (error) {
+        return Promise.reject(error);
+      }
+    },
+    [],
+  );
+  // #endregion
 
   return (
     <FadeInEntrance>
