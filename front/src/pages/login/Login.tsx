@@ -6,7 +6,7 @@ import Row from 'reactstrap/lib/Row';
 import Col from 'reactstrap/lib/Col';
 import { appConfig } from '../../config/appConfig';
 import { getLocationOrigin } from '../../services/API/fetchTools';
-import userInfoMock from '../../mock/userInfo.json';
+import userInfoMock from '../../mock/userInfo.js';
 import { AuthContextProps } from '../../contexts/auth/consumerHOC';
 import FadeInEntrance from '../../components/fadeInEntrance';
 
@@ -52,42 +52,39 @@ function Login({
     [],
   );
 
-  const handlesOnLogin = async (event: React.MouseEvent<HTMLButtonElement>) => {
-    event && event.preventDefault();
+  const handlesOnLogin = useCallback(
+    async (event: React.MouseEvent<HTMLButtonElement>) => {
+      event && event.preventDefault();
 
-    const { history, setToken, setUserInfo } = this.props;
-    const { email, password } = this.state;
+      try {
+        setIsLogging(true);
+        const response = await logUser(email, password);
+        const {
+          data: { token, user },
+        } = response;
 
-    const userLogin = {
-      login: email,
-      password: password,
-    };
+        setToken(token);
+        setUserInfo(user);
 
-    try {
-      this.setState({ isLogging: true });
-      const response = await logUser(userLogin);
-      const {
-        data: { token, user },
-      } = response;
-
-      setToken(token);
-      setUserInfo(user);
-
-      this.setState({ isLogging: false });
-
-      history.push({ pathname: '/' }); // back to Home
-    } catch (error) {
-      this.setState({ isLogging: false });
-      /* eslint-disable no-console */
-      console.log('login went wrong..., error: ', error);
-      /* eslint-enable no-console */
-    }
-  };
+        history.push({ pathname: '/' }); // back to Home
+      } catch (error) {
+        /* eslint-disable no-console */
+        console.log('login went wrong..., error: ', error);
+        /* eslint-enable no-console */
+      } finally {
+        setIsLogging(false);
+      }
+    },
+    [history, setToken, setUserInfo, email, password],
+  );
   // #endregion
 
   // #region log user request
   const logUser = useCallback(
-    async (login: string = '', password: string = '') => {
+    async (
+      login: string = '',
+      password: string = '',
+    ): Promise<{ data: { user: Partial<User>; token: string } }> => {
       const __SOME_LOGIN_API__ = 'login';
       const url = `${getLocationOrigin()}/${__SOME_LOGIN_API__}`;
       const method = 'post';
@@ -107,7 +104,7 @@ function Login({
       }
 
       try {
-        const response = await axios.request({
+        const response = await axios.request<{ token: string; user: any }>({
           method,
           url,
           withCredentials: true,
@@ -120,9 +117,9 @@ function Login({
           ...options,
         });
 
-        return Promise.resolve(response);
+        return response;
       } catch (error) {
-        return Promise.reject(error);
+        throw error;
       }
     },
     [],

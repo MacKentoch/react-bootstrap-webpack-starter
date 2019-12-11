@@ -1,8 +1,8 @@
 declare type User = {
-  id: string;
+  id: string | number;
   login: string;
   firstname: string;
   lastname: string;
   token: string;
-  isAuthenticated: boolean;
+  isAuthenticated?: boolean;
 };
