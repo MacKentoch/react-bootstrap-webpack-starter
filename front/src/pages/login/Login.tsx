@@ -13,7 +13,7 @@ import FadeInEntrance from '../../components/fadeInEntrance';
 type Props = {} & RouteComponentProps<any, any> & AuthContextProps;
 
 function Login({
-  disconnectUser = () => {},
+  disconnectUser = () => true,
   history,
   setToken,
   setUserInfo,
@@ -84,7 +84,7 @@ function Login({
     async (
       login: string = '',
       password: string = '',
-    ): Promise<{ data: { user: Partial<User>; token: string } }> => {
+    ): Promise<{ data: { user: User; token: string } }> => {
       const __SOME_LOGIN_API__ = 'login';
       const url = `${getLocationOrigin()}/${__SOME_LOGIN_API__}`;
       const method = 'post';
