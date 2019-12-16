@@ -1,12 +1,8 @@
-// @flow
-
-// #region imports
 import React from 'react';
 import { compose } from 'redux';
 import withSuspense from '../hoc/withSuspense';
 import { Route, Switch } from 'react-router';
 import PrivateRoute from '../components/privateRoute';
-// #endregion
 
 // #region constants
 const AsyncHome = React.lazy(() => import('../pages/home'));
