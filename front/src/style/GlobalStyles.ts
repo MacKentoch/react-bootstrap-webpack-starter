@@ -1,8 +1,4 @@
-// @flow
-
-// #region imports
 import { createGlobalStyle } from 'styled-components';
-// #endregion
 
 const GlobalStyle = createGlobalStyle`
   html, body {
