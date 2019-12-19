@@ -1,9 +1,6 @@
-// @flow
-
-// #region imports
 import React, { Component, Fragment } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
-import {compose} from 'redux';
+import { compose } from 'redux';
 import createHistory from 'history/createBrowserHistory';
 import withMainLayout from './hoc/withMainLayout';
 import MainRoutes from './routes/MainRoutes';
@@ -13,9 +10,8 @@ import AuthProvider from './contexts/auth/providerComponent';
 import { devToolsStore } from './contexts/withDevTools';
 import Login from './pages/login';
 import GlobalStyle from './style/GlobalStyles';
-// #endregion
 
-// #region flow types
+// #region types
 type Props = any;
 type State = any;
 // #endregion
@@ -29,7 +25,13 @@ const history = createHistory();
 class Root extends Component<Props, State> {
   componentDidMount() {
     // init devTools (so that will be visible in Chrome redux devtools tab):
-    devToolsStore && devToolsStore.init();
+    devToolsStore && devToolsStore?.init();
+  }
+
+  componentDidCatch(error: any, info: any) {
+    console.log('App error: ', error);
+    console.log('App error info: ', info);
+    //
   }
 
   render() {

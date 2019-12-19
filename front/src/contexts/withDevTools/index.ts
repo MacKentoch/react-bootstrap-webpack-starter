@@ -12,6 +12,7 @@ export type DevToolsMessage = {
 };
 
 export type DevTools = {
+  init: () => void;
   connect: () => any;
   subscribe: (message: DevToolsMessage) => any;
   send: (action: { type: string; state?: any }, newState: any) => any;
@@ -22,6 +23,7 @@ export type DevTools = {
 // #endregion
 
 // #region constants
+// @ts-ignore
 const isDEV = process.env.NODE_ENV === 'development';
 
 export const withDevTools =
