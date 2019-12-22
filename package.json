@@ -1,6 +1,6 @@
 {
   "name": "react-bootstrap-webpack-starter",
-  "version": "8.0.0",
+  "version": "9.0.0",
   "description": "react js + bootstrap + webpack starter",
   "main": "src/index.js",
   "repository": {
@@ -16,21 +16,18 @@
     "yarn": ">=1.19.0"
   },
   "scripts": {
-    "flow": "node_modules/.bin/flow",
-    "test": "cross-env NODE_ENV=test jest --no-cache",
-    "clean-docs": "rimraf docs/*",
-    "prepare:index-html": "node ./scripts/prepareIndexHtml.js",
-    "analyze": "rimraf docs/public/assets && cross-env NODE_ENV=production webpack -p --config webpack.analyze.config.js",
+    "test": "cross-env NODE_ENV=test jest",
+    "test:coverage": "cross-env NODE_ENV=test jest --coverage",
+    "clean-docs": "rimraf ../docs/*",
     "predev": "npm run clean-docs",
     "dev": "cross-env NODE_ENV=dev webpack --config webpack.dev.config.js",
     "postdev": "react-snap",
     "preprod": "npm run clean-docs",
     "prod": "cross-env NODE_ENV=production webpack -p --config webpack.production.config.js",
     "postprod": "react-snap",
-    "prestart": "npm run clean-docs && npm run prepare:index-html",
-    "start": "cross-env NODE_ENV=dev webpack-dev-server --config ./webpack.hot.reload.config.js --mode development",
-    "serve-dev": "npm run dev && nodemon ./src/server/server.js",
-    "serve-prod": "npm run prod && node ./src/server/server.js"
+    "analyze": "rimraf docs/assets && cross-env NODE_ENV=production webpack -p --config webpack.analyze.config.js",
+    "prestart": "npm run clean-docs",
+    "start": "cross-env NODE_ENV=dev webpack-dev-server --config ./webpack.hot.reload.config.js"
   },
   "reactSnap": {
     "source": "docs"
