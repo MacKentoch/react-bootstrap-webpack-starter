@@ -1,6 +1,3 @@
-// @flow
-
-// #region imports
 import '@babel/polyfill'; // NOTE: REALLY important to avoid "regeneratorRuntime is not defined"
 import React from 'react';
 import { hydrate, unstable_createRoot } from 'react-dom';
@@ -8,7 +5,6 @@ import { AppContainer } from 'react-hot-loader';
 import smoothScrollPolyfill from 'smoothscroll-polyfill';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Root from './Root';
-// #endregion
 
 // #region constants
 const ELEMENT_TO_BOOTSTRAP = 'root';
@@ -20,9 +16,9 @@ const root = unstable_createRoot(bootstrapedElement);
 // smoothscroll polyfill
 smoothScrollPolyfill.polyfill();
 // force polyfill (even if browser partially implements it)
-window.__forceSmoothScrollPolyfill__ = true;
+(window as any).__forceSmoothScrollPolyfill__ = true;
 
-window.snapSaveState = () => ({
+(window as any).snapSaveState = () => ({
   __LOADABLE_STATE__: {
     children: [
       {
@@ -44,7 +40,7 @@ window.snapSaveState = () => ({
 // #endregion
 
 // #region render (with hot reload if dev)
-const renderApp = RootComponent => {
+const renderApp = (RootComponent: any) => {
   const Application = () => (
     <AppContainer>
       <RootComponent />
