@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
+import { hot } from 'react-hot-loader/root';
 import { compose } from 'redux';
 import createHistory from 'history/createBrowserHistory';
 import withMainLayout from './hoc/withMainLayout';
@@ -56,4 +57,4 @@ class Root extends Component<Props, State> {
   }
 }
 
-export default Root;
+export default hot(Root);
