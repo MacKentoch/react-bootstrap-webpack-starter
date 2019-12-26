@@ -6,7 +6,7 @@ import Row from 'reactstrap/lib/Row';
 import Col from 'reactstrap/lib/Col';
 import { appConfig } from '../../config/appConfig';
 import { getLocationOrigin } from '../../services/API/fetchTools';
-import userInfoMock from '../../mock/userInfo.js';
+import userInfoMock from '../../mock/userInfo';
 import { AuthContextProps } from '../../contexts/auth/consumerHOC';
 import FadeInEntrance from '../../components/fadeInEntrance';
 
