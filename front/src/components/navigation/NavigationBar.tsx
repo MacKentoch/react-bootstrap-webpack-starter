@@ -8,7 +8,7 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
-import { RouteComponentProps } from 'react-router';
+import { RouteComponentProps } from 'react-router-dom';
 import { OwnProps, MappedDispatchToProps, MappedStateToProps } from './index';
 
 // #region types
@@ -24,7 +24,6 @@ function NavigationBar({
   leftNavItemClick,
   rightNavItemClick,
   isAuthenticated,
-  history,
   disconnectUser,
 }: Props) {
   const [isOpen, setIsOpen] = useState(false);
