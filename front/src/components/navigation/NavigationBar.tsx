@@ -10,15 +10,17 @@ import {
 } from 'reactstrap';
 import { RouteComponentProps } from 'react-router-dom';
 import { OwnProps, MappedDispatchToProps, MappedStateToProps } from './index';
+import { Link } from '../../config/navigation';
 
 // #region types
-type Props = {} & RouteComponentProps &
+type Props = RouteComponentProps &
   OwnProps &
   MappedStateToProps &
   MappedDispatchToProps;
 // #endregion
 
 function NavigationBar({
+  history,
   brand,
   navModel: { rightLinks },
   leftNavItemClick,
@@ -37,7 +39,7 @@ function NavigationBar({
 
   // #region handlesNavItemClick event
   const handlesNavItemClick = (link: string = '/') => (
-    event: React.MouseEvent<HTMLButtonElement>,
+    event: React.MouseEvent<HTMLButtonElement | any>,
   ) => {
     event && event.preventDefault();
     history.push(link);
@@ -45,7 +47,9 @@ function NavigationBar({
   // #endregion
 
   // #region disconnect
-  const handlesDisconnect = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handlesDisconnect = (
+    event: React.MouseEvent<HTMLButtonElement | any>,
+  ) => {
     event && event.preventDefault();
     disconnectUser();
     history.push('/');
@@ -58,7 +62,7 @@ function NavigationBar({
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
         <Nav className="ml-auto" navbar>
-          {rightLinks.map(({ label, link }, index) => (
+          {(rightLinks as Array<Link>).map(({ label, link }, index) => (
             <NavItem key={`${index}`}>
               <NavLink href="#" onClick={handlesNavItemClick(link)}>
                 {label}
