@@ -11,7 +11,5 @@ export type OwnProps = {
   rightNavItemClick: () => any;
   disconnectUser: () => any;
 };
-export type MappedDispatchToProps = any;
-export type MappedStateToProps = any;
 
 export default compose(withAuth())(NavigationBar);

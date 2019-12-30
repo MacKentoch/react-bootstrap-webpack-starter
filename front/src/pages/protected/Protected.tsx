@@ -1,9 +1,13 @@
 import React, { PureComponent } from 'react';
 import { RouteComponentProps } from 'react-router';
 import FadeInEntrance from '../../components/fadeInEntrance';
+import { OwnProps, MappedDispatchToProps, MappedStateToProps } from './index';
 
 // #region types
-type Props = {} & RouteComponentProps<any, any>;
+type Props = RouteComponentProps &
+  OwnProps &
+  MappedStateToProps &
+  MappedDispatchToProps;
 // #endregion
 
 function Protected({}: Props) {

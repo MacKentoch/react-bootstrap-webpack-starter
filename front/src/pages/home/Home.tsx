@@ -7,7 +7,7 @@ import MainTitle from './styled/MainTitle';
 import LightNote from './styled/LightNote';
 import FadeInEntrance from '../../components/fadeInEntrance';
 
-type Props = {} & RouteComponentProps<any, any>;
+type Props = RouteComponentProps;
 
 function Home({}: Props) {
   return (
