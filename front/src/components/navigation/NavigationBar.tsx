@@ -9,11 +9,11 @@ import {
   NavLink,
 } from 'reactstrap';
 import { RouteComponentProps } from 'react-router-dom';
-import { OwnProps } from './index';
+import { OwnProps, FromAuthContextProps } from './index';
 import { Link } from '../../config/navigation';
 
 // #region types
-type Props = RouteComponentProps & OwnProps;
+type Props = RouteComponentProps & OwnProps & FromAuthContextProps;
 // #endregion
 
 function NavigationBar({
