@@ -2,18 +2,17 @@ import React from 'react';
 import { useEffect } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { RouteComponentProps } from 'react-router';
-import { MappedDispatchToProps, MappedStateToProps, OwnProps } from './index';
+import { FromAuthContextProps, OwnProps } from './index';
 
 // #region types
-type Props = {} & RouteComponentProps &
-  MappedDispatchToProps &
-  MappedStateToProps &
-  OwnProps;
+type Props = {} & RouteComponentProps & FromAuthContextProps & OwnProps;
 // #endregion
 
 function LogoutRoute(props: Props) {
   const { disconnectUser } = props;
-  useEffect(() => disconnectUser());
+  useEffect(() => {
+    disconnectUser();
+  });
 
   return (
     <Route {...props}>
