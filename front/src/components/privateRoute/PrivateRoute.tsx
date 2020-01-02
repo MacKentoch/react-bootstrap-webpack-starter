@@ -1,12 +1,10 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { RouteComponentProps } from 'react-router';
+import { OwnProps, FromAuthContextProps } from './index';
 
 // #region types
-type Props = {
-  component: any;
-  checkUserIsConnected: () => { isAuthenticated: boolean };
-} & RouteComponentProps;
+type Props = RouteComponentProps & OwnProps & FromAuthContextProps;
 // #endregion
 
 function PrivateRoute(props: Props) {
