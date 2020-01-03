@@ -3,9 +3,10 @@ import { withRouter, RouteComponentProps } from 'react-router';
 import { Location } from 'history';
 
 // #region types
-type Props = {
+type OwnProps = {
   children: any;
-} & RouteComponentProps;
+};
+type Props = OwnProps & RouteComponentProps;
 // #endregion
 
 function useScrollToTopOnLocationChange(location: any) {
@@ -15,15 +16,12 @@ function useScrollToTopOnLocationChange(location: any) {
     prevLocation.current = location;
   }, []);
 
-  useEffect(
-    () => {
-      if (prevLocation.current !== location) {
-        window && window.scrollTo(0, 0);
-        prevLocation.current = location;
-      }
-    },
-    [location],
-  );
+  useEffect(() => {
+    if (prevLocation.current !== location) {
+      window && window.scrollTo(0, 0);
+      prevLocation.current = location;
+    }
+  }, [location]);
 }
 
 function ScrollToTop({ children, location }: Props) {

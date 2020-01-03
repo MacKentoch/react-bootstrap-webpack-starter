@@ -1,7 +1,6 @@
 import { createContext } from 'react';
 
 // #region types
-
 export type AuthData = {
   isAuthenticated: boolean;
   isExpiredToken?: boolean;
