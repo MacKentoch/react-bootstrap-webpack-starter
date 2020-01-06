@@ -1,15 +1,17 @@
 // #region types
 export type Link = {
   label: string;
+  viewName?: string;
   link: string;
   view?: string;
   isRouteBtn?: boolean;
+  onClick?: () => any;
 };
 
 export type Navigation = {
   brand: string;
-  leftLinks: Array<Link>;
-  rightLinks: Array<Link>;
+  leftLinks?: Array<Link>;
+  rightLinks?: Array<Link>;
 };
 // #endregion
 

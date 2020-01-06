@@ -6,6 +6,12 @@ import NavigationBar from '../NavigationBar';
 describe('NavigationBar component', () => {
   it('renders as expected', () => {
     const props = {
+      checkIsAuthenticated: () => true,
+      checkTokenIsExpired: () => false,
+      setToken: () => {},
+      setUserInfo: (user: User) => {},
+      disconnectUser: () => true,
+
       brand: 'test',
       handleLeftNavItemClick: () => {},
       handleRightNavItemClick: () => {},
