@@ -1,20 +1,23 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { MemoryRouter } from 'react-router';
+import { getMockRouterProps } from '../../../../test/mockedRouter';
+import { OwnProps, FromAuthContextProps } from '../index';
 import NavigationBar from '../NavigationBar';
 
 describe('NavigationBar component', () => {
   it('renders as expected', () => {
-    const props = {
+    const props = getMockRouterProps<OwnProps & FromAuthContextProps>({
+      isAuthenticated: false,
       checkIsAuthenticated: () => true,
       checkTokenIsExpired: () => false,
-      setToken: () => {},
+      setToken: (token: string) => {},
       setUserInfo: (user: User) => {},
       disconnectUser: () => true,
 
       brand: 'test',
-      handleLeftNavItemClick: () => {},
-      handleRightNavItemClick: () => {},
+      leftNavItemClick: () => {},
+      rightNavItemClick: () => {},
       navModel: {
         leftLinks: [
           {
@@ -33,7 +36,7 @@ describe('NavigationBar component', () => {
           },
         ],
       },
-    };
+    });
 
     const component = shallow(
       <div>
