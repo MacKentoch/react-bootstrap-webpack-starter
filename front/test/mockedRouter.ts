@@ -41,6 +41,7 @@ export function getMockRouterProps<P>(data: P) {
       },
     },
     staticContext: {},
+    ...data,
   };
 
   return props;

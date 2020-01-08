@@ -7,7 +7,7 @@ import NavigationBar from '../NavigationBar';
 
 describe('NavigationBar component', () => {
   it('renders as expected', () => {
-    const props = getMockRouterProps<OwnProps & FromAuthContextProps>({
+    const props = getMockRouterProps<any>({
       isAuthenticated: false,
       checkIsAuthenticated: () => true,
       checkTokenIsExpired: () => false,
