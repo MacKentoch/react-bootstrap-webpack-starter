@@ -17,9 +17,11 @@ export const authDefault: AuthData = {
 // #endregion
 
 // #region context
-const AuthContext = createContext<AuthData>({
+export const AuthContext = createContext<AuthData>({
   ...authDefault,
 });
+
+export default AuthContext;
 
 export const AuthContextProvider = AuthContext.Provider;
 export const AuthContextConsumer = AuthContext.Consumer;
