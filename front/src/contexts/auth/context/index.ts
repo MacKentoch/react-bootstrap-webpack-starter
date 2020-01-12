@@ -8,18 +8,28 @@ export type AuthData = {
   token?: string;
   user?: User;
 };
+
+export type AuthProviderState = {
+  checkIsAuthenticated: () => boolean;
+  checkTokenIsExpired: () => boolean;
+  setToken: (token: string) => any;
+  setUserInfo: (user: User) => any;
+  disconnectUser: () => boolean;
+} & AuthData;
 // #endregion
 
 // #region default context value
-export const authDefault: AuthData = {
-  isAuthenticated: false,
-};
+// export const authDefault: AuthProviderState = {
+//   isAuthenticated: false,
+//   isExpiredToken: undefined,
+//   lastAuthDate: undefined,
+//   token: '',
+//   user: undefined,
+// };
 // #endregion
 
 // #region context
-export const AuthContext = createContext<AuthData>({
-  ...authDefault,
-});
+export const AuthContext = createContext<AuthProviderState>();
 
 export default AuthContext;
 

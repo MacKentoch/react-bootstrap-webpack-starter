@@ -7,13 +7,6 @@ import { devToolsStore } from '../../withDevTools';
 export type AuthProviderProps = {
   initialState: {} & AuthData;
 };
-export type AuthProviderState = {
-  checkIsAuthenticated: () => boolean;
-  checkTokenIsExpired: () => boolean;
-  setToken: (token: string) => any;
-  setUserInfo: (user: User) => any;
-  disconnectUser: () => boolean;
-} & AuthData;
 // #endregion
 
 // #region constants
