@@ -3,19 +3,17 @@ import { useEffect, useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { RouteComponentProps } from 'react-router';
 import { FromAuthContextProps, OwnProps } from './index';
-import AuthContext from '../../contexts/auth/context';
-import { AuthProviderState } from '../../contexts/auth/providerComponent';
+import { AuthContext } from '../../contexts/auth';
 
-// TODO: fix context hook in TS: https://stackoverflow.com/questions/53335907/using-react-context-with-react-hooks-in-typescript
 // #region types
-type Props = {} & RouteComponentProps & FromAuthContextProps & OwnProps;
+type Props = OwnProps & RouteComponentProps & FromAuthContextProps;
 // #endregion
 
 function LogoutRoute(props: Props) {
-  const auth = useContext(AuthContext);
+  const auth = useContext<FromAuthContextProps | null>(AuthContext);
 
   useEffect(() => {
-    auth.disconnectUser();
+    auth && auth.disconnectUser();
   }, []);
 
   return (

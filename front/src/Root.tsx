@@ -5,7 +5,7 @@ import createHistory from 'history/createBrowserHistory';
 import MainRoutes from './routes/MainRoutes';
 import ScrollToTop from './components/scrollToTop/ScrollToTop';
 import LogoutRoute from './components/logoutRoute';
-import AuthProvider from './contexts/auth/providerComponent';
+import { AuthProvider } from './contexts/auth';
 import { devToolsStore } from './contexts/withDevTools';
 import Login from './pages/login';
 import GlobalStyle from './style/GlobalStyles';

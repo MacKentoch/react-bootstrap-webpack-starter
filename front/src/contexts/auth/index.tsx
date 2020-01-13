@@ -1,12 +1,31 @@
-import React, { Component } from 'react';
-import { AuthContextProvider, AuthData } from '../context';
-import auth from '../../../services/auth';
-import { devToolsStore } from '../../withDevTools';
+import React, { Component, createContext } from 'react';
+import auth from '../../services/auth';
+import { devToolsStore } from '../withDevTools';
 
 // #region types
+export type AuthData = {
+  isAuthenticated: boolean;
+  isExpiredToken?: boolean;
+  lastAuthDate?: Date;
+  token?: string;
+  user?: User;
+};
+
+export type AuthProviderState = {
+  checkIsAuthenticated: () => boolean;
+  checkTokenIsExpired: () => boolean;
+  setToken: (token: string) => any;
+  setUserInfo: (user: User) => any;
+  disconnectUser: () => boolean;
+} & AuthData;
+
 export type AuthProviderProps = {
   initialState: {} & AuthData;
 };
+// #endregion
+
+// #region context
+export const AuthContext = createContext<AuthProviderState | null>(null);
 // #endregion
 
 // #region constants
@@ -20,7 +39,7 @@ const initialState: AuthData = {
 // #endregion
 
 // #region PROVIDER component
-export default class AuthProvider extends Component<
+export class AuthProvider extends Component<
   AuthProviderProps,
   AuthProviderState
 > {
@@ -49,13 +68,13 @@ export default class AuthProvider extends Component<
     const { children } = this.props;
 
     return (
-      <AuthContextProvider
+      <AuthContext.Provider
         value={{
           ...this.state,
         }}
       >
         {children}
-      </AuthContextProvider>
+      </AuthContext.Provider>
     );
   }
   // #endregion
@@ -130,4 +149,6 @@ export default class AuthProvider extends Component<
     return true;
   };
 }
+
+export default AuthProvider;
 // #endregion
