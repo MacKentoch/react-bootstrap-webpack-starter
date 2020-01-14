@@ -1,6 +1,5 @@
 import { compose } from 'redux';
-import withAuth from '../../contexts/auth/consumerHOC';
-import { AuthProviderState } from '../../contexts/auth/providerComponent';
+import { AuthProviderState } from '../../contexts/auth';
 import NavigationBar from './NavigationBar';
 import { Link } from '../../config/navigation';
 
@@ -13,4 +12,4 @@ export type OwnProps = {
 
 export type FromAuthContextProps = AuthProviderState;
 
-export default compose(withAuth())(NavigationBar);
+export default compose()(NavigationBar);

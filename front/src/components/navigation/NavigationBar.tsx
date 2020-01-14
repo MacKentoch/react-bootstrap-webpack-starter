@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {
   Collapse,
   Navbar,
@@ -11,10 +11,9 @@ import {
 import { RouteComponentProps } from 'react-router-dom';
 import { OwnProps, FromAuthContextProps } from './index';
 import { Link } from '../../config/navigation';
+import { AuthContext } from '../../contexts/auth';
 
-// #region types
 type Props = RouteComponentProps & OwnProps & FromAuthContextProps;
-// #endregion
 
 function NavigationBar({
   history,
@@ -22,10 +21,9 @@ function NavigationBar({
   navModel: { rightLinks },
   leftNavItemClick,
   rightNavItemClick,
-  isAuthenticated,
-  disconnectUser,
 }: Props) {
   const [isOpen, setIsOpen] = useState(false);
+  const auth = useContext<FromAuthContextProps | null>(AuthContext);
 
   // #region navigation bar toggle
   const toggle = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -38,7 +36,7 @@ function NavigationBar({
   const handlesNavItemClick = (link: string = '/') => (
     event: React.MouseEvent<HTMLButtonElement | any>,
   ) => {
-    event && event.preventDefault();
+    event?.preventDefault();
     history.push(link);
   };
   // #endregion
@@ -47,8 +45,8 @@ function NavigationBar({
   const handlesDisconnect = (
     event: React.MouseEvent<HTMLButtonElement | any>,
   ) => {
-    event && event.preventDefault();
-    disconnectUser();
+    event?.preventDefault();
+    auth?.disconnectUser();
     history.push('/');
   };
   // #endregion
@@ -66,7 +64,7 @@ function NavigationBar({
               </NavLink>
             </NavItem>
           ))}
-          {isAuthenticated && (
+          {auth?.isAuthenticated && (
             <NavItem>
               <NavLink href="#" onClick={handlesDisconnect}>
                 Disconnect
