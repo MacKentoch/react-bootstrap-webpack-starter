@@ -9,11 +9,17 @@ import {
   NavLink,
 } from 'reactstrap';
 import { RouteComponentProps } from 'react-router-dom';
-import { OwnProps, FromAuthContextProps } from './index';
 import { Link } from '../../config/navigation';
-import { AuthContext } from '../../contexts/auth';
+import { AuthContext, AuthProviderState } from '../../contexts/auth';
+import { Navigation } from '../../config/navigation';
 
-type Props = RouteComponentProps & OwnProps & FromAuthContextProps;
+export type OwnProps = {
+  brand: string;
+  navModel: Partial<Navigation>;
+  leftNavItemClick?: () => any;
+  rightNavItemClick?: () => any;
+};
+type Props = RouteComponentProps & OwnProps;
 
 function NavigationBar({
   history,
@@ -23,7 +29,7 @@ function NavigationBar({
   rightNavItemClick,
 }: Props) {
   const [isOpen, setIsOpen] = useState(false);
-  const auth = useContext<FromAuthContextProps | null>(AuthContext);
+  const auth = useContext<AuthProviderState | null>(AuthContext);
 
   // #region navigation bar toggle
   const toggle = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {

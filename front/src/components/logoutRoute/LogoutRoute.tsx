@@ -2,15 +2,15 @@ import React from 'react';
 import { useEffect, useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { RouteComponentProps } from 'react-router';
-import { FromAuthContextProps, OwnProps } from './index';
-import { AuthContext } from '../../contexts/auth';
+import { AuthProviderState, AuthContext } from '../../contexts/auth';
 
 // #region types
-type Props = OwnProps & RouteComponentProps & FromAuthContextProps;
+type OwnProps = {};
+type Props = OwnProps & RouteComponentProps;
 // #endregion
 
 function LogoutRoute(props: Props) {
-  const auth = useContext<FromAuthContextProps | null>(AuthContext);
+  const auth = useContext<AuthProviderState | null>(AuthContext);
 
   useEffect(() => {
     auth && auth.disconnectUser();
