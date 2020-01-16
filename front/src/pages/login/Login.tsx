@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useContext } from 'react';
 import axios from 'axios';
 import { RouteComponentProps } from 'react-router';
 import Button from 'reactstrap/lib/Button';
@@ -7,24 +7,21 @@ import Col from 'reactstrap/lib/Col';
 import { appConfig } from '../../config/appConfig';
 import { getLocationOrigin } from '../../services/API/fetchTools';
 import userInfoMock from '../../mock/userInfo';
-import { AuthContextProps } from '../../contexts/auth/consumerHOC';
+import { AuthProviderState, AuthContext } from '../../contexts/auth';
 import FadeInEntrance from '../../components/fadeInEntrance';
 
-type Props = {} & RouteComponentProps<any, any> & AuthContextProps;
+export type OwnProps = {};
+type Props = OwnProps & RouteComponentProps;
 
-function Login({
-  disconnectUser = () => true,
-  history,
-  setToken,
-  setUserInfo,
-}: Props) {
+function Login({ history }: Props) {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [isLogging, setIsLogging] = useState<boolean>(false);
+  const auth = useContext<AuthProviderState | null>(AuthContext);
 
   // #region on mount
   useEffect(() => {
-    disconnectUser(); // diconnect user: remove token and user info
+    auth?.disconnectUser(); // diconnect user: remove token and user info
   }, []);
   // #endregion
 
@@ -63,8 +60,8 @@ function Login({
           data: { token, user },
         } = response;
 
-        setToken(token);
-        setUserInfo(user);
+        auth?.setToken(token);
+        auth?.setUserInfo(user);
 
         history.push({ pathname: '/' }); // back to Home
       } catch (error) {
@@ -75,7 +72,7 @@ function Login({
         setIsLogging(false);
       }
     },
-    [history, setToken, setUserInfo, email, password],
+    [history, email, password],
   );
   // #endregion
 

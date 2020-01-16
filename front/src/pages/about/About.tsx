@@ -1,8 +1,8 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import FadeInEntrance from '../../components/fadeInEntrance';
-import { OwnProps } from './index';
 
+type OwnProps = {};
 type Props = OwnProps & RouteComponentProps;
 
 function About({}: Props) {
