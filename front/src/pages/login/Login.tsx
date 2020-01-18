@@ -13,7 +13,7 @@ import FadeInEntrance from '../../components/fadeInEntrance';
 export type OwnProps = {};
 type Props = OwnProps & RouteComponentProps;
 
-function Login({ history }: Props) {
+function Login({ history, location }: Props) {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [isLogging, setIsLogging] = useState<boolean>(false);
@@ -53,6 +53,8 @@ function Login({ history }: Props) {
     async (event: React.MouseEvent<HTMLButtonElement>) => {
       event && event.preventDefault();
 
+      const { from } = location.state || { from: { pathname: '/' } };
+
       try {
         setIsLogging(true);
         const response = await logUser(email, password);
@@ -63,7 +65,7 @@ function Login({ history }: Props) {
         auth?.setToken(token);
         auth?.setUserInfo(user);
 
-        history.push({ pathname: '/' }); // back to Home
+        history.replace(from); // back to previous private failed access page or by default to Home
       } catch (error) {
         /* eslint-disable no-console */
         console.log('login went wrong..., error: ', error);
@@ -72,7 +74,7 @@ function Login({ history }: Props) {
         setIsLogging(false);
       }
     },
-    [history, email, password],
+    [history, email, password, location],
   );
   // #endregion
 
