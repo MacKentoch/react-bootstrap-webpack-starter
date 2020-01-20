@@ -16,8 +16,8 @@ import { Navigation } from '../../config/navigation';
 export type OwnProps = {
   brand: string;
   navModel: Partial<Navigation>;
-  leftNavItemClick?: () => any;
-  rightNavItemClick?: () => any;
+  leftNavItemClick?: (event?: any, viewName?: string) => any;
+  rightNavItemClick?: (event?: any, viewName?: string) => any;
 };
 type Props = RouteComponentProps & OwnProps;
 

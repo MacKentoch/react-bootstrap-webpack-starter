@@ -4,10 +4,8 @@ import { Route, Redirect } from 'react-router-dom';
 import { RouteComponentProps } from 'react-router';
 import { AuthProviderState, AuthContext } from '../../contexts/auth';
 
-// #region types
 type OwnProps = {};
 type Props = OwnProps & RouteComponentProps;
-// #endregion
 
 function LogoutRoute(props: Props) {
   const auth = useContext<AuthProviderState | null>(AuthContext);

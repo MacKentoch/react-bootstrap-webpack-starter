@@ -3,7 +3,6 @@ import cx from 'classnames';
 import UpIcon from './UpIcon';
 import WithRightMargin from './styled/WithRightMargin';
 
-// #region types
 export type BackButtonPosition = 'bottom-left' | 'bottom-right';
 type Props = {
   position: BackButtonPosition;
@@ -11,7 +10,6 @@ type Props = {
   children?: any;
   motionStyle: any;
 };
-// #endregion
 
 // #region constants
 const defaultBackGroundColor = '#4A4A4A';

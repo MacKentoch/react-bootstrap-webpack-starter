@@ -16,12 +16,15 @@ function MainLayout({ children }: Props) {
 
   // #region callbacks
   /* eslint-disable no-unused-vars*/
-  const handleLeftNavItemClick = useCallback((event: any, viewName: string) => {
-    // something to do here?
-  }, []);
+  const handleLeftNavItemClick = useCallback(
+    (event?: any, viewName?: string) => {
+      // something to do here?
+    },
+    [],
+  );
 
   const handleRightNavItemClick = useCallback(
-    (event: any, viewName: string) => {
+    (event?: any, viewName?: string) => {
       // something to do here?
     },
     [],
@@ -33,8 +36,8 @@ function MainLayout({ children }: Props) {
       <NavigationBar
         brand={navModel.brand}
         navModel={navModel}
-        handleLeftNavItemClick={handleLeftNavItemClick}
-        handleRightNavItemClick={handleRightNavItemClick}
+        leftNavItemClick={handleLeftNavItemClick}
+        rightNavItemClick={handleRightNavItemClick}
       />
       <Container fluid>{children}</Container>
       <BackToTop minScrollY={40} scrollTo={'appContainer'} />

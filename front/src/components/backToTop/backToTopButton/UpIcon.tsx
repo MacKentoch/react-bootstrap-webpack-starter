@@ -1,10 +1,8 @@
 import React from 'react';
 
-// #region types
 type Props = {
   color: string;
 };
-// #endregion
 
 const UpIcon = ({ color }: Props) => {
   return (

@@ -3,13 +3,11 @@ import React, { useState, useEffect } from 'react';
 import BackToTopButton from './backToTopButton/BackToTopButton';
 import { Motion, spring, presets } from 'react-motion';
 
-// #region types
 type Props = {
-  minScrollY: number,
-  scrollTo?: string,
-  onScrollDone?: () => any,
+  minScrollY: number;
+  scrollTo?: string;
+  onScrollDone?: () => any;
 };
-// #endregion
 
 function BackToTop({ minScrollY = 120, onScrollDone = () => {} }: Props) {
   const [showBackButton, setShowBackButton] = useState(false);
