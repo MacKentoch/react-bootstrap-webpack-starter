@@ -11,10 +11,8 @@ import Login from './pages/login';
 import GlobalStyle from './style/GlobalStyles';
 import registerServiceWorker from './services/sw/registerServiceWorker';
 
-// #region types
 type Props = any;
 type State = any;
-// #endregion
 
 // #region constants
 const history = createHistory();

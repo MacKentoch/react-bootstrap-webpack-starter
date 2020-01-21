@@ -1,15 +1,13 @@
 import React, { useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { RouteComponentProps } from 'react-router';
+import { RouteComponentProps, withRouter } from 'react-router';
 import { AuthContext, AuthProviderState } from '../../contexts/auth';
 
-// #region types
-export type OwnProps = {
+type OwnProps = {
   component: any;
   checkUserIsConnected: () => { isAuthenticated: boolean };
 };
 type Props = RouteComponentProps & OwnProps;
-// #endregion
 
 function PrivateRoute(props: Props) {
   const auth = useContext<AuthProviderState | null>(AuthContext);
@@ -34,4 +32,4 @@ function PrivateRoute(props: Props) {
 
 PrivateRoute.displayName = 'PrivateRoute';
 
-export default PrivateRoute;
+export default withRouter(PrivateRoute);

@@ -10,7 +10,7 @@ import userInfoMock from '../../mock/userInfo';
 import { AuthProviderState, AuthContext } from '../../contexts/auth';
 import FadeInEntrance from '../../components/fadeInEntrance';
 
-export type OwnProps = {};
+type OwnProps = {};
 type Props = OwnProps & RouteComponentProps;
 
 function Login({ history, location }: Props) {

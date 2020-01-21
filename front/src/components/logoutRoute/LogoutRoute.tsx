@@ -1,10 +1,12 @@
 import React from 'react';
 import { useEffect, useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { RouteComponentProps } from 'react-router';
+import { RouteComponentProps, withRouter } from 'react-router';
 import { AuthProviderState, AuthContext } from '../../contexts/auth';
 
-type OwnProps = {};
+type OwnProps = {
+  path?: string;
+};
 type Props = OwnProps & RouteComponentProps;
 
 function LogoutRoute(props: Props) {
@@ -23,4 +25,4 @@ function LogoutRoute(props: Props) {
 
 LogoutRoute.displayName = 'LogoutRoute';
 
-export default LogoutRoute;
+export default withRouter(LogoutRoute);

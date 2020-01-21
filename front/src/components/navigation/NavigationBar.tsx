@@ -8,7 +8,7 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
-import { RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { Link } from '../../config/navigation';
 import { AuthContext, AuthProviderState } from '../../contexts/auth';
 import { Navigation } from '../../config/navigation';
@@ -85,4 +85,4 @@ function NavigationBar({
 
 NavigationBar.displayName = 'NavigationBar';
 
-export default NavigationBar;
+export default withRouter(NavigationBar);

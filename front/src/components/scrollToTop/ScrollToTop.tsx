@@ -2,12 +2,10 @@ import React, { Fragment, useEffect, useRef } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router';
 import { Location } from 'history';
 
-// #region types
 type OwnProps = {
   children: any;
 };
 type Props = OwnProps & RouteComponentProps;
-// #endregion
 
 function useScrollToTopOnLocationChange(location: any) {
   const prevLocation = useRef<Location | null>(null);
