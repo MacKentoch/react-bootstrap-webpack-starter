@@ -2,10 +2,10 @@ import React, { PureComponent } from 'react';
 import { RouteComponentProps } from 'react-router';
 import FadeInEntrance from '../../components/fadeInEntrance';
 
-type OwnProps = {};
+type OwnProps = any;
 type Props = RouteComponentProps & OwnProps;
 
-function Protected({}: Props) {
+function Protected() {
   return (
     <FadeInEntrance>
       <h1>Protected view</h1>

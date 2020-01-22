@@ -9,7 +9,7 @@ import FadeInEntrance from '../../components/fadeInEntrance';
 
 type Props = RouteComponentProps;
 
-function Home({}: Props) {
+function Home() {
   return (
     <FadeInEntrance>
       <Jumbotron>

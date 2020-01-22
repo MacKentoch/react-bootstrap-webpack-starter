@@ -3,10 +3,10 @@ import { RouteComponentProps } from 'react-router';
 import Jumbotron from 'reactstrap/lib/Jumbotron';
 import FadeInEntrance from '../../components/fadeInEntrance';
 
-type OwnProps = {};
+type OwnProps = any;
 type Props = OwnProps & RouteComponentProps;
 
-function PageNotFound({}: Props) {
+function PageNotFound() {
   return (
     <FadeInEntrance>
       <Jumbotron>

@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/backToTop/BackToTop.tsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/components/backToTop</a> BackToTop.tsx
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">47.62% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>20/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.38% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>3/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">38.24% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>13/34</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable no-undefined */
+import React, { useState, useEffect } from 'react';
+import BackToTopButton from './backToTopButton/BackToTopButton';
+import { Motion, spring, presets } from 'react-motion';
+&nbsp;
+type Props = {
+  minScrollY: number;
+  scrollTo?: string;
+  onScrollDone?: () =&gt; any;
+};
+&nbsp;
+function BackToTop({ <span class="branch-0 cbranch-no" title="branch not covered" >minScrollY = 120</span>, <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >onScrollDone = () =&gt; {}</span></span> }: Props) {
+  const [showBackButton, setShowBackButton] = useState(false);
+  const [windowScrollY, setWindowScrollY] = useState(0);
+  const [tickingScollObserve, setTickingScollObserve] = useState(false);
+&nbsp;
+  // #region on windows scroll callback
+  const handleWindowScroll = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    if (!window) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+&nbsp;
+    /* eslint-disable no-undefined */
+    const currentWindowScrollY =
+<span class="cstat-no" title="statement not covered" >      window.pageYOffset !== undefined</span>
+        ? window.pageYOffset
+        : (
+            document.documentElement ||
+            document.body.parentNode ||
+            document.body
+          ).scrollTop;
+    /* eslint-enable no-undefined */
+&nbsp;
+    // scroll event fires to often, using window.requestAnimationFrame to limit computations
+<span class="cstat-no" title="statement not covered" >    if (!tickingScollObserve) {</span>
+<span class="cstat-no" title="statement not covered" >      window.requestAnimationFrame(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (windowScrollY !== currentWindowScrollY) {</span>
+          const shouldShowBackButton =
+<span class="cstat-no" title="statement not covered" >            currentWindowScrollY &gt;= minScrollY ? true : false;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          setWindowScrollY(currentWindowScrollY);</span>
+<span class="cstat-no" title="statement not covered" >          setShowBackButton(shouldShowBackButton);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        setTickingScollObserve(false);</span>
+      });
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    setTickingScollObserve(true);</span>
+  };
+  // #endregion
+&nbsp;
+  // #region on button click (smooth scroll)
+  const handlesOnBackButtonClick = <span class="fstat-no" title="function not covered" >(</span>
+    event: React.MouseEvent&lt;HTMLButtonElement&gt;,
+  ) =&gt; {
+<span class="cstat-no" title="statement not covered" >    event &amp;&amp; event.preventDefault();</span>
+<span class="cstat-no" title="statement not covered" >    if (window &amp;&amp; windowScrollY &amp;&amp; windowScrollY &gt; minScrollY) {</span>
+      // using here smoothscroll-polyfill
+<span class="cstat-no" title="statement not covered" >      window.scroll({ top: 0, left: 0, behavior: 'smooth' });</span>
+<span class="cstat-no" title="statement not covered" >      typeof onScrollDone === 'function' &amp;&amp; onScrollDone();</span>
+    }
+  };
+  // #endregion
+&nbsp;
+  // #region mount and unmount subscrubstions
+  useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    if (typeof window !== 'undefined') {</span>
+<span class="cstat-no" title="statement not covered" >      window.addEventListener('scroll', handleWindowScroll);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return function <span class="fstat-no" title="function not covered" >unsubscribeEvents(</span>) {</span>
+<span class="cstat-no" title="statement not covered" >      if (typeof window !== 'undefined') {</span>
+<span class="cstat-no" title="statement not covered" >        window.removeEventListener('scroll', handleWindowScroll);</span>
+      }
+    };
+  });
+  // #endregion
+&nbsp;
+  return (
+    // @ts-ignore
+    &lt;Motion style={{ x: spring(showBackButton ? <span class="branch-0 cbranch-no" title="branch not covered" >0 </span>: 120, presets.stiff) }}&gt;
+      {<span class="fstat-no" title="function not covered" >(</span>{ <span class="cstat-no" title="statement not covered" >x </span>}) =&gt; <span class="cstat-no" title="statement not covered" >(</span>
+        &lt;BackToTopButton
+          position={'bottom-right'}
+          onClick={handlesOnBackButtonClick}
+          motionStyle={{
+            WebkitTransform: `translate3d(${x}px, 0, 0)`,
+            transform: `translate3d(${x}px, 0, 0)`,
+          }}
+        /&gt;
+      )}
+    &lt;/Motion&gt;
+  );
+}
+&nbsp;
+BackToTop.displayName = 'BackToTop';
+&nbsp;
+export default BackToTop;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jan 21 2020 05:28:47 GMT+0100 (GMT+01:00)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

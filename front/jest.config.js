@@ -14,8 +14,7 @@ module.exports = {
   testEnvironment: 'node',
   verbose: true,
   roots: ['<rootDir>/src/', '<rootDir>/test'],
-  setupFiles: [],
-  setupFilesAfterEnv: ['<rootDir>/test/setupTests.ts'],
+  setupFiles: ['<rootDir>/test/setupTests.ts'],
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/src/test/__mocks__/fileMock.js',

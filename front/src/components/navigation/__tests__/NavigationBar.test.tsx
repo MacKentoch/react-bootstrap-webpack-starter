@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { MemoryRouter } from 'react-router';
 import { getMockRouterProps } from '../../../../test/mockedRouter';
-import { OwnProps, FromAuthContextProps } from '../index';
 import NavigationBar from '../NavigationBar';
 
 describe('NavigationBar component', () => {
