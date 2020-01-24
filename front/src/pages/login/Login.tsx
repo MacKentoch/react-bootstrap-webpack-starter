@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useContext } from 'react';
 import axios from 'axios';
-import { RouteComponentProps } from 'react-router';
+import { useHistory, useLocation } from 'react-router-dom';
 import Button from 'reactstrap/lib/Button';
 import Row from 'reactstrap/lib/Row';
 import Col from 'reactstrap/lib/Col';
@@ -11,9 +11,11 @@ import { AuthProviderState, AuthContext } from '../../contexts/auth';
 import FadeInEntrance from '../../components/fadeInEntrance';
 
 type OwnProps = any;
-type Props = OwnProps & RouteComponentProps;
+type Props = OwnProps;
 
-function Login({ history, location }: Props) {
+function Login(props: Props) {
+  const location = useLocation();
+  const history = useHistory();
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [isLogging, setIsLogging] = useState<boolean>(false);

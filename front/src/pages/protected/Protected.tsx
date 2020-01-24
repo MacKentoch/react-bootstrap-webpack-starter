@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
-import { RouteComponentProps } from 'react-router';
+// import { RouteComponentProps } from 'react-router-dom';
 import FadeInEntrance from '../../components/fadeInEntrance';
 
 type OwnProps = any;
-type Props = RouteComponentProps & OwnProps;
+type Props = OwnProps;
 
 function Protected() {
   return (

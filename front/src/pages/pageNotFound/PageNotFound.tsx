@@ -1,5 +1,5 @@
 import React from 'react';
-import { RouteComponentProps } from 'react-router';
+import { RouteComponentProps } from 'react-router-dom';
 import Jumbotron from 'reactstrap/lib/Jumbotron';
 import FadeInEntrance from '../../components/fadeInEntrance';
 

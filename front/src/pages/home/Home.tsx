@@ -1,5 +1,5 @@
 import React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+// import {  } from 'react-router-dom';
 import Jumbotron from 'reactstrap/lib/Jumbotron';
 import { Link } from 'react-router-dom';
 import HomeInfo from './styled/HomeInfo';
@@ -7,7 +7,8 @@ import MainTitle from './styled/MainTitle';
 import LightNote from './styled/LightNote';
 import FadeInEntrance from '../../components/fadeInEntrance';
 
-type Props = RouteComponentProps;
+type OwnProps = any;
+type Props = OwnProps;
 
 function Home() {
   return (

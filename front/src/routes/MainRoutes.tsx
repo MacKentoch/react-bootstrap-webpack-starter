@@ -17,11 +17,19 @@ const MainRoutes = () => {
       <WithSuspense>
         <Switch>
           {/* public views: */}
-          <Route exact path="/" component={AsyncHome} />
-          <Route path="/about" component={AsyncAbout} />
+          <Route exact path="/">
+            <AsyncHome />
+          </Route>
+          <Route path="/about">
+            <AsyncAbout />
+          </Route>
           {/* private views: need user to be authenticated */}
-          <PrivateRoute path="/protected" component={AsyncProtected} />
-          <Route component={AsyncPageNotFound} />
+          <PrivateRoute path="/protected">
+            <AsyncProtected />
+          </PrivateRoute>
+          <Route path="*">
+            <AsyncPageNotFound />
+          </Route>
         </Switch>
       </WithSuspense>
     </MainLayout>

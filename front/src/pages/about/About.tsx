@@ -1,9 +1,9 @@
 import React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+// import {  } from 'react-router-dom';
 import FadeInEntrance from '../../components/fadeInEntrance';
 
 type OwnProps = any;
-type Props = OwnProps & RouteComponentProps;
+type Props = OwnProps;
 
 function About() {
   return (
