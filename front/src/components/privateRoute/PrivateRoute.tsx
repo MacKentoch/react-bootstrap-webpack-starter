@@ -5,7 +5,6 @@ import { AuthContext, AuthProviderState } from '../../contexts/auth';
 type OwnProps = {
   path: string;
   children: any;
-  checkUserIsConnected: () => { isAuthenticated: boolean };
 };
 type Props = OwnProps;
 

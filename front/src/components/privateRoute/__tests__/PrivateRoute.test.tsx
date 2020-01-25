@@ -4,9 +4,11 @@ import { Router, Switch } from 'react-router';
 import { Route } from 'react-router';
 import createHistory from 'history/createHashHistory';
 import PrivateRoute from '../PrivateRoute';
+import { AuthProvider } from '../../../contexts/auth';
 
 // #region constants
 const history = createHistory();
+
 const Home = (p: any) => {
   p.history.push('/protected');
   return <p>home</p>;
@@ -15,76 +17,50 @@ const Home = (p: any) => {
 
 describe('PrivateRoute component', () => {
   it('renders as expected', () => {
-    const props = {
-      checkIsAuthenticated: () => true,
-    };
+    const props = {};
+    const Child = () => <p>private</p>;
 
     const component = shallow(
-      <Router history={history}>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <PrivateRoute
-            {...props}
-            path="/protected"
-            component={() => <p>private</p>}
-          />
-          <Route exact path="/login" component={() => <p>login</p>} />
-        </Switch>
-      </Router>,
+      <AuthProvider>
+        <Router history={history}>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <PrivateRoute {...props} path="/protected">
+              <Child />
+            </PrivateRoute>
+            <Route exact path="/login" component={() => <p>login</p>} />
+          </Switch>
+        </Router>
+        ,
+      </AuthProvider>,
     );
     expect(component).toMatchSnapshot();
   });
 
   it('redirects to login when not authenticated', () => {
-    const props = {
-      checkIsAuthenticated: () => false,
-    };
+    const props = {};
+    const PrivatePage = () => <p id="private">private</p>;
+    const LoginPage = () => <p id="login">login</p>;
 
     const wrapper = mount(
-      <Router history={history}>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <PrivateRoute
-            {...props}
-            path="/protected"
-            component={() => <p id="private">private</p>}
-          />
-          <Route
-            exact
-            path="/login"
-            component={() => <p id="login">login</p>}
-          />
-        </Switch>
-      </Router>,
+      <AuthProvider>
+        <Router history={history}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <PrivateRoute {...props} path="/protected">
+              <PrivatePage />
+            </PrivateRoute>
+            <Route exact path="/login">
+              <LoginPage />
+            </Route>
+          </Switch>
+        </Router>
+        ,
+      </AuthProvider>,
     );
 
     expect(wrapper.find('#login')).toHaveLength(1);
   });
-
-  // it('does not redirects to login when authenticated', () => {
-  //   const props = {
-  //     checkIsAuthenticated: () => true,
-  //     isAuthenticated: true,
-  //   };
-
-  //   const wrapper = mount(
-  //     <Router history={history}>
-  //       <Switch>
-  //         <Route exact path="/" component={Home} />
-  //         <PrivateRoute
-  //           {...props}
-  //           path="/protected"
-  //           component={() => <p id="private">private</p>}
-  //         />
-  //         <Route
-  //           exact
-  //           path="/login"
-  //           component={() => <p id="login">login</p>}
-  //         />
-  //       </Switch>
-  //     </Router>,
-  //   );
-
-  //   expect(wrapper.find('#private')).toHaveLength(1);
-  // });
 });

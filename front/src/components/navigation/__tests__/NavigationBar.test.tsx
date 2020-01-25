@@ -3,17 +3,11 @@ import { shallow } from 'enzyme';
 import { MemoryRouter } from 'react-router';
 import { getMockRouterProps } from '../../../../test/mockedRouter';
 import NavigationBar from '../NavigationBar';
+import { AuthProvider } from '../../../contexts/auth';
 
 describe('NavigationBar component', () => {
   it('renders as expected', () => {
     const props = getMockRouterProps<any>({
-      isAuthenticated: false,
-      checkIsAuthenticated: () => true,
-      checkTokenIsExpired: () => false,
-      setToken: (token: string) => {},
-      setUserInfo: (user: User) => {},
-      disconnectUser: () => true,
-
       brand: 'test',
       leftNavItemClick: () => {},
       rightNavItemClick: () => {},
@@ -39,9 +33,11 @@ describe('NavigationBar component', () => {
 
     const component = shallow(
       <div>
-        <MemoryRouter>
-          <NavigationBar {...props} />
-        </MemoryRouter>
+        <AuthProvider>
+          <MemoryRouter>
+            <NavigationBar {...props} />
+          </MemoryRouter>
+        </AuthProvider>
       </div>,
     );
     expect(component).toMatchSnapshot();

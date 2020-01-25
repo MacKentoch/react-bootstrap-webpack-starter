@@ -1,17 +1,18 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { MemoryRouter } from 'react-router';
+import { AuthProvider } from '../../../contexts/auth';
 import LogoutRoute from '../index';
 
 describe('LogoutRoute component', () => {
   it('renders as expected', () => {
-    const props = {
-      disconnectUser: jest.fn(),
-    };
+    const props = {};
 
     const component = shallow(
       <MemoryRouter initialEntries={['/']}>
-        <LogoutRoute {...props} />
+        <AuthProvider>
+          <LogoutRoute {...props} />
+        </AuthProvider>
       </MemoryRouter>,
     );
     expect(component).toMatchSnapshot();
