@@ -1,14 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ScrollToTop component renders as expected 1`] = `
+exports[`LogoutRoute component renders as expected 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <MemoryRouter>
-    <withRouter(ScrollToTop)>
-      <p>
-        a child
-      </p>
-    </withRouter(ScrollToTop)>
+  Symbol(enzyme.__unrendered__): <MemoryRouter
+    initialEntries={
+      Array [
+        "/",
+      ]
+    }
+  >
+    <AuthProvider
+      initialState={
+        Object {
+          "isAuthenticated": false,
+          "isExpiredToken": true,
+          "lastAuthDate": undefined,
+          "token": "",
+          "user": undefined,
+        }
+      }
+    >
+      <LogoutRoute />
+    </AuthProvider>
   </MemoryRouter>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -24,11 +38,19 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": <withRouter(ScrollToTop)>
-        <p>
-          a child
-        </p>
-      </withRouter(ScrollToTop)>,
+      "children": <AuthProvider
+        initialState={
+          Object {
+            "isAuthenticated": false,
+            "isExpiredToken": true,
+            "lastAuthDate": undefined,
+            "token": "",
+            "user": undefined,
+          }
+        }
+      >
+        <LogoutRoute />
+      </AuthProvider>,
       "history": Object {
         "action": "POP",
         "block": [Function],
@@ -37,7 +59,7 @@ ShallowWrapper {
         "entries": Array [
           Object {
             "hash": "",
-            "key": "37ia4v",
+            "key": "wfg6nz",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -51,7 +73,7 @@ ShallowWrapper {
         "listen": [Function],
         "location": Object {
           "hash": "",
-          "key": "37ia4v",
+          "key": "wfg6nz",
           "pathname": "/",
           "search": "",
           "state": undefined,
@@ -64,23 +86,26 @@ ShallowWrapper {
     "rendered": Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "class",
       "props": Object {
-        "children": <p>
-          a child
-        </p>,
+        "children": <LogoutRoute />,
+        "initialState": Object {
+          "isAuthenticated": false,
+          "isExpiredToken": true,
+          "lastAuthDate": undefined,
+          "token": "",
+          "user": undefined,
+        },
       },
       "ref": null,
       "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "a child",
-        },
+        "nodeType": "function",
+        "props": Object {},
         "ref": null,
-        "rendered": "a child",
-        "type": "p",
+        "rendered": null,
+        "type": [Function],
       },
       "type": [Function],
     },
@@ -92,11 +117,19 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": <withRouter(ScrollToTop)>
-          <p>
-            a child
-          </p>
-        </withRouter(ScrollToTop)>,
+        "children": <AuthProvider
+          initialState={
+            Object {
+              "isAuthenticated": false,
+              "isExpiredToken": true,
+              "lastAuthDate": undefined,
+              "token": "",
+              "user": undefined,
+            }
+          }
+        >
+          <LogoutRoute />
+        </AuthProvider>,
         "history": Object {
           "action": "POP",
           "block": [Function],
@@ -105,7 +138,7 @@ ShallowWrapper {
           "entries": Array [
             Object {
               "hash": "",
-              "key": "37ia4v",
+              "key": "wfg6nz",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -119,7 +152,7 @@ ShallowWrapper {
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "37ia4v",
+            "key": "wfg6nz",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -132,23 +165,26 @@ ShallowWrapper {
       "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
-          "children": <p>
-            a child
-          </p>,
+          "children": <LogoutRoute />,
+          "initialState": Object {
+            "isAuthenticated": false,
+            "isExpiredToken": true,
+            "lastAuthDate": undefined,
+            "token": "",
+            "user": undefined,
+          },
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "a child",
-          },
+          "nodeType": "function",
+          "props": Object {},
           "ref": null,
-          "rendered": "a child",
-          "type": "p",
+          "rendered": null,
+          "type": [Function],
         },
         "type": [Function],
       },
