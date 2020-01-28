@@ -1,11 +1,28 @@
+
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
+import '@testing-library/react/cleanup-after-each';
 import UpIcon from '../UpIcon';
 
-describe('UpIcon component', () => {
+let rootElement: any = null;
+const defaultProps = {
+  color: ''
+}
+
+describe('LoadingContent component', () => {
+  beforeEach(() => {
+    rootElement = document.createElement('div');
+    document.body.appendChild(rootElement);
+  });
+
+  afterEach(() => {
+    rootElement && document.body.removeChild(rootElement);
+    rootElement = null;
+  });
+
   it('renders as expected', () => {
-    const props = { color: '' };
-    const component = shallow(<UpIcon {...props} />);
-    expect(component).toMatchSnapshot();
+    const props = {...defaultProps}
+    const { container } = render(<UpIcon {...props} />, rootElement);
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
