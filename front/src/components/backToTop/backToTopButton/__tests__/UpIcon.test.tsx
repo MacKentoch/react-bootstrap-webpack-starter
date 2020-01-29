@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/react/cleanup-after-each';
@@ -6,10 +5,10 @@ import UpIcon from '../UpIcon';
 
 let rootElement: any = null;
 const defaultProps = {
-  color: ''
-}
+  color: '',
+};
 
-describe('LoadingContent component', () => {
+describe('UpIcon component', () => {
   beforeEach(() => {
     rootElement = document.createElement('div');
     document.body.appendChild(rootElement);
@@ -21,7 +20,7 @@ describe('LoadingContent component', () => {
   });
 
   it('renders as expected', () => {
-    const props = {...defaultProps}
+    const props = { ...defaultProps };
     const { container } = render(<UpIcon {...props} />, rootElement);
     expect(container.firstChild).toMatchSnapshot();
   });
