@@ -5,7 +5,7 @@ import FadeInEntrance from '../FadeInEntrance';
 
 let rootElement: any = null;
 
-describe('BackToTopButton component', () => {
+describe('FadeInEntrance component', () => {
   beforeEach(() => {
     rootElement = document.createElement('div');
     document.body.appendChild(rootElement);

@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { MemoryRouter } from 'react-router';
 import MainLayout from '../MainLayout';
 
-describe('withMainLayout HOC', () => {
+describe('MainLayout component', () => {
   it('renders as expected', () => {
     const component = shallow(
       <MemoryRouter>

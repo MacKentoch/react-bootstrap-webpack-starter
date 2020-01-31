@@ -7,9 +7,9 @@ let rootElement: any = null;
 const defaultProps = {
   minScrollY: 10,
   onScrollDone: jest.fn(),
-}
+};
 
-describe('LoadingContent component', () => {
+describe('BackToTop component', () => {
   beforeEach(() => {
     rootElement = document.createElement('div');
     document.body.appendChild(rootElement);
@@ -21,7 +21,7 @@ describe('LoadingContent component', () => {
   });
 
   it('renders as expected', () => {
-    const props = {...defaultProps}
+    const props = { ...defaultProps };
     const { container } = render(<BackToTop {...props} />, rootElement);
     expect(container.firstChild).toMatchSnapshot();
   });
