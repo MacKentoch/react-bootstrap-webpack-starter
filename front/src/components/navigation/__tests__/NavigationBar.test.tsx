@@ -1,23 +1,35 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
-import { getMockRouterProps } from '../../../../test/mockedRouter';
 import NavigationBar from '../NavigationBar';
 import { AuthProvider } from '../../../contexts/auth';
 
-describe('NavigationBar component', () => {
+let rootElement: any = null;
+
+describe('MainLayout component', () => {
+  beforeEach(() => {
+    rootElement = document.createElement('div');
+    document.body.appendChild(rootElement);
+  });
+
+  afterEach(() => {
+    rootElement && document.body.removeChild(rootElement);
+    rootElement = null;
+  });
+
   it('renders as expected', () => {
-    const props = getMockRouterProps<any>({
+    const props = {
       brand: 'test',
-      leftNavItemClick: () => {},
-      rightNavItemClick: () => {},
+      leftNavItemClick: jest.fn(),
+      rightNavItemClick: jest.fn(),
       navModel: {
+        brand: 'test',
         leftLinks: [
           {
             link: '/',
             label: 'home',
             viewName: 'home',
-            onClick: () => {},
+            onClick: jest.fn(),
           },
         ],
         rightLinks: [
@@ -25,21 +37,20 @@ describe('NavigationBar component', () => {
             link: '/',
             label: 'home',
             viewName: 'home',
-            onClick: () => {},
+            onClick: jest.fn(),
           },
         ],
       },
-    });
+    };
 
-    const component = shallow(
-      <div>
-        <AuthProvider>
-          <MemoryRouter>
-            <NavigationBar {...props} />
-          </MemoryRouter>
-        </AuthProvider>
-      </div>,
+    const { container } = render(
+      <AuthProvider>
+        <MemoryRouter>
+          <NavigationBar {...props} />
+        </MemoryRouter>
+      </AuthProvider>,
+      rootElement,
     );
-    expect(component).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

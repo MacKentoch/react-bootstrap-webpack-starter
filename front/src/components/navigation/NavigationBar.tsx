@@ -8,7 +8,7 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
-import { RouteComponentProps, withRouter } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Link } from '../../config/navigation';
 import { AuthContext, AuthProviderState } from '../../contexts/auth';
 import { Navigation } from '../../config/navigation';
@@ -19,10 +19,9 @@ export type OwnProps = {
   leftNavItemClick?: (event?: any, viewName?: string) => any;
   rightNavItemClick?: (event?: any, viewName?: string) => any;
 };
-type Props = RouteComponentProps & OwnProps;
+type Props = OwnProps;
 
 function NavigationBar({
-  history,
   brand,
   navModel: { rightLinks },
   leftNavItemClick,
@@ -30,6 +29,7 @@ function NavigationBar({
 }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const auth = useContext<AuthProviderState | null>(AuthContext);
+  const history = useHistory();
 
   // #region navigation bar toggle
   const toggle = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -85,4 +85,4 @@ function NavigationBar({
 
 NavigationBar.displayName = 'NavigationBar';
 
-export default withRouter(NavigationBar);
+export default NavigationBar;

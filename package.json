@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2"
+  },
+  "devDependencies": {
+    "@types/react-router": "^5.1.4",
+    "@types/react-router-dom": "^5.1.3"
+  }
+}
