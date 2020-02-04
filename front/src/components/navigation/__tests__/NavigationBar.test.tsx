@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import '@testing-library/react/cleanup-after-each';
 import { MemoryRouter } from 'react-router';
 import NavigationBar from '../NavigationBar';
 import { AuthProvider } from '../../../contexts/auth';
