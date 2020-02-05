@@ -1,17 +1,29 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import { MemoryRouter } from 'react-router';
+import { render } from '@testing-library/react';
+import '@testing-library/react/cleanup-after-each';
 import Home from '../Home';
 
+let rootElement: any = null;
+
 describe('Home page', () => {
+  beforeEach(() => {
+    rootElement = document.createElement('div');
+    document.body.appendChild(rootElement);
+  });
+
+  afterEach(() => {
+    rootElement && document.body.removeChild(rootElement);
+    rootElement = null;
+  });
+
   it('renders as expected', () => {
-    const component = shallow(
-      <div>
-        <MemoryRouter>
-          <Home />
-        </MemoryRouter>
-      </div>,
+    const { container } = render(
+      <MemoryRouter>
+        <Home />
+      </MemoryRouter>,
+      rootElement,
     );
-    expect(component).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
