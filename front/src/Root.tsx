@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import { Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
-import createHistory from 'history/createBrowserHistory';
 import MainRoutes from './routes/MainRoutes';
 import ScrollToTop from './components/scrollToTop/ScrollToTop';
 import LogoutRoute from './components/logoutRoute';
@@ -13,10 +12,6 @@ import registerServiceWorker from './services/sw/registerServiceWorker';
 
 type Props = any;
 type State = any;
-
-// #region constants
-const history = createHistory();
-// #endregion
 
 class Root extends Component<Props, State> {
   componentDidMount() {
@@ -34,7 +29,7 @@ class Root extends Component<Props, State> {
 
   render() {
     return (
-      <Router history={history}>
+      <Router>
         <Fragment>
           <GlobalStyle />
           <AuthProvider>
