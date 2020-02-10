@@ -9,15 +9,15 @@
 
 #### Full client and server side in ES6+-ES2015+ using only React 16.3 Context API for state management.
 
-> Dev bundle `connects context` to `redux devTools` (*yes you are not dreaming*) to feel redux development experience in a pure Context API app. Contrary to a redux based app connecting to devTools is not automatic (*you have to specify each `pseudo-action` you want to trace in devTools state*).
+> Dev bundle `connects context` to `redux devTools` (_yes you are not dreaming_) to feel redux development experience in a pure Context API app. Contrary to a redux based app connecting to devTools is not automatic (_you have to specify each `pseudo-action` you want to trace in devTools state_).
 
 _Concept behind:_ **this starter is an easy way to understand and ready to use ReactJS (ES6) + bootstrap + webpack starter with:**
 
-* `no hard core Webpack` config so it is more commonly understandable (_they are numerous amazing starters with incredible webpack configs — hard core configs aren't bad things at all! —. This one is just for easier understanding for people even discovering webpack_)
-* `with hot reload` (_ReactJS + webpack => hot reload = WINNER_)
-* `no flux` (_yes, to give you freedom to add then since you may want to use something else like observables?_)
-* `with JWT auth`
-* _ReactJS Components written with `optimization tricks` (stateless, pure render...)._
+- `no hard core Webpack` config so it is more commonly understandable (_they are numerous amazing starters with incredible webpack configs — hard core configs aren't bad things at all! —. This one is just for easier understanding for people even discovering webpack_)
+- `with hot reload` (_ReactJS + webpack => hot reload = WINNER_)
+- `no flux` (_yes, to give you freedom to add then since you may want to use something else like observables?_)
+- `with JWT auth`
+- _ReactJS Components written with `optimization tricks` (stateless, pure render...)._
 
 ![preview](./preview/preview.png)
 
@@ -27,29 +27,29 @@ _Concept behind:_ **this starter is an easy way to understand and ready to use R
 
 **Front:**
 
-* React JS (16.4.x - [github :link:](https://github.com/facebook/react))
-* react-router (4.x- [github :link:](https://github.com/reactjs/react-router))
-* Bootstrap (4.x - [github :link:](https://github.com/twbs/bootstrap))
-* react-strap ([github :link:](https://reactstrap.github.io/))
-* font-awesome ([github :link:](https://github.com/FortAwesome/Font-Awesome))
-* animate.css ([github :link:](https://github.com/daneden/animate.css))
-* classnames ([github :link:](https://github.com/JedWatson/classnames))
-* react-motion ([github :link:](https://github.com/chenglou/react-motion))
-* Webpack 4.x ([github :link:](https://github.com/webpack/webpack))
-* babel 7+ ([github :link:](https://github.com/babel/babel))
-* axios ([github :link:](https://github.com/mzabriskie/axios) _Why: simple, complete, isomorphic ..._)
+- React JS (16.8.x - [github :link:](https://github.com/facebook/react))
+- react-router (5.x- [github :link:](https://github.com/reactjs/react-router))
+- Bootstrap (4.x - [github :link:](https://github.com/twbs/bootstrap))
+- react-strap ([github :link:](https://reactstrap.github.io/))
+- font-awesome ([github :link:](https://github.com/FortAwesome/Font-Awesome))
+- animate.css ([github :link:](https://github.com/daneden/animate.css))
+- classnames ([github :link:](https://github.com/JedWatson/classnames))
+- react-motion ([github :link:](https://github.com/chenglou/react-motion))
+- Webpack 4.x ([github :link:](https://github.com/webpack/webpack))
+- babel 7+ ([github :link:](https://github.com/babel/babel))
+- axios ([github :link:](https://github.com/mzabriskie/axios) _Why: simple, complete, isomorphic ..._)
 
 **Tool chain:**
 
-* babel 7+
-* eslint
-* hot reload
-* loaders
-  * `js` / `jsx`
-  * css
-  * json
-  * images formats
-  * svg and fonts formats
+- babel 7+
+- eslint
+- hot reload
+- loaders
+  - `js` / `jsx`
+  - css
+  - json
+  - images formats
+  - svg and fonts formats
 
 **tests:**
 
@@ -120,8 +120,6 @@ Do you use & ❤️ `react-material-ui-next-starter` but you don’t find a way 
 If yes, please consider donating to support this project. Otherwise, no worries, regardless of whether there is support or not, I will keep maintaining this project. Still, if you buy me a cup of coffee I would be more than happy though 😄
 
 [![Support via PayPal](./assets/Paypal-button.png)](https://www.paypal.me/ErwanDatin/)
-
-
 
 ## License
 

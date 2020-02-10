@@ -55,7 +55,8 @@ function Login(props: Props) {
     async (event: React.MouseEvent<HTMLButtonElement>) => {
       event && event.preventDefault();
 
-      const { from } = location.state || { from: { pathname: '/' } };
+      // @ts-ignore
+      const from = location?.state?.from ?? '/';
 
       try {
         setIsLogging(true);
