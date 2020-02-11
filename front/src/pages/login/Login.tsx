@@ -51,36 +51,6 @@ function Login(props: Props) {
     [],
   );
 
-  const handlesOnLogin = useCallback(
-    async (event: React.MouseEvent<HTMLButtonElement>) => {
-      event && event.preventDefault();
-
-      // @ts-ignore
-      const from = location?.state?.from ?? '/';
-
-      try {
-        setIsLogging(true);
-        const response = await logUser(email, password);
-        const {
-          data: { token, user },
-        } = response;
-
-        auth?.setToken(token);
-        auth?.setUserInfo(user);
-
-        history.replace(from); // back to previous private failed access page or by default to Home
-      } catch (error) {
-        /* eslint-disable no-console */
-        console.log('login went wrong..., error: ', error);
-        /* eslint-enable no-console */
-      } finally {
-        setIsLogging(false);
-      }
-    },
-    [history, email, password, location],
-  );
-  // #endregion
-
   // #region log user request
   const logUser = useCallback(
     async (
@@ -125,6 +95,36 @@ function Login(props: Props) {
       }
     },
     [],
+  );
+  // #endregion
+
+  const handlesOnLogin = useCallback(
+    async (event: React.MouseEvent<HTMLButtonElement>) => {
+      event && event.preventDefault();
+
+      // @ts-ignore
+      const from = location?.state?.from ?? '/';
+
+      try {
+        setIsLogging(true);
+        const response = await logUser(email, password);
+        const {
+          data: { token, user },
+        } = response;
+
+        auth?.setToken(token);
+        auth?.setUserInfo(user);
+
+        history.replace(from); // back to previous private failed access page or by default to Home
+      } catch (error) {
+        /* eslint-disable no-console */
+        console.log('login went wrong..., error: ', error);
+        /* eslint-enable no-console */
+      } finally {
+        setIsLogging(false);
+      }
+    },
+    [history, email, password, location],
   );
   // #endregion
 
