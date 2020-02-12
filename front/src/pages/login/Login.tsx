@@ -103,7 +103,7 @@ function Login(props: Props) {
       event && event.preventDefault();
 
       // @ts-ignore
-      const from = location?.state?.from ?? '/';
+      const from = location?.state?.from ?? { pathname: '/' };
 
       try {
         setIsLogging(true);
@@ -115,7 +115,8 @@ function Login(props: Props) {
         auth?.setToken(token);
         auth?.setUserInfo(user);
 
-        history.replace(from); // back to previous private failed access page or by default to Home
+        console.log('will route to from = ', { from });
+        history.replace({ pathname: from?.pathname ?? '/' }); // back to previous private failed access page or by default to Home
       } catch (error) {
         /* eslint-disable no-console */
         console.log('login went wrong..., error: ', error);
