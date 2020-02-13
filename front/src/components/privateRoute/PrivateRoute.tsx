@@ -14,13 +14,16 @@ function PrivateRoute({ children }: Props) {
 
   return (
     <Route
-      render={({ location }) =>
-        isAuthenticated ? (
+      render={({ location }) => {
+        console.log('location: ', { location });
+        return isAuthenticated ? (
           children
         ) : (
-          <Redirect to={{ pathname: '/login', state: { from: location } }} />
-        )
-      }
+          <Redirect
+            to={{ pathname: '/login', state: { from: location.pathname } }}
+          />
+        );
+      }}
     />
   );
 }
