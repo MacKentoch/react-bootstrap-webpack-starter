@@ -1,146 +1,108 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Login page renders as expected 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <div>
-    <MemoryRouter>
-      <Login
-        checkIsAuthenticated={[Function]}
-        disconnectUser={[Function]}
-        setToken={[Function]}
-        setUserInfo={[Function]}
-      />
-    </MemoryRouter>
-  </div>,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "host",
-    "props": Object {
-      "children": <MemoryRouter>
-        <Login
-          checkIsAuthenticated={[Function]}
-          disconnectUser={[Function]}
-          setToken={[Function]}
-          setUserInfo={[Function]}
-        />
-      </MemoryRouter>,
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": <Login
-          checkIsAuthenticated={[Function]}
-          disconnectUser={[Function]}
-          setToken={[Function]}
-          setUserInfo={[Function]}
-        />,
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "checkIsAuthenticated": [Function],
-          "disconnectUser": [Function],
-          "setToken": [Function],
-          "setUserInfo": [Function],
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      "type": [Function],
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <MemoryRouter>
-          <Login
-            checkIsAuthenticated={[Function]}
-            disconnectUser={[Function]}
-            setToken={[Function]}
-            setUserInfo={[Function]}
-          />
-        </MemoryRouter>,
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": <Login
-            checkIsAuthenticated={[Function]}
-            disconnectUser={[Function]}
-            setToken={[Function]}
-            setUserInfo={[Function]}
-          />,
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "checkIsAuthenticated": [Function],
-            "disconnectUser": [Function],
-            "setToken": [Function],
-            "setUserInfo": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        "type": [Function],
-      },
-      "type": "div",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromError": true,
-          "getDerivedStateFromProps": Object {
-            "hasShouldComponentUpdateBug": false,
-          },
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-    Symbol(enzyme.__providerValues__): undefined,
-  },
-  Symbol(enzyme.__providerValues__): Map {},
-}
+<div
+  class="sc-bdVaJa jxVqOJ"
+>
+  <div
+    class="content"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-10 offset-1 col-md-4 offset-md-4"
+      >
+        <form
+          class="form-horizontal"
+          novalidate=""
+        >
+          <fieldset>
+            <legend>
+              Login
+            </legend>
+            <div
+              class="form-group"
+            >
+              <label
+                class="col-lg-2 control-label"
+                for="inputEmail"
+              >
+                Email
+              </label>
+              <div
+                class="col-lg-12"
+              >
+                <input
+                  autocomplete="username email"
+                  class="form-control"
+                  id="inputEmail"
+                  placeholder="Email"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="form-group"
+            >
+              <label
+                class="col-lg-2 control-label"
+                for="inputPassword"
+              >
+                Password
+              </label>
+              <div
+                class="col-lg-12"
+              >
+                <input
+                  autocomplete="current-password"
+                  class="form-control"
+                  id="inputPassword"
+                  placeholder="Password"
+                  type="password"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="form-group"
+            >
+              <div
+                class="col-lg-12"
+              >
+                <button
+                  class="login-button btn-block btn btn-primary"
+                  type="button"
+                >
+                  <span>
+                    Login
+                  </span>
+                </button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="col-10 offset-1 col-md-4 offset-md-4"
+      >
+        <div
+          class="pull-right"
+        >
+          <button
+            class="btn-block btn btn-secondary"
+            type="button"
+          >
+            back to home
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;

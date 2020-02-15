@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainLayout component renders as expected 1`] = `
+<nav
+  class="navbar navbar-expand-md navbar-light bg-light"
+>
+  <a
+    class="navbar-brand"
+    href="/"
+  >
+    test
+  </a>
+  <button
+    aria-label="Toggle navigation"
+    class="navbar-toggler"
+    type="button"
+  >
+    <span
+      class="navbar-toggler-icon"
+    />
+  </button>
+  <div
+    aria-expanded="false"
+    class="collapse navbar-collapse"
+  >
+    <ul
+      class="ml-auto navbar-nav"
+    >
+      <li
+        class="nav-item"
+      >
+        <a
+          class="nav-link"
+          href="#"
+        >
+          home
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+`;

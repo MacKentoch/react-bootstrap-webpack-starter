@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page renders as expected 1`] = `
+<div
+  class="sc-bxivhb gbmved"
+>
+  <div
+    class="jumbotron"
+  >
+    <div
+      class="sc-bdVaJa bDWFJH"
+    >
+      <h1
+        class="sc-bwzfXH jJLXBi"
+      >
+        ReactJS 16.4+ Bootstrap 4
+      </h1>
+      <h2>
+        with Hot Reload (
+        <i>
+          react-hot-loader 4+
+        </i>
+        )!!!
+      </h2>
+      <h2>
+        and React 16+ Context API
+      </h2>
+      <h2>
+        and React Router v4
+      </h2>
+      <h2>
+        and webpack 4.x
+      </h2>
+      <h2>
+        and Typescript
+      </h2>
+      <h2>
+        and styled-components (
+        <i
+          class="sc-htpNat jfNlAg"
+        >
+          so keep using SCSS like styles and benefit performant css-in-js
+        </i>
+        )
+      </h2>
+      <h1>
+        Starter
+      </h1>
+      <p>
+        <a
+          class="btn btn-success btn-lg"
+          href="/about"
+        >
+          <i
+            class="fa fa-info"
+          />
+            go to about
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+`;
