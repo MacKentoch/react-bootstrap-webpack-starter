@@ -1,10 +1,10 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { hydrate, render } from 'react-dom';
 import smoothScrollPolyfill from 'smoothscroll-polyfill';
 import { loadComponents, getState } from 'loadable-components';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Root from './Root';
 
 // #region constants
@@ -17,25 +17,7 @@ const bootstrapedElement = document.getElementById(ELEMENT_TO_BOOTSTRAP);
 smoothScrollPolyfill.polyfill();
 // force polyfill (even if browser partially implements it)
 (window as any).__forceSmoothScrollPolyfill__ = true;
-
-(window as any).snapSaveState = () => ({
-  __LOADABLE_STATE__: {
-    children: [
-      {
-        id: '../pages/home',
-      },
-      {
-        id: '../pages/about',
-      },
-      {
-        id: '../pages/protected',
-      },
-      {
-        id: '../pages/pageNotFound',
-      },
-    ],
-  },
-});
+(window as any).snapSaveState = () => getState();
 
 (async () => {
   console.log(
