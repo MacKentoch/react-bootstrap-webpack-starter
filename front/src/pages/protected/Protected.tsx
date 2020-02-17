@@ -1,5 +1,4 @@
 import React from 'react';
-// import { RouteComponentProps } from 'react-router-dom';
 import FadeInEntrance from '../../components/fadeInEntrance';
 
 type OwnProps = any;

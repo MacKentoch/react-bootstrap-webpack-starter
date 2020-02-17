@@ -18,13 +18,16 @@ const MainRoutes = () => {
         <Route exact path="/">
           <AsyncHome />
         </Route>
+
         <Route path="/about">
           <AsyncAbout />
         </Route>
+
         {/* private views: need user to be authenticated */}
         <PrivateRoute path="/protected">
           <AsyncProtected />
         </PrivateRoute>
+
         <Route path="*">
           <AsyncPageNotFound />
         </Route>

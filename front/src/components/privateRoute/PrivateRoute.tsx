@@ -8,12 +8,13 @@ type OwnProps = {
 };
 type Props = OwnProps;
 
-function PrivateRoute({ children }: Props) {
+function PrivateRoute({ children, ...rest }: Props) {
   const auth = useContext<AuthProviderState | null>(AuthContext);
   const isAuthenticated = !!window && auth?.checkIsAuthenticated();
 
   return (
     <Route
+      {...rest}
       render={({ location }) => {
         return isAuthenticated ? (
           children

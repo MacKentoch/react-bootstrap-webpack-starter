@@ -19,7 +19,7 @@
   },
   "scripts": {
     "test": "cross-env NODE_ENV=test jest",
-    "test:coverage": "cross-env NODE_ENV=test jest --coverage",
+    "test-coverage": "cross-env NODE_ENV=test jest --coverage",
     "clean-docs": "rimraf ../docs/*",
     "predev": "npm run clean-docs",
     "dev": "cross-env NODE_ENV=dev webpack --config webpack.dev.config.js",
