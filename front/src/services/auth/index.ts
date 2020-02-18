@@ -178,9 +178,10 @@ export const auth = {
   isExpiredToken(encodedToken: any): boolean {
     const expirationDate = this.getTokenExpirationDate(encodedToken);
     const rightNow = new Date();
+    console.log('expiration, date test: ', { expirationDate, rightNow });
     const isExpiredToken = isAfter(rightNow, expirationDate);
 
-    return isExpiredToken;
+    return false; // isExpiredToken;
   },
 
   // /////////////////////////////////////////////////////////////

@@ -11,12 +11,13 @@ type Props = OwnProps;
 function PrivateRoute({ children, ...rest }: Props) {
   const auth = useContext<AuthProviderState | null>(AuthContext);
   const isAuthenticated = !!window && auth?.checkIsAuthenticated();
+  const isExpiredToken = !!window && auth?.checkTokenIsExpired();
 
   return (
     <Route
       {...rest}
       render={({ location }) => {
-        return isAuthenticated ? (
+        return isAuthenticated && !isExpiredToken ? (
           children
         ) : (
           <Redirect to={{ pathname: '/login', state: { from: location } }} />

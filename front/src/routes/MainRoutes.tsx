@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
 import PrivateRoute from '../components/privateRoute';
-import WithSuspense from '../components/withSuspense';
 import MainLayout from '../components/mainLayout';
 import {
   Home as AsyncHome,

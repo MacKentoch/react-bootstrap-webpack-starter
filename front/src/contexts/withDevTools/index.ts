@@ -26,6 +26,8 @@ export type DevTools = {
 // @ts-ignore
 const isDEV = process.env.NODE_ENV === 'development';
 
+console.log('isDev: ', { isDEV: process.env.NODE_ENV });
+
 export const withDevTools =
   isDEV &&
   typeof window !== 'undefined' &&
