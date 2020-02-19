@@ -116,7 +116,7 @@ function Login(props: Props) {
         auth?.setUserInfo(user);
 
         console.log('will route to from = ', { from });
-        // history.replace(from); // back to previous private failed access page or by default to Home
+        history.replace(from); // back to previous private failed access page or by default to Home
       } catch (error) {
         /* eslint-disable no-console */
         console.log('login went wrong..., error: ', error);
