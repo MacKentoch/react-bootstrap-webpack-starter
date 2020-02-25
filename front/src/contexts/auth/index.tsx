@@ -84,6 +84,11 @@ export class AuthProvider extends Component<
     const user = auth.getUserInfo() ? auth.getUserInfo() : null;
     const isAuthenticated = !!(auth.getToken() && checkUserHasId(user));
 
+    console.log('checkIsAuthenticated, : ', {
+      user,
+      isAuthenticated,
+    });
+
     devToolsStore &&
       devToolsStore.dispatch({
         type: 'AUTH_CHECK_IS_AUTHENTICATED',
@@ -110,14 +115,15 @@ export class AuthProvider extends Component<
 
   setToken = (token: string = '') => {
     auth.setToken(token);
+    const isExpiredToken = auth.isExpiredToken(token);
 
     devToolsStore &&
       devToolsStore.dispatch({
         type: 'AUTH_SET_TOKEN',
-        state: { ...this.state, token, isAuthenticated: true },
+        state: { ...this.state, token, isAuthenticated: true, isExpiredToken },
       });
 
-    this.setState({ token, isAuthenticated: true });
+    this.setState({ token, isAuthenticated: true, isExpiredToken });
   };
 
   setUserInfo = (user: User) => {

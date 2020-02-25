@@ -38,11 +38,11 @@ export const auth = {
   ): string | null {
     // localStorage:
     if (fromStorage === APP_PERSIST_STORES_TYPES[0]) {
-      return (localStorage && localStorage.getItem(tokenKey)) || null;
+      return window?.localStorage.getItem(tokenKey) || null;
     }
     // sessionStorage:
     if (fromStorage === APP_PERSIST_STORES_TYPES[1]) {
-      return (sessionStorage && sessionStorage.getItem(tokenKey)) || null;
+      return window?.sessionStorage.getItem(tokenKey) || null;
     }
     // default:
     return null;
@@ -66,14 +66,14 @@ export const auth = {
     }
     // localStorage:
     if (toStorage === APP_PERSIST_STORES_TYPES[0]) {
-      if (localStorage) {
+      if (window?.localStorage) {
         localStorage.setItem(tokenKey, value);
         return;
       }
     }
     // sessionStorage:
     if (toStorage === APP_PERSIST_STORES_TYPES[1]) {
-      if (sessionStorage) {
+      if (window?.sessionStorage) {
         sessionStorage.setItem(tokenKey, value);
         return;
       }
@@ -107,7 +107,7 @@ export const auth = {
   ): boolean {
     // localStorage:
     if (fromStorage === APP_PERSIST_STORES_TYPES[0]) {
-      if (localStorage && localStorage.getItem(tokenKey)) {
+      if (window?.localStorage.getItem(tokenKey)) {
         return true;
       }
       return false;
@@ -115,7 +115,7 @@ export const auth = {
 
     // sessionStorage:
     if (fromStorage === APP_PERSIST_STORES_TYPES[1]) {
-      if (sessionStorage && sessionStorage.getItem(tokenKey)) {
+      if (window?.sessionStorage.getItem(tokenKey)) {
         return true;
       }
       return false;
@@ -136,12 +136,12 @@ export const auth = {
     tokenKey: TokenKey = TOKEN_KEY,
   ): boolean {
     // localStorage:
-    if (localStorage && localStorage[tokenKey]) {
+    if (window?.localStorage[tokenKey]) {
       localStorage.removeItem(tokenKey);
       return true;
     }
     // sessionStorage:
-    if (sessionStorage && sessionStorage[tokenKey]) {
+    if (window?.sessionStorage[tokenKey]) {
       sessionStorage.removeItem(tokenKey);
       return true;
     }
@@ -178,10 +178,9 @@ export const auth = {
   isExpiredToken(encodedToken: any): boolean {
     const expirationDate = this.getTokenExpirationDate(encodedToken);
     const rightNow = new Date();
-    console.log('expiration, date test: ', { expirationDate, rightNow });
     const isExpiredToken = isAfter(rightNow, expirationDate);
 
-    return false; // isExpiredToken;
+    return isExpiredToken;
   },
 
   // /////////////////////////////////////////////////////////////
@@ -202,9 +201,8 @@ export const auth = {
     if (fromStorage === APP_PERSIST_STORES_TYPES[0]) {
       try {
         return (
-          (window &&
-            localStorage &&
-            parse(localStorage.getItem(userInfoKey) || '')) ||
+          (window?.localStorage &&
+            JSON.parse(localStorage.getItem(userInfoKey) || '')) ||
           null
         );
       } catch (error) {
@@ -215,9 +213,8 @@ export const auth = {
     if (fromStorage === APP_PERSIST_STORES_TYPES[1]) {
       try {
         return (
-          (window &&
-            sessionStorage &&
-            parse(sessionStorage.getItem(userInfoKey) || '')) ||
+          (window?.sessionStorage &&
+            JSON.parse(sessionStorage.getItem(userInfoKey) || '')) ||
           null
         );
       } catch (error) {
@@ -247,7 +244,7 @@ export const auth = {
 
     // localStorage:
     if (toStorage === APP_PERSIST_STORES_TYPES[0]) {
-      if (localStorage) {
+      if (window?.localStorage) {
         localStorage.setItem(userInfoKey, stringify(value));
         return;
       }
@@ -255,7 +252,7 @@ export const auth = {
 
     // sessionStorage:
     if (toStorage === APP_PERSIST_STORES_TYPES[1]) {
-      if (sessionStorage) {
+      if (window?.sessionStorage) {
         sessionStorage.setItem(userInfoKey, stringify(value));
         return;
       }
@@ -270,13 +267,13 @@ export const auth = {
    */
   clearUserInfo(userInfoKey: UserInfoKey = USER_INFO): any {
     // localStorage:
-    if (localStorage && localStorage[userInfoKey]) {
+    if (window?.localStorage[userInfoKey]) {
       localStorage.removeItem(userInfoKey);
       return;
     }
 
     // sessionStorage:
-    if (sessionStorage && sessionStorage[userInfoKey]) {
+    if (window?.sessionStorage[userInfoKey]) {
       sessionStorage.removeItem(userInfoKey);
       return;
     }
@@ -291,15 +288,8 @@ export const auth = {
    * @returns {bool} success/failure flag
    */
   clearAllAppStorage(): any {
-    if (localStorage) {
-      localStorage.clear();
-      return;
-    }
-
-    if (sessionStorage) {
-      sessionStorage.clear();
-      return;
-    }
+    window?.localStorage.clear();
+    window?.sessionStorage.clear();
   },
 };
 

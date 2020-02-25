@@ -13,6 +13,12 @@ function PrivateRoute({ children, ...rest }: Props) {
   const isAuthenticated = !!window && auth?.checkIsAuthenticated();
   const isExpiredToken = !!window && auth?.checkTokenIsExpired();
 
+  console.log('Private route: ', {
+    auth,
+    isAuthenticated,
+    isExpiredToken,
+  });
+
   return (
     <Route
       {...rest}
