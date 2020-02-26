@@ -234,11 +234,11 @@ export const auth = {
    * @returns {boolean} success/failure flag
    */
   setUserInfo(
-    value: string = '',
+    value: object | null,
     toStorage: STORES_TYPES = APP_PERSIST_STORES_TYPES[0],
     userInfoKey: UserInfoKey = USER_INFO,
   ): any {
-    if (!value || value.length <= 0) {
+    if (!value) {
       return;
     }
 

@@ -112,6 +112,8 @@ function Login(props: Props) {
           data: { token, user },
         } = response;
 
+        console.log('user fetched: ', { token, user });
+
         auth?.setToken(token);
         auth?.setUserInfo(user);
 
