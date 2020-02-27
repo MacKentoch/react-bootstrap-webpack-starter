@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { AuthContext, AuthProviderState } from '../../contexts/auth';
 
@@ -10,8 +10,20 @@ type Props = OwnProps;
 
 function PrivateRoute({ children, ...rest }: Props) {
   const auth = useContext<AuthProviderState | null>(AuthContext);
-  const isAuthenticated = !!window && auth?.checkIsAuthenticated();
-  const isExpiredToken = !!window && auth?.checkTokenIsExpired();
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    !!window && auth?.checkIsAuthenticated(),
+  );
+  const [isExpiredToken, setIsExpiredToken] = useState(
+    !!window && auth?.checkTokenIsExpired(),
+  );
+
+  // useEffect(() => {
+  //   const _isAuthenticated = !!window && auth?.checkIsAuthenticated();
+  //   const _isExpiredToken = !!window && auth?.checkTokenIsExpired();
+
+  //   setIsAuthenticated(!!_isAuthenticated);
+  //   setIsExpiredToken(!!_isExpiredToken);
+  // }, [auth]);
 
   console.log('Private route: ', {
     auth,
