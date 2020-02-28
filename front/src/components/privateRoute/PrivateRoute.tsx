@@ -10,32 +10,12 @@ type Props = OwnProps;
 
 function PrivateRoute({ children, ...rest }: Props) {
   const auth = useContext<AuthProviderState | null>(AuthContext);
-  const [isAuthenticated, setIsAuthenticated] = useState(
-    !!window && auth?.checkIsAuthenticated(),
-  );
-  const [isExpiredToken, setIsExpiredToken] = useState(
-    !!window && auth?.checkTokenIsExpired(),
-  );
-
-  // useEffect(() => {
-  //   const _isAuthenticated = !!window && auth?.checkIsAuthenticated();
-  //   const _isExpiredToken = !!window && auth?.checkTokenIsExpired();
-
-  //   setIsAuthenticated(!!_isAuthenticated);
-  //   setIsExpiredToken(!!_isExpiredToken);
-  // }, [auth]);
-
-  console.log('Private route: ', {
-    auth,
-    isAuthenticated,
-    isExpiredToken,
-  });
 
   return (
     <Route
       {...rest}
       render={({ location }) => {
-        return isAuthenticated && !isExpiredToken ? (
+        return auth?.isAuthenticated && !auth?.isExpiredToken ? (
           children
         ) : (
           <Redirect to={{ pathname: '/login', state: { from: location } }} />
