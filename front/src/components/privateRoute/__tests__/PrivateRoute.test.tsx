@@ -2,12 +2,12 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { Router, Switch } from 'react-router';
 import { Route } from 'react-router';
-import createHistory from 'history/createHashHistory';
+import { createHashHistory } from 'history';
 import PrivateRoute from '../PrivateRoute';
 import { AuthProvider } from '../../../contexts/auth';
 
 // #region constants
-const history = createHistory();
+const history = createHashHistory();
 
 const Home = (p: any) => {
   p.history.push('/protected');

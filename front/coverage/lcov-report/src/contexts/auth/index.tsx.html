@@ -177,7 +177,8 @@
 152
 153
 154
-155</td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
+155
+156</td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -244,11 +245,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -258,36 +257,39 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -414,7 +416,7 @@ export class AuthProvider extends Component&lt;
 &nbsp;
   checkIsAuthenticated = (): boolean =&gt; {
     const checkUserHasId = <span class="fstat-no" title="function not covered" >(</span>user: User) =&gt; <span class="cstat-no" title="statement not covered" >user.id;</span>
-    const user = auth.getUserInfo() ? <span class="branch-0 cbranch-no" title="branch not covered" >auth.getUserInfo() </span>: null;
+    const user = auth.getUserInfo();
     const isAuthenticated = !!(auth.getToken() &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >checkUserHasId(user))</span>;
 &nbsp;
     devToolsStore &amp;&amp;
@@ -443,19 +445,20 @@ export class AuthProvider extends Component&lt;
 &nbsp;
   setToken = <span class="fstat-no" title="function not covered" >(<span class="cstat-no" title="statement not covered" ></span>token: string = '')</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >    auth.setToken(token);</span>
+    const isExpiredToken = <span class="cstat-no" title="statement not covered" >auth.isExpiredToken(token);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    devToolsStore &amp;&amp;</span>
       devToolsStore.dispatch({
         type: 'AUTH_SET_TOKEN',
-        state: { ...this.state, token, isAuthenticated: true },
+        state: { ...this.state, token, isAuthenticated: true, isExpiredToken },
       });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    this.setState({ token, isAuthenticated: true });</span>
+<span class="cstat-no" title="statement not covered" >    this.setState({ token, isAuthenticated: true, isExpiredToken });</span>
   };
 &nbsp;
   setUserInfo = <span class="fstat-no" title="function not covered" >(</span>user: User) =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (typeof user === 'object') {</span>
-<span class="cstat-no" title="statement not covered" >      auth.setUserInfo(JSON.stringify(user));</span>
+<span class="cstat-no" title="statement not covered" >      auth.setUserInfo(user);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      devToolsStore &amp;&amp;</span>
         devToolsStore.dispatch({
@@ -491,7 +494,7 @@ export default AuthProvider;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Feb 14 2020 05:18:56 GMT+0100 (GMT+01:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Feb 28 2020 05:37:37 GMT+0100 (GMT+01:00)
 </div>
 </div>
 <script src="../../../prettify.js"></script>
