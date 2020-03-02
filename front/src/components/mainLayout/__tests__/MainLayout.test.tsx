@@ -21,9 +21,11 @@ describe('MainLayout component', () => {
   it('renders as expected', () => {
     const { container } = render(
       <MemoryRouter>
-        <MainLayout>
-          <p>children here</p>
-        </MainLayout>
+        <AuthProvider>
+          <MainLayout>
+            <p>children here</p>
+          </MainLayout>
+        </AuthProvider>
       </MemoryRouter>,
       rootElement,
     );

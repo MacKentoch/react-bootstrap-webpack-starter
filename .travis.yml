@@ -7,6 +7,8 @@ cache:
   npm: true
   directories:
     - node_modules
+services:
+  - xvfb
 before_install:
   - cd front
 before_script:
