@@ -1,13 +1,12 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import '@testing-library/react/cleanup-after-each';
 import { MemoryRouter } from 'react-router';
 import { AuthProvider } from '../../../contexts/auth';
 import LogoutRoute from '../index';
 
-let rootElement: any = null;
-
 describe('LogoutRoute component', () => {
+  let rootElement: any = null;
+
   beforeEach(() => {
     rootElement = document.createElement('div');
     document.body.appendChild(rootElement);

@@ -1,11 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import '@testing-library/react/cleanup-after-each';
 import LoadingContent from '../LoadingContent';
 
-let rootElement: any = null;
-
 describe('LoadingContent component', () => {
+  let rootElement: any = null;
+
   beforeEach(() => {
     rootElement = document.createElement('div');
     document.body.appendChild(rootElement);

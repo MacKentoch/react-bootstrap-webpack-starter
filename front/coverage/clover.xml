@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1583123247087" clover="3.2.0">
-  <project timestamp="1583123247088" name="All files">
+<coverage generated="1583210722426" clover="3.2.0">
+  <project timestamp="1583210722426" name="All files">
     <metrics statements="444" coveredstatements="294" conditionals="342" coveredconditionals="92" methods="67" coveredmethods="37" elements="853" coveredelements="423" complexity="0" loc="444" ncloc="444" packages="25" files="32" classes="32">
       <package name="src.components.backToTop">
         <metrics statements="34" coveredstatements="19" conditionals="32" coveredconditionals="6" methods="8" coveredmethods="4"/>
@@ -183,25 +183,25 @@
           <line num="2" count="2" type="stmt"/>
           <line num="11" count="2" type="stmt"/>
           <line num="13" count="2" type="stmt"/>
-          <line num="25" count="2" type="stmt"/>
-          <line num="26" count="2" type="stmt"/>
-          <line num="27" count="2" type="stmt"/>
-          <line num="28" count="2" type="stmt"/>
-          <line num="30" count="2" type="stmt"/>
-          <line num="31" count="2" type="stmt"/>
-          <line num="32" count="2" type="stmt"/>
-          <line num="35" count="2" type="stmt"/>
+          <line num="25" count="1" type="stmt"/>
+          <line num="26" count="1" type="stmt"/>
+          <line num="27" count="1" type="stmt"/>
+          <line num="28" count="1" type="stmt"/>
+          <line num="30" count="1" type="stmt"/>
+          <line num="31" count="1" type="stmt"/>
+          <line num="32" count="1" type="stmt"/>
+          <line num="35" count="1" type="stmt"/>
           <line num="36" count="0" type="cond" truecount="0" falsecount="2"/>
           <line num="37" count="0" type="stmt"/>
-          <line num="42" count="4" type="cond" truecount="1" falsecount="1"/>
+          <line num="42" count="1" type="cond" truecount="1" falsecount="1"/>
           <line num="45" count="0" type="cond" truecount="0" falsecount="4"/>
           <line num="46" count="0" type="stmt"/>
-          <line num="51" count="2" type="stmt"/>
+          <line num="51" count="1" type="stmt"/>
           <line num="54" count="0" type="cond" truecount="0" falsecount="4"/>
           <line num="55" count="0" type="cond" truecount="0" falsecount="4"/>
           <line num="56" count="0" type="stmt"/>
-          <line num="60" count="2" type="stmt"/>
-          <line num="66" count="4" type="stmt"/>
+          <line num="60" count="1" type="stmt"/>
+          <line num="66" count="1" type="stmt"/>
           <line num="86" count="2" type="stmt"/>
           <line num="88" count="2" type="stmt"/>
         </file>
@@ -274,16 +274,16 @@
         <metrics statements="43" coveredstatements="30" conditionals="18" coveredconditionals="5" methods="9" coveredmethods="5"/>
         <file name="index.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/contexts/auth/index.tsx">
           <metrics statements="43" coveredstatements="30" conditionals="18" coveredconditionals="5" methods="9" coveredmethods="5"/>
-          <line num="1" count="5" type="stmt"/>
-          <line num="2" count="5" type="stmt"/>
-          <line num="3" count="5" type="stmt"/>
-          <line num="28" count="5" type="stmt"/>
-          <line num="32" count="5" type="stmt"/>
-          <line num="42" count="5" type="stmt"/>
-          <line num="46" count="5" type="stmt"/>
+          <line num="1" count="6" type="stmt"/>
+          <line num="2" count="6" type="stmt"/>
+          <line num="3" count="6" type="stmt"/>
+          <line num="28" count="6" type="stmt"/>
+          <line num="32" count="6" type="stmt"/>
+          <line num="42" count="6" type="stmt"/>
+          <line num="46" count="6" type="stmt"/>
           <line num="54" count="5" type="cond" truecount="2" falsecount="0"/>
           <line num="57" count="5" type="stmt"/>
-          <line num="67" count="5" type="stmt"/>
+          <line num="67" count="6" type="stmt"/>
           <line num="68" count="6" type="stmt"/>
           <line num="70" count="6" type="stmt"/>
           <line num="82" count="5" type="stmt"/>
@@ -315,24 +315,24 @@
           <line num="142" count="1" type="cond" truecount="1" falsecount="1"/>
           <line num="148" count="1" type="stmt"/>
           <line num="150" count="1" type="stmt"/>
-          <line num="152" count="5" type="stmt"/>
-          <line num="154" count="5" type="stmt"/>
+          <line num="152" count="6" type="stmt"/>
+          <line num="154" count="6" type="stmt"/>
         </file>
       </package>
       <package name="src.contexts.withDevTools">
         <metrics statements="21" coveredstatements="6" conditionals="25" coveredconditionals="3" methods="2" coveredmethods="0"/>
         <file name="index.ts" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/contexts/withDevTools/index.ts">
           <metrics statements="21" coveredstatements="6" conditionals="25" coveredconditionals="3" methods="2" coveredmethods="0"/>
-          <line num="27" count="5" type="stmt"/>
-          <line num="29" count="5" type="stmt"/>
-          <line num="34" count="5" type="stmt"/>
-          <line num="48" count="5" type="stmt"/>
-          <line num="52" count="5" type="cond" truecount="0" falsecount="2"/>
+          <line num="27" count="6" type="stmt"/>
+          <line num="29" count="6" type="stmt"/>
+          <line num="34" count="6" type="stmt"/>
+          <line num="48" count="6" type="stmt"/>
+          <line num="52" count="6" type="cond" truecount="0" falsecount="2"/>
           <line num="54" count="0" type="stmt"/>
           <line num="61" count="0" type="stmt"/>
           <line num="62" count="0" type="stmt"/>
           <line num="67" count="0" type="stmt"/>
-          <line num="79" count="5" type="stmt"/>
+          <line num="79" count="6" type="stmt"/>
           <line num="85" count="0" type="cond" truecount="0" falsecount="2"/>
           <line num="86" count="0" type="stmt"/>
           <line num="88" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -510,14 +510,14 @@
         <metrics statements="92" coveredstatements="29" conditionals="156" coveredconditionals="37" methods="10" coveredmethods="4"/>
         <file name="index.ts" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/services/auth/index.ts">
           <metrics statements="92" coveredstatements="29" conditionals="156" coveredconditionals="37" methods="10" coveredmethods="4"/>
-          <line num="1" count="6" type="stmt"/>
-          <line num="2" count="6" type="stmt"/>
-          <line num="5" count="6" type="stmt"/>
-          <line num="6" count="6" type="stmt"/>
-          <line num="8" count="6" type="stmt"/>
-          <line num="13" count="6" type="stmt"/>
-          <line num="14" count="6" type="stmt"/>
-          <line num="23" count="6" type="stmt"/>
+          <line num="1" count="7" type="stmt"/>
+          <line num="2" count="7" type="stmt"/>
+          <line num="5" count="7" type="stmt"/>
+          <line num="6" count="7" type="stmt"/>
+          <line num="8" count="7" type="stmt"/>
+          <line num="13" count="7" type="stmt"/>
+          <line num="14" count="7" type="stmt"/>
+          <line num="23" count="7" type="stmt"/>
           <line num="36" count="3" type="cond" truecount="2" falsecount="0"/>
           <line num="37" count="3" type="cond" truecount="2" falsecount="0"/>
           <line num="40" count="2" type="cond" truecount="1" falsecount="1"/>
@@ -601,7 +601,7 @@
           <line num="278" count="0" type="stmt"/>
           <line num="291" count="1" type="cond" truecount="3" falsecount="1"/>
           <line num="292" count="1" type="cond" truecount="3" falsecount="1"/>
-          <line num="296" count="6" type="stmt"/>
+          <line num="296" count="7" type="stmt"/>
         </file>
       </package>
       <package name="test">
