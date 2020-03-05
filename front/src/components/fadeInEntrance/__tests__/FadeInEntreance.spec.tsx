@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import '@testing-library/react/cleanup-after-each';
 import FadeInEntrance from '../FadeInEntrance';
 
-let rootElement: any = null;
 
 describe('FadeInEntrance component', () => {
+  let rootElement: any = null;
+
   beforeEach(() => {
     rootElement = document.createElement('div');
     document.body.appendChild(rootElement);

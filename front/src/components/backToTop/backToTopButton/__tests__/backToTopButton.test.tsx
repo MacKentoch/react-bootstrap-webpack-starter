@@ -1,12 +1,10 @@
-
 import React from 'react';
 import { render } from '@testing-library/react';
-import '@testing-library/react/cleanup-after-each';
 import BackToTopButton, { BackButtonPosition } from '../BackToTopButton';
 
-let rootElement: any = null;
-
 describe('BackToTopButton component', () => {
+  let rootElement: any = null;
+
   beforeEach(() => {
     rootElement = document.createElement('div');
     document.body.appendChild(rootElement);
@@ -25,11 +23,12 @@ describe('BackToTopButton component', () => {
       motionStyle: {},
     };
 
-    const { container } = render(<BackToTopButton {...props}>
-      <p>a child</p>
-    </BackToTopButton>, rootElement);
+    const { container } = render(
+      <BackToTopButton {...props}>
+        <p>a child</p>
+      </BackToTopButton>,
+      rootElement,
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 });
-
-

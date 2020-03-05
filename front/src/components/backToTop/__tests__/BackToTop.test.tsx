@@ -1,15 +1,15 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import '@testing-library/react/cleanup-after-each';
 import BackToTop from '../BackToTop';
 
-let rootElement: any = null;
-const defaultProps = {
-  minScrollY: 10,
-  onScrollDone: jest.fn(),
-};
-
 describe('BackToTop component', () => {
+  let rootElement: any = null;
+
+  const defaultProps = {
+    minScrollY: 10,
+    onScrollDone: jest.fn(),
+  };
+
   beforeEach(() => {
     rootElement = document.createElement('div');
     document.body.appendChild(rootElement);

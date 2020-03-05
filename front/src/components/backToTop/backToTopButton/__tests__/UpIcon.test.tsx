@@ -1,14 +1,14 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import '@testing-library/react/cleanup-after-each';
 import UpIcon from '../UpIcon';
 
-let rootElement: any = null;
-const defaultProps = {
-  color: '',
-};
-
 describe('UpIcon component', () => {
+  let rootElement: any = null;
+
+  const defaultProps = {
+    color: '',
+  };
+
   beforeEach(() => {
     rootElement = document.createElement('div');
     document.body.appendChild(rootElement);
