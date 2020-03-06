@@ -1,13 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import '@testing-library/react/cleanup-after-each';
 import { MemoryRouter } from 'react-router';
 import NavigationBar from '../NavigationBar';
 import { AuthProvider } from '../../../contexts/auth';
 
-let rootElement: any = null;
 
 describe('MainLayout component', () => {
+  let rootElement: any = null;
+
   beforeEach(() => {
     rootElement = document.createElement('div');
     document.body.appendChild(rootElement);

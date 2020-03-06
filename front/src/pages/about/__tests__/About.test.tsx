@@ -1,12 +1,11 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router';
 import { render } from '@testing-library/react';
-import '@testing-library/react/cleanup-after-each';
 import About from '../About';
 
-let rootElement: any = null;
-
 describe('About page', () => {
+  let rootElement: any = null;
+
   beforeEach(() => {
     rootElement = document.createElement('div');
     document.body.appendChild(rootElement);

@@ -1,12 +1,11 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router';
 import { render } from '@testing-library/react';
-import '@testing-library/react/cleanup-after-each';
 import PageNotFound from '../PageNotFound';
 
-let rootElement: any = null;
-
 describe('PageNotFound page', () => {
+  let rootElement: any = null;
+
   beforeEach(() => {
     rootElement = document.createElement('div');
     document.body.appendChild(rootElement);

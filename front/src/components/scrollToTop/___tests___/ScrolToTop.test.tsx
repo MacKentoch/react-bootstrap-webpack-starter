@@ -1,12 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import '@testing-library/react/cleanup-after-each';
 import { MemoryRouter } from 'react-router';
 import ScrollToTop from '../ScrollToTop';
 
-let rootElement: any = null;
-
 describe('ScrollToTop component', () => {
+  let rootElement: any = null;
+
   beforeEach(() => {
     rootElement = document.createElement('div');
     document.body.appendChild(rootElement);
