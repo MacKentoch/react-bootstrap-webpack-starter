@@ -32,7 +32,7 @@
     "start": "cross-env NODE_ENV=dev webpack-dev-server --config ./webpack.hot.reload.config.js"
   },
   "reactSnap": {
-    "source": "docs"
+    "source": "../docs"
   },
   "keywords": [
     "react",

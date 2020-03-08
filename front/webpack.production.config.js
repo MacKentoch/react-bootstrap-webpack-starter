@@ -84,7 +84,7 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: './index.html',
       filename: '../index.html', // hack since outPut path would place in '/dist/assets/' in place of '/dist/'
     }),
     new webpack.DefinePlugin({
