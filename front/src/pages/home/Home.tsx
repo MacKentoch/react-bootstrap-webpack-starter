@@ -15,13 +15,13 @@ function Home() {
     <FadeInEntrance>
       <Jumbotron>
         <HomeInfo>
-          <MainTitle>ReactJS 16.4+ Bootstrap 4</MainTitle>
+          <MainTitle>ReactJS 16.11+ Bootstrap 4</MainTitle>
           <h2>
             with Hot Reload (<i>react-hot-loader 4+</i>
             )!!!
           </h2>
           <h2>and React 16+ Context API</h2>
-          <h2>and React Router v4</h2>
+          <h2>and React Router v5</h2>
           <h2>and webpack 4.x</h2>
           <h2>and Typescript</h2>
           <h2>
