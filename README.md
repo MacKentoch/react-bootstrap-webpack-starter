@@ -64,12 +64,6 @@ _Concept behind:_ **this starter is an easy way to understand and ready to use R
 npm install
 ```
 
-or
-
-```bash
-yarn install
-```
-
 ### bundle dev mode
 
 ```bash
