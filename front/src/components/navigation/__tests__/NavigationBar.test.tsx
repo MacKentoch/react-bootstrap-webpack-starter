@@ -4,8 +4,7 @@ import { MemoryRouter } from 'react-router';
 import NavigationBar from '../NavigationBar';
 import { AuthProvider } from '../../../contexts/auth';
 
-
-describe('MainLayout component', () => {
+describe('NavigationBar component', () => {
   let rootElement: any = null;
 
   beforeEach(() => {
@@ -18,7 +17,7 @@ describe('MainLayout component', () => {
     rootElement = null;
   });
 
-  it('renders as expected', () => {
+  it('renders as expected', async () => {
     const props = {
       brand: 'test',
       leftNavItemClick: jest.fn(),
@@ -44,7 +43,7 @@ describe('MainLayout component', () => {
       },
     };
 
-    const { container } = render(
+    const { container } = await render(
       <AuthProvider>
         <MemoryRouter>
           <NavigationBar {...props} />
