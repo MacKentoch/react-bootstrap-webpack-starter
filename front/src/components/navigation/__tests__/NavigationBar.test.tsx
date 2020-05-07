@@ -44,11 +44,11 @@ describe('NavigationBar component', () => {
     };
 
     const { container } = await render(
-      <AuthProvider>
-        <MemoryRouter>
+      <MemoryRouter>
+        <AuthProvider>
           <NavigationBar {...props} />
-        </MemoryRouter>
-      </AuthProvider>,
+        </AuthProvider>
+      </MemoryRouter>,
       rootElement,
     );
     expect(container.firstChild).toMatchSnapshot();
