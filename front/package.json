@@ -167,7 +167,7 @@
     "react-overdrive": "^0.0.10",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
-    "reactstrap": "^8.1.1",
+    "reactstrap": "^8.4.1",
     "recompose": "^0.30.0",
     "smoothscroll-polyfill": "^0.4.4",
     "styled-components": "^4.4.1"

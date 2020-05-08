@@ -20,7 +20,6 @@ exports[`NavigationBar component renders as expected 1`] = `
     />
   </button>
   <div
-    aria-expanded="false"
     class="collapse navbar-collapse"
   >
     <ul
