@@ -4,6 +4,7 @@
 - Upgrade React to v16.9+
 - react-testing-library for test
 - use react-router 5+ hooks
+- `reactstrap` upgrade
 
 # v7.1.0
 
