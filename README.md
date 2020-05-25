@@ -110,7 +110,7 @@ npm run serve-prod
 
 ## Donate
 
-Do you use & ❤️ `react-material-ui-next-starter` but you don’t find a way to show some love?
+Do you use & ❤️ `react-bootstrap-webpack-starter` but you don’t find a way to show some love?
 If yes, please consider donating to support this project. Otherwise, no worries, regardless of whether there is support or not, I will keep maintaining this project. Still, if you buy me a cup of coffee I would be more than happy though 😄
 
 [![Support via PayPal](./assets/Paypal-button.png)](https://www.paypal.me/ErwanDatin/)
