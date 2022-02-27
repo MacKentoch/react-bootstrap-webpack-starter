@@ -1,6 +1,6 @@
 {
   "name": "react-bootstrap-webpack-starter-front",
-  "version": "9.0.0",
+  "version": "9.0.1",
   "description": "react js + bootstrap + webpack starter",
   "author": "Erwan DATIN (MacKentoch)",
   "license": "MIT",
@@ -67,6 +67,7 @@
     "@testing-library/dom": "^6.11.0",
     "@testing-library/jest-dom": "^5.0.2",
     "@testing-library/react": "^9.4.0",
+    "@testing-library/react-hooks": "^7.0.2",
     "@types/axios": "^0.14.0",
     "@types/chai": "^4.0.4",
     "@types/classnames": "^2.2.6",
