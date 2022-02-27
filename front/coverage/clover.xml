@@ -1,338 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1589262674523" clover="3.2.0">
-  <project timestamp="1589262674523" name="All files">
-    <metrics statements="444" coveredstatements="294" conditionals="342" coveredconditionals="92" methods="67" coveredmethods="37" elements="853" coveredelements="423" complexity="0" loc="444" ncloc="444" packages="25" files="32" classes="32">
-      <package name="src.components.backToTop">
-        <metrics statements="34" coveredstatements="19" conditionals="32" coveredconditionals="6" methods="8" coveredmethods="4"/>
-        <file name="BackToTop.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/components/backToTop/BackToTop.tsx">
-          <metrics statements="34" coveredstatements="19" conditionals="32" coveredconditionals="6" methods="8" coveredmethods="4"/>
-          <line num="2" count="2" type="stmt"/>
-          <line num="3" count="2" type="stmt"/>
-          <line num="4" count="2" type="stmt"/>
-          <line num="12" count="4" type="cond" truecount="3" falsecount="1"/>
-          <line num="13" count="2" type="stmt"/>
-          <line num="14" count="2" type="stmt"/>
-          <line num="15" count="2" type="stmt"/>
-          <line num="18" count="2" type="stmt"/>
-          <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="20" count="0" type="stmt"/>
-          <line num="25" count="0" type="stmt"/>
-          <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="36" count="0" type="stmt"/>
-          <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="39" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="41" count="0" type="stmt"/>
-          <line num="42" count="0" type="stmt"/>
-          <line num="44" count="0" type="stmt"/>
-          <line num="48" count="0" type="stmt"/>
-          <line num="53" count="2" type="stmt"/>
-          <line num="56" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="57" count="0" type="cond" truecount="0" falsecount="5"/>
-          <line num="59" count="0" type="stmt"/>
-          <line num="60" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="66" count="2" type="stmt"/>
-          <line num="67" count="2" type="cond" truecount="1" falsecount="1"/>
-          <line num="68" count="2" type="stmt"/>
-          <line num="71" count="2" type="stmt"/>
-          <line num="72" count="2" type="cond" truecount="1" falsecount="1"/>
-          <line num="73" count="2" type="stmt"/>
-          <line num="79" count="2" type="stmt"/>
-          <line num="82" count="2" type="stmt"/>
-          <line num="96" count="2" type="stmt"/>
-          <line num="98" count="2" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.components.backToTop.backToTopButton">
-        <metrics statements="36" coveredstatements="35" conditionals="13" coveredconditionals="9" methods="3" coveredmethods="3"/>
-        <file name="BackToTopButton.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/components/backToTop/backToTopButton/BackToTopButton.tsx">
-          <metrics statements="30" coveredstatements="29" conditionals="13" coveredconditionals="9" methods="2" coveredmethods="2"/>
-          <line num="1" count="3" type="stmt"/>
-          <line num="2" count="3" type="stmt"/>
-          <line num="3" count="3" type="stmt"/>
-          <line num="4" count="3" type="stmt"/>
-          <line num="15" count="3" type="stmt"/>
-          <line num="16" count="3" type="stmt"/>
-          <line num="17" count="3" type="stmt"/>
-          <line num="18" count="3" type="stmt"/>
-          <line num="19" count="3" type="stmt"/>
-          <line num="20" count="3" type="stmt"/>
-          <line num="21" count="3" type="stmt"/>
-          <line num="32" count="3" type="cond" truecount="2" falsecount="2"/>
-          <line num="33" count="3" type="stmt"/>
-          <line num="35" count="3" type="stmt"/>
-          <line num="37" count="2" type="stmt"/>
-          <line num="38" count="2" type="stmt"/>
-          <line num="39" count="2" type="stmt"/>
-          <line num="42" count="1" type="stmt"/>
-          <line num="43" count="1" type="stmt"/>
-          <line num="44" count="1" type="stmt"/>
-          <line num="47" count="0" type="stmt"/>
-          <line num="52" count="3" type="stmt"/>
-          <line num="53" count="3" type="stmt"/>
-          <line num="54" count="6" type="cond" truecount="1" falsecount="1"/>
-          <line num="55" count="3" type="stmt"/>
-          <line num="56" count="3" type="stmt"/>
-          <line num="58" count="3" type="stmt"/>
-          <line num="63" count="3" type="stmt"/>
-          <line num="81" count="3" type="stmt"/>
-          <line num="83" count="3" type="stmt"/>
-        </file>
-        <file name="UpIcon.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/components/backToTop/backToTopButton/UpIcon.tsx">
-          <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="1" count="4" type="stmt"/>
-          <line num="7" count="4" type="stmt"/>
-          <line num="8" count="3" type="stmt"/>
-          <line num="19" count="4" type="stmt"/>
-          <line num="23" count="4" type="stmt"/>
-          <line num="26" count="4" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.components.backToTop.backToTopButton.styled">
-        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
-        <file name="WithRightMargin.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/components/backToTop/backToTopButton/styled/WithRightMargin.tsx">
-          <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
-          <line num="1" count="3" type="stmt"/>
-          <line num="3" count="3" type="cond" truecount="2" falsecount="0"/>
-          <line num="7" count="3" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.components.fadeInEntrance">
-        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <file name="FadeInEntrance.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/components/fadeInEntrance/FadeInEntrance.tsx">
-          <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="1" count="6" type="stmt"/>
-          <line num="2" count="6" type="stmt"/>
-          <line num="8" count="6" type="stmt"/>
-          <line num="9" count="6" type="stmt"/>
-          <line num="12" count="6" type="stmt"/>
-          <line num="14" count="6" type="stmt"/>
-        </file>
-        <file name="index.ts" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/components/fadeInEntrance/index.ts">
-          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="1" count="5" type="stmt"/>
-          <line num="3" count="5" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.components.fadeInEntrance.styled">
-        <metrics statements="6" coveredstatements="6" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
-        <file name="FadeInDiv.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/components/fadeInEntrance/styled/FadeInDiv.tsx">
-          <metrics statements="6" coveredstatements="6" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
-          <line num="1" count="6" type="stmt"/>
-          <line num="3" count="6" type="cond" truecount="2" falsecount="0"/>
-          <line num="13" count="6" type="cond" truecount="2" falsecount="0"/>
-          <line num="26" count="6" type="cond" truecount="2" falsecount="0"/>
-          <line num="27" count="6" type="cond" truecount="2" falsecount="0"/>
-          <line num="30" count="6" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.components.loadingContent">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <file name="LoadingContent.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/components/loadingContent/LoadingContent.tsx">
-          <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="1" count="1" type="stmt"/>
-          <line num="6" count="1" type="stmt"/>
-          <line num="9" count="1" type="stmt"/>
-          <line num="11" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.components.logoutRoute">
-        <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-        <file name="LogoutRoute.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/components/logoutRoute/LogoutRoute.tsx">
-          <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-          <line num="1" count="1" type="stmt"/>
-          <line num="2" count="1" type="stmt"/>
-          <line num="3" count="1" type="stmt"/>
-          <line num="5" count="1" type="stmt"/>
-          <line num="13" count="2" type="stmt"/>
-          <line num="15" count="2" type="stmt"/>
-          <line num="16" count="1" type="cond" truecount="2" falsecount="0"/>
-          <line num="19" count="2" type="stmt"/>
-          <line num="26" count="1" type="stmt"/>
-          <line num="28" count="1" type="stmt"/>
-        </file>
-        <file name="index.ts" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/components/logoutRoute/index.ts">
-          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="1" count="1" type="stmt"/>
-          <line num="3" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.components.mainLayout">
-        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
-        <file name="MainLayout.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/components/mainLayout/MainLayout.tsx">
-          <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+<coverage generated="1645981753358" clover="3.2.0">
+  <project timestamp="1645981753358" name="All files">
+    <metrics statements="167" coveredstatements="46" conditionals="207" coveredconditionals="5" methods="19" coveredmethods="2" elements="393" coveredelements="53" complexity="0" loc="167" ncloc="167" packages="4" files="4" classes="4">
+      <package name="src.contexts.auth.hook">
+        <metrics statements="47" coveredstatements="24" conditionals="26" coveredconditionals="2" methods="7" coveredmethods="2"/>
+        <file name="authContextHook.ts" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/contexts/auth/hook/authContextHook.ts">
+          <metrics statements="47" coveredstatements="24" conditionals="26" coveredconditionals="2" methods="7" coveredmethods="2"/>
           <line num="1" count="1" type="stmt"/>
           <line num="2" count="1" type="stmt"/>
           <line num="4" count="1" type="stmt"/>
-          <line num="5" count="1" type="stmt"/>
           <line num="6" count="1" type="stmt"/>
-          <line num="7" count="1" type="stmt"/>
-          <line num="14" count="1" type="stmt"/>
-          <line num="15" count="1" type="stmt"/>
-          <line num="19" count="1" type="stmt"/>
-          <line num="26" count="1" type="stmt"/>
-          <line num="34" count="1" type="stmt"/>
-          <line num="48" count="1" type="stmt"/>
-          <line num="50" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.components.navigation">
-        <metrics statements="27" coveredstatements="20" conditionals="22" coveredconditionals="5" methods="6" coveredmethods="3"/>
-        <file name="NavigationBar.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/components/navigation/NavigationBar.tsx">
-          <metrics statements="25" coveredstatements="18" conditionals="22" coveredconditionals="5" methods="6" coveredmethods="3"/>
-          <line num="1" count="2" type="stmt"/>
-          <line num="2" count="2" type="stmt"/>
-          <line num="11" count="2" type="stmt"/>
-          <line num="13" count="2" type="stmt"/>
-          <line num="25" count="1" type="stmt"/>
-          <line num="26" count="1" type="stmt"/>
-          <line num="27" count="1" type="stmt"/>
-          <line num="28" count="1" type="stmt"/>
-          <line num="30" count="1" type="stmt"/>
-          <line num="31" count="1" type="stmt"/>
-          <line num="32" count="1" type="stmt"/>
-          <line num="35" count="1" type="stmt"/>
-          <line num="36" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="37" count="0" type="stmt"/>
-          <line num="42" count="1" type="cond" truecount="1" falsecount="1"/>
-          <line num="45" count="0" type="cond" truecount="0" falsecount="4"/>
-          <line num="46" count="0" type="stmt"/>
-          <line num="51" count="1" type="stmt"/>
-          <line num="54" count="0" type="cond" truecount="0" falsecount="4"/>
-          <line num="55" count="0" type="cond" truecount="0" falsecount="4"/>
-          <line num="56" count="0" type="stmt"/>
-          <line num="60" count="1" type="stmt"/>
-          <line num="66" count="1" type="stmt"/>
-          <line num="86" count="2" type="stmt"/>
-          <line num="88" count="2" type="stmt"/>
-        </file>
-        <file name="index.ts" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/components/navigation/index.ts">
-          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="1" count="1" type="stmt"/>
-          <line num="3" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.components.privateRoute">
-        <metrics statements="10" coveredstatements="10" conditionals="12" coveredconditionals="5" methods="2" coveredmethods="2"/>
-        <file name="PrivateRoute.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/components/privateRoute/PrivateRoute.tsx">
-          <metrics statements="10" coveredstatements="10" conditionals="12" coveredconditionals="5" methods="2" coveredmethods="2"/>
-          <line num="1" count="1" type="stmt"/>
-          <line num="2" count="1" type="stmt"/>
-          <line num="3" count="1" type="stmt"/>
-          <line num="11" count="1" type="stmt"/>
-          <line num="12" count="1" type="stmt"/>
-          <line num="14" count="1" type="stmt"/>
-          <line num="17" count="1" type="stmt"/>
-          <line num="18" count="1" type="cond" truecount="4" falsecount="6"/>
-          <line num="28" count="1" type="stmt"/>
-          <line num="30" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.components.scrollToTop">
-        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <file name="ScrollToTop.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/components/scrollToTop/ScrollToTop.tsx">
-          <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="1" count="1" type="stmt"/>
-          <line num="2" count="1" type="stmt"/>
-          <line num="3" count="1" type="stmt"/>
-          <line num="9" count="1" type="stmt"/>
-          <line num="10" count="1" type="stmt"/>
-          <line num="11" count="1" type="stmt"/>
-          <line num="13" count="1" type="stmt"/>
-          <line num="16" count="1" type="stmt"/>
-          <line num="18" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.components.scrollToTop.hooks.useScrollToTopOnLocationChange">
-        <metrics statements="9" coveredstatements="7" conditionals="4" coveredconditionals="1" methods="3" coveredmethods="3"/>
-        <file name="index.ts" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/components/scrollToTop/hooks/useScrollToTopOnLocationChange/index.ts">
-          <metrics statements="9" coveredstatements="7" conditionals="4" coveredconditionals="1" methods="3" coveredmethods="3"/>
-          <line num="1" count="1" type="stmt"/>
-          <line num="4" count="1" type="stmt"/>
-          <line num="5" count="1" type="stmt"/>
-          <line num="7" count="1" type="stmt"/>
           <line num="8" count="1" type="stmt"/>
-          <line num="11" count="1" type="stmt"/>
-          <line num="12" count="1" type="cond" truecount="1" falsecount="1"/>
-          <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="14" count="0" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.config">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <file name="appConfig.ts" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/config/appConfig.ts">
-          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="1" count="1" type="stmt"/>
-          <line num="10" count="1" type="stmt"/>
-        </file>
-        <file name="navigation.ts" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/config/navigation.ts">
-          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="18" count="1" type="stmt"/>
-          <line num="41" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.contexts.auth">
-        <metrics statements="43" coveredstatements="30" conditionals="18" coveredconditionals="5" methods="9" coveredmethods="5"/>
-        <file name="index.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/contexts/auth/index.tsx">
-          <metrics statements="43" coveredstatements="30" conditionals="18" coveredconditionals="5" methods="9" coveredmethods="5"/>
-          <line num="1" count="6" type="stmt"/>
-          <line num="2" count="6" type="stmt"/>
-          <line num="3" count="6" type="stmt"/>
-          <line num="28" count="6" type="stmt"/>
-          <line num="32" count="6" type="stmt"/>
-          <line num="42" count="6" type="stmt"/>
-          <line num="46" count="6" type="stmt"/>
-          <line num="54" count="5" type="cond" truecount="2" falsecount="0"/>
-          <line num="57" count="5" type="stmt"/>
-          <line num="67" count="6" type="stmt"/>
-          <line num="68" count="6" type="stmt"/>
-          <line num="70" count="6" type="stmt"/>
-          <line num="82" count="5" type="stmt"/>
-          <line num="83" count="1" type="stmt"/>
-          <line num="84" count="1" type="stmt"/>
-          <line num="85" count="1" type="cond" truecount="1" falsecount="1"/>
-          <line num="87" count="1" type="cond" truecount="1" falsecount="1"/>
-          <line num="93" count="1" type="stmt"/>
-          <line num="94" count="1" type="stmt"/>
-          <line num="97" count="5" type="stmt"/>
+          <line num="16" count="1" type="stmt"/>
+          <line num="17" count="3" type="stmt"/>
+          <line num="20" count="3" type="stmt"/>
+          <line num="23" count="3" type="stmt"/>
+          <line num="26" count="3" type="stmt"/>
+          <line num="27" count="3" type="stmt"/>
+          <line num="29" count="3" type="stmt"/>
+          <line num="30" count="0" type="stmt"/>
+          <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="33" count="0" type="stmt"/>
+          <line num="35" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="46" count="0" type="stmt"/>
+          <line num="49" count="3" type="stmt"/>
+          <line num="50" count="1" type="stmt"/>
+          <line num="51" count="1" type="stmt"/>
+          <line num="53" count="1" type="stmt"/>
+          <line num="57" count="1" type="stmt"/>
+          <line num="59" count="1" type="cond" truecount="2" falsecount="2"/>
+          <line num="70" count="1" type="stmt"/>
+          <line num="73" count="3" type="cond" truecount="0" falsecount="2"/>
+          <line num="74" count="0" type="stmt"/>
+          <line num="75" count="0" type="stmt"/>
+          <line num="76" count="0" type="stmt"/>
+          <line num="78" count="0" type="stmt"/>
+          <line num="79" count="0" type="stmt"/>
+          <line num="80" count="0" type="stmt"/>
+          <line num="82" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="94" count="3" type="stmt"/>
+          <line num="95" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="96" count="0" type="stmt"/>
           <line num="98" count="0" type="stmt"/>
-          <line num="99" count="0" type="stmt"/>
-          <line num="101" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="107" count="0" type="stmt"/>
-          <line num="108" count="0" type="stmt"/>
-          <line num="111" count="5" type="cond" truecount="0" falsecount="2"/>
-          <line num="112" count="0" type="stmt"/>
-          <line num="113" count="0" type="stmt"/>
-          <line num="115" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="121" count="0" type="stmt"/>
-          <line num="124" count="5" type="stmt"/>
-          <line num="125" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="126" count="0" type="stmt"/>
-          <line num="128" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="134" count="0" type="stmt"/>
-          <line num="138" count="5" type="stmt"/>
-          <line num="139" count="1" type="stmt"/>
-          <line num="140" count="1" type="stmt"/>
-          <line num="142" count="1" type="cond" truecount="1" falsecount="1"/>
-          <line num="148" count="1" type="stmt"/>
-          <line num="150" count="1" type="stmt"/>
-          <line num="152" count="6" type="stmt"/>
-          <line num="154" count="6" type="stmt"/>
+          <line num="100" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="113" count="3" type="stmt"/>
+          <line num="114" count="0" type="stmt"/>
+          <line num="116" count="0" type="stmt"/>
+          <line num="117" count="0" type="stmt"/>
+          <line num="118" count="0" type="stmt"/>
+          <line num="119" count="0" type="stmt"/>
+          <line num="120" count="0" type="stmt"/>
+          <line num="122" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="128" count="3" type="stmt"/>
+          <line num="143" count="1" type="stmt"/>
         </file>
       </package>
       <package name="src.contexts.withDevTools">
         <metrics statements="21" coveredstatements="6" conditionals="25" coveredconditionals="3" methods="2" coveredmethods="0"/>
         <file name="index.ts" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/contexts/withDevTools/index.ts">
           <metrics statements="21" coveredstatements="6" conditionals="25" coveredconditionals="3" methods="2" coveredmethods="0"/>
-          <line num="27" count="6" type="stmt"/>
-          <line num="29" count="6" type="stmt"/>
-          <line num="34" count="6" type="stmt"/>
-          <line num="48" count="6" type="stmt"/>
-          <line num="52" count="6" type="cond" truecount="0" falsecount="2"/>
+          <line num="27" count="1" type="stmt"/>
+          <line num="29" count="1" type="stmt"/>
+          <line num="34" count="1" type="stmt"/>
+          <line num="48" count="1" type="stmt"/>
+          <line num="52" count="1" type="cond" truecount="0" falsecount="2"/>
           <line num="54" count="0" type="stmt"/>
           <line num="61" count="0" type="stmt"/>
           <line num="62" count="0" type="stmt"/>
           <line num="67" count="0" type="stmt"/>
-          <line num="79" count="6" type="stmt"/>
+          <line num="79" count="1" type="stmt"/>
           <line num="85" count="0" type="cond" truecount="0" falsecount="2"/>
           <line num="86" count="0" type="stmt"/>
           <line num="88" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -346,194 +82,34 @@
           <line num="102" count="0" type="cond" truecount="0" falsecount="2"/>
         </file>
       </package>
-      <package name="src.mock">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <file name="userInfo.ts" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/mock/userInfo.ts">
-          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="1" count="1" type="stmt"/>
-          <line num="15" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.pages.about">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <file name="About.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/pages/about/About.tsx">
-          <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="1" count="1" type="stmt"/>
-          <line num="3" count="1" type="stmt"/>
-          <line num="9" count="1" type="stmt"/>
-          <line num="16" count="1" type="stmt"/>
-          <line num="18" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.pages.home">
-        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <file name="Home.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/pages/home/Home.tsx">
-          <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="1" count="1" type="stmt"/>
-          <line num="3" count="1" type="stmt"/>
-          <line num="4" count="1" type="stmt"/>
-          <line num="5" count="1" type="stmt"/>
-          <line num="6" count="1" type="stmt"/>
-          <line num="7" count="1" type="stmt"/>
-          <line num="8" count="1" type="stmt"/>
-          <line num="14" count="1" type="stmt"/>
-          <line num="47" count="1" type="stmt"/>
-          <line num="49" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.pages.home.styled">
-        <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="6" methods="0" coveredmethods="0"/>
-        <file name="HomeInfo.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/pages/home/styled/HomeInfo.tsx">
-          <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
-          <line num="1" count="1" type="stmt"/>
-          <line num="3" count="1" type="cond" truecount="2" falsecount="0"/>
-          <line num="5" count="1" type="stmt"/>
-        </file>
-        <file name="LightNote.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/pages/home/styled/LightNote.tsx">
-          <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
-          <line num="1" count="1" type="stmt"/>
-          <line num="3" count="1" type="cond" truecount="2" falsecount="0"/>
-          <line num="7" count="1" type="stmt"/>
-        </file>
-        <file name="MainTitle.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/pages/home/styled/MainTitle.tsx">
-          <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
-          <line num="1" count="1" type="stmt"/>
-          <line num="4" count="1" type="cond" truecount="2" falsecount="0"/>
-          <line num="9" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.pages.login">
-        <metrics statements="58" coveredstatements="28" conditionals="36" coveredconditionals="3" methods="9" coveredmethods="2"/>
-        <file name="Login.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/pages/login/Login.tsx">
-          <metrics statements="58" coveredstatements="28" conditionals="36" coveredconditionals="3" methods="9" coveredmethods="2"/>
-          <line num="1" count="1" type="stmt"/>
-          <line num="2" count="1" type="stmt"/>
-          <line num="3" count="1" type="stmt"/>
-          <line num="4" count="1" type="stmt"/>
-          <line num="5" count="1" type="stmt"/>
-          <line num="6" count="1" type="stmt"/>
-          <line num="7" count="1" type="stmt"/>
-          <line num="8" count="1" type="stmt"/>
-          <line num="9" count="1" type="stmt"/>
-          <line num="10" count="1" type="stmt"/>
-          <line num="11" count="1" type="stmt"/>
-          <line num="16" count="1" type="stmt"/>
-          <line num="17" count="1" type="stmt"/>
-          <line num="18" count="1" type="stmt"/>
-          <line num="19" count="1" type="stmt"/>
-          <line num="20" count="1" type="stmt"/>
-          <line num="21" count="1" type="stmt"/>
-          <line num="22" count="1" type="stmt"/>
-          <line num="25" count="1" type="stmt"/>
-          <line num="26" count="1" type="cond" truecount="2" falsecount="2"/>
-          <line num="31" count="1" type="stmt"/>
-          <line num="32" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="33" count="0" type="stmt"/>
-          <line num="36" count="1" type="stmt"/>
-          <line num="38" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="40" count="0" type="stmt"/>
-          <line num="45" count="1" type="stmt"/>
-          <line num="47" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="49" count="0" type="stmt"/>
-          <line num="55" count="1" type="stmt"/>
-          <line num="57" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="58" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="60" count="0" type="stmt"/>
-          <line num="61" count="0" type="stmt"/>
-          <line num="62" count="0" type="stmt"/>
-          <line num="63" count="0" type="stmt"/>
-          <line num="64" count="0" type="stmt"/>
-          <line num="72" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="73" count="0" type="stmt"/>
-          <line num="74" count="0" type="stmt"/>
-          <line num="79" count="0" type="stmt"/>
-          <line num="92" count="0" type="stmt"/>
-          <line num="94" count="0" type="stmt"/>
-          <line num="101" count="1" type="stmt"/>
-          <line num="103" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="106" count="0" type="cond" truecount="0" falsecount="8"/>
-          <line num="109" count="0" type="stmt"/>
-          <line num="110" count="0" type="stmt"/>
-          <line num="112" count="0" type="stmt"/>
-          <line num="115" count="0" type="stmt"/>
-          <line num="117" count="0" type="cond" truecount="0" falsecount="4"/>
-          <line num="118" count="0" type="cond" truecount="0" falsecount="4"/>
-          <line num="120" count="0" type="stmt"/>
-          <line num="123" count="0" type="stmt"/>
-          <line num="126" count="0" type="stmt"/>
-          <line num="133" count="1" type="stmt"/>
-          <line num="219" count="1" type="stmt"/>
-          <line num="221" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.pages.pageNotFound">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <file name="PageNotFound.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/pages/pageNotFound/PageNotFound.tsx">
-          <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="1" count="1" type="stmt"/>
-          <line num="2" count="1" type="stmt"/>
-          <line num="3" count="1" type="stmt"/>
-          <line num="9" count="1" type="stmt"/>
-          <line num="18" count="1" type="stmt"/>
-          <line num="20" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.pages.protected">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <file name="Protected.tsx" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/pages/protected/Protected.tsx">
-          <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="1" count="1" type="stmt"/>
-          <line num="2" count="1" type="stmt"/>
-          <line num="8" count="1" type="stmt"/>
-          <line num="16" count="1" type="stmt"/>
-          <line num="18" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.services.API">
-        <metrics statements="11" coveredstatements="7" conditionals="6" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <file name="fetchTools.ts" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/services/API/fetchTools.ts">
-          <metrics statements="11" coveredstatements="7" conditionals="6" coveredconditionals="0" methods="2" coveredmethods="0"/>
-          <line num="1" count="1" type="stmt"/>
-          <line num="4" count="1" type="stmt"/>
-          <line num="5" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="7" count="0" type="stmt"/>
-          <line num="11" count="0" type="stmt"/>
-          <line num="16" count="1" type="stmt"/>
-          <line num="20" count="1" type="stmt"/>
-          <line num="24" count="1" type="stmt"/>
-          <line num="28" count="1" type="stmt"/>
-          <line num="38" count="1" type="cond" truecount="0" falsecount="2"/>
-          <line num="39" count="0" type="stmt"/>
-        </file>
-      </package>
       <package name="src.services.auth">
-        <metrics statements="92" coveredstatements="29" conditionals="156" coveredconditionals="37" methods="10" coveredmethods="4"/>
+        <metrics statements="92" coveredstatements="9" conditionals="156" coveredconditionals="0" methods="10" coveredmethods="0"/>
         <file name="index.ts" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/src/services/auth/index.ts">
-          <metrics statements="92" coveredstatements="29" conditionals="156" coveredconditionals="37" methods="10" coveredmethods="4"/>
-          <line num="1" count="7" type="stmt"/>
-          <line num="2" count="7" type="stmt"/>
-          <line num="5" count="7" type="stmt"/>
-          <line num="6" count="7" type="stmt"/>
-          <line num="8" count="7" type="stmt"/>
-          <line num="13" count="7" type="stmt"/>
-          <line num="14" count="7" type="stmt"/>
-          <line num="23" count="7" type="stmt"/>
-          <line num="36" count="3" type="cond" truecount="2" falsecount="0"/>
-          <line num="37" count="3" type="cond" truecount="2" falsecount="0"/>
-          <line num="40" count="2" type="cond" truecount="1" falsecount="1"/>
-          <line num="41" count="2" type="cond" truecount="5" falsecount="1"/>
+          <metrics statements="92" coveredstatements="9" conditionals="156" coveredconditionals="0" methods="10" coveredmethods="0"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="5" count="1" type="stmt"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="13" count="1" type="stmt"/>
+          <line num="14" count="1" type="stmt"/>
+          <line num="23" count="1" type="stmt"/>
+          <line num="36" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="40" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="41" count="0" type="cond" truecount="0" falsecount="6"/>
           <line num="44" count="0" type="cond" truecount="0" falsecount="2"/>
           <line num="45" count="0" type="cond" truecount="0" falsecount="6"/>
           <line num="48" count="0" type="stmt"/>
-          <line num="60" count="1" type="cond" truecount="1" falsecount="1"/>
-          <line num="61" count="1" type="cond" truecount="1" falsecount="1"/>
-          <line num="62" count="1" type="cond" truecount="1" falsecount="1"/>
-          <line num="64" count="1" type="cond" truecount="3" falsecount="1"/>
+          <line num="60" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="61" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="62" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="64" count="0" type="cond" truecount="0" falsecount="4"/>
           <line num="65" count="0" type="stmt"/>
-          <line num="68" count="1" type="cond" truecount="1" falsecount="1"/>
-          <line num="69" count="1" type="cond" truecount="4" falsecount="2"/>
-          <line num="70" count="1" type="stmt"/>
-          <line num="71" count="1" type="stmt"/>
+          <line num="68" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="69" count="0" type="cond" truecount="0" falsecount="6"/>
+          <line num="70" count="0" type="stmt"/>
+          <line num="71" count="0" type="stmt"/>
           <line num="75" count="0" type="cond" truecount="0" falsecount="2"/>
           <line num="76" count="0" type="cond" truecount="0" falsecount="6"/>
           <line num="77" count="0" type="stmt"/>
@@ -569,12 +145,12 @@
           <line num="180" count="0" type="stmt"/>
           <line num="181" count="0" type="stmt"/>
           <line num="183" count="0" type="stmt"/>
-          <line num="197" count="2" type="cond" truecount="1" falsecount="1"/>
-          <line num="198" count="2" type="cond" truecount="1" falsecount="1"/>
-          <line num="201" count="1" type="cond" truecount="1" falsecount="1"/>
-          <line num="202" count="1" type="stmt"/>
-          <line num="203" count="1" type="stmt"/>
-          <line num="209" count="1" type="stmt"/>
+          <line num="197" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="198" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="201" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="202" count="0" type="stmt"/>
+          <line num="203" count="0" type="stmt"/>
+          <line num="209" count="0" type="stmt"/>
           <line num="213" count="0" type="cond" truecount="0" falsecount="2"/>
           <line num="214" count="0" type="stmt"/>
           <line num="215" count="0" type="stmt"/>
@@ -599,22 +175,22 @@
           <line num="276" count="0" type="cond" truecount="0" falsecount="6"/>
           <line num="277" count="0" type="stmt"/>
           <line num="278" count="0" type="stmt"/>
-          <line num="291" count="1" type="cond" truecount="3" falsecount="1"/>
-          <line num="292" count="1" type="cond" truecount="3" falsecount="1"/>
-          <line num="296" count="7" type="stmt"/>
+          <line num="291" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="292" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="296" count="1" type="stmt"/>
         </file>
       </package>
       <package name="test">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <file name="setupTests.ts" path="/Users/mackentoch/GitProjects/react-bootstrap-webpack-starter/front/test/setupTests.ts">
           <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="3" count="16" type="stmt"/>
-          <line num="5" count="16" type="stmt"/>
-          <line num="7" count="16" type="stmt"/>
-          <line num="9" count="16" type="stmt"/>
-          <line num="11" count="16" type="stmt"/>
-          <line num="13" count="16" type="stmt"/>
-          <line num="16" count="16" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="5" count="1" type="stmt"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="13" count="1" type="stmt"/>
+          <line num="16" count="1" type="stmt"/>
         </file>
       </package>
     </metrics>
