@@ -1,155 +1,81 @@
-import React, { Component, createContext } from 'react';
-import auth from '../../services/auth';
-import { devToolsStore } from '../withDevTools';
+import React, {
+  ReactNode,
+  useState,
+  useCallback,
+  useMemo,
+  createContext,
+} from 'react';
+import { authContextHook } from './hook/authContextHook';
 
 // #region types
-export type AuthData = {
-  isAuthenticated: boolean;
-  isExpiredToken?: boolean;
-  lastAuthDate?: Date;
-  token?: string;
-  user?: User;
-};
-
 export type AuthProviderState = {
+  isAuthenticated: boolean;
+  isExpiredToken: boolean;
+  lastAuthDate?: Date;
+  token: string;
+  user?: User;
   checkIsAuthenticated: () => boolean;
   checkTokenIsExpired: () => boolean;
-  setToken: (token: string) => any;
-  setUserInfo: (user: User) => any;
-  disconnectUser: () => boolean;
-} & AuthData;
+  setToken: (token: string) => void;
+  setUserInfo: (newUser: User) => void;
+  disconnectUser: () => void;
+};
 
-export type AuthProviderProps = {
-  initialState: {} & AuthData;
+type Props = {
+  children: ReactNode;
 };
 // #endregion
 
 // #region context
 export const AuthContext = createContext<AuthProviderState | null>(null);
+AuthContext.displayName = 'AuthContext'; // NOTE: displayName will be sugar ;) if you use react context devtools in your browser
 // #endregion
 
-// #region constants
-const initialState: AuthData = {
-  token: '',
-  user: undefined,
-  isAuthenticated: false,
-  isExpiredToken: true,
-  lastAuthDate: undefined,
-};
-// #endregion
+export function AuthProvider({ children }: Props) {
+  const {
+    isAuthenticated,
+    isExpiredToken,
+    token,
+    lastAuthDate,
+    user,
 
-// #region PROVIDER component
-export class AuthProvider extends Component<
-  AuthProviderProps,
-  AuthProviderState
-> {
-  static defaultProps = {
-    initialState: {
-      ...initialState,
-    },
-  };
+    checkIsAuthenticated,
+    checkTokenIsExpired,
+    setToken,
+    setUserInfo,
+    disconnectUser,
+  } = authContextHook();
 
-  // #region lifecyle
-  constructor(props: AuthProviderProps) {
-    super(props);
+  const value = useMemo(
+    () => ({
+      isAuthenticated,
+      isExpiredToken,
+      token,
+      lastAuthDate,
+      user,
 
-    // initialize state in constructor (otherwise function won't be passed)
-    this.state = {
-      ...this.props.initialState,
-      checkIsAuthenticated: this.checkIsAuthenticated,
-      checkTokenIsExpired: this.checkTokenIsExpired,
-      disconnectUser: this.disconnectUser,
-      setToken: this.setToken,
-      setUserInfo: this.setUserInfo,
-    };
-  }
+      checkIsAuthenticated,
+      checkTokenIsExpired,
+      setToken,
+      setUserInfo,
+      disconnectUser,
+    }),
+    [
+      isAuthenticated,
+      isExpiredToken,
+      lastAuthDate,
+      token,
+      user,
 
-  render() {
-    const { children } = this.props;
+      checkIsAuthenticated,
+      checkTokenIsExpired,
+      setToken,
+      setUserInfo,
+      disconnectUser,
+    ],
+  );
 
-    return (
-      <AuthContext.Provider
-        value={{
-          ...this.state,
-        }}
-      >
-        {children}
-      </AuthContext.Provider>
-    );
-  }
-  // #endregion
-
-  checkIsAuthenticated = (): boolean => {
-    const checkUserHasId = (user: User) => user.id;
-    const user = auth.getUserInfo();
-    const isAuthenticated = !!(auth.getToken() && checkUserHasId(user));
-
-    devToolsStore &&
-      devToolsStore.dispatch({
-        type: 'AUTH_CHECK_IS_AUTHENTICATED',
-        state: { ...this.state, isAuthenticated },
-      });
-
-    this.setState({ isAuthenticated });
-    return isAuthenticated;
-  };
-
-  checkTokenIsExpired = (): boolean => {
-    const token = auth.getToken();
-    const isExpiredToken = auth.isExpiredToken(token);
-
-    devToolsStore &&
-      devToolsStore.dispatch({
-        type: 'AUTH_CHECK_TOKEN_IS_EXPIRED',
-        state: { ...this.state, isExpiredToken },
-      });
-
-    this.setState({ isExpiredToken });
-    return isExpiredToken;
-  };
-
-  setToken = (token: string = '') => {
-    auth.setToken(token);
-    const isExpiredToken = auth.isExpiredToken(token);
-
-    devToolsStore &&
-      devToolsStore.dispatch({
-        type: 'AUTH_SET_TOKEN',
-        state: { ...this.state, token, isAuthenticated: true, isExpiredToken },
-      });
-
-    this.setState({ token, isAuthenticated: true, isExpiredToken });
-  };
-
-  setUserInfo = (user: User) => {
-    if (typeof user === 'object') {
-      auth.setUserInfo(user);
-
-      devToolsStore &&
-        devToolsStore.dispatch({
-          type: 'AUTH_SET_USER_INFO',
-          state: { ...this.state, user },
-        });
-
-      this.setState({ user });
-    }
-  };
-
-  disconnectUser = (): boolean => {
-    auth.clearAllAppStorage();
-    this.checkIsAuthenticated();
-
-    devToolsStore &&
-      devToolsStore.dispatch({
-        type: 'AUTH_DISCONNECT_USER',
-        state: { ...initialState },
-      });
-
-    this.setState({ ...initialState });
-
-    return true;
-  };
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
 export default AuthProvider;
-// #endregion
