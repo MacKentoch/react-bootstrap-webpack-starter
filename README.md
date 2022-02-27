@@ -7,7 +7,7 @@
 
 ### ReactJS + Bootstrap starter with hot reload
 
-#### Full client and server side in ES6+-ES2015+ using only React 16.3 Context API for state management.
+#### Full client and server side in ES6+-ES2015+ using only React 16.3 Context API for state management
 
 > Dev bundle `connects context` to `redux devTools` (_yes you are not dreaming_) to feel redux development experience in a pure Context API app. Contrary to a redux based app connecting to devTools is not automatic (_you have to specify each `pseudo-action` you want to trace in devTools state_).
 
@@ -27,7 +27,7 @@ _Concept behind:_ **this starter is an easy way to understand and ready to use R
 
 **Front:**
 
-- React JS (16.8.x - [github :link:](https://github.com/facebook/react))
+- React JS (16.11.x - [github :link:](https://github.com/facebook/react))
 - react-router (5.x- [github :link:](https://github.com/reactjs/react-router))
 - Bootstrap (4.x - [github :link:](https://github.com/twbs/bootstrap))
 - react-strap ([github :link:](https://reactstrap.github.io/))
