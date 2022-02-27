@@ -50,10 +50,6 @@ export function authContextHook(): AuthProviderState {
     const token = auth.getToken();
     const _isExpiredToken = auth.isExpiredToken(token);
 
-    console.log('DEBUG checkTokenIsExpired : ', {
-      token,
-      _isExpiredToken,
-    });
     setIsExpiredToken(_isExpiredToken);
 
     devToolsStore?.dispatch({
